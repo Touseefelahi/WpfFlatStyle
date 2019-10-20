@@ -1,0 +1,116 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <Style x:Key="ButtonBase" TargetType="{x:Type Button}" BasedOn="{StaticResource BaseStyle}">
+        <Setter Property="Background" Value="{StaticResource PrimaryBrush}" />
+        <Setter Property="Foreground" Value="{StaticResource BackgroundBrush}" />
+        <Setter Property="TextOptions.TextFormattingMode" Value="Display" />
+        <Setter Property="UseLayoutRounding" Value="True" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Grid>
+                        <Border CornerRadius="3"  x:Name="buttonFrame" Background="{TemplateBinding Background}" />
+                        <Border>
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                        </Border>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Border.Effect" TargetName="buttonFrame">
+                                <Setter.Value>
+                                    <DropShadowEffect Color="{StaticResource ForegroundMain}" Direction="320" ShadowDepth="2"  Opacity="0.5" />
+                                </Setter.Value>
+                            </Setter>
+                        </Trigger>
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter Property="Border.Effect" TargetName="buttonFrame">
+                                <Setter.Value>
+                                    <DropShadowEffect Color="{StaticResource ForegroundMain}" Direction="320" ShadowDepth="2"  Opacity="0" />
+                                </Setter.Value>
+                            </Setter>
+                        </Trigger>
+                        <Trigger Property="IsEnabled" Value="False">
+                            <Setter Property="Border.BorderBrush" TargetName="buttonFrame" Value="{StaticResource DisabledBrush}" />
+                            <Setter Property="Border.Background" TargetName="buttonFrame" Value="{StaticResource DisabledBrush}" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style TargetType="{x:Type Button}" BasedOn="{StaticResource ButtonBase}" />
+
+    <Style x:Key="ToggleButtonBase" TargetType="{x:Type ToggleButton}" BasedOn="{StaticResource BaseStyle}">
+        <Setter Property="Background" Value="{StaticResource TransparentBrush}" />
+        <Setter Property="Foreground" Value="{StaticResource PrimaryBrush}" />
+        <Setter Property="TextOptions.TextFormattingMode" Value="Display" />
+        <Setter Property="UseLayoutRounding" Value="True" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type ToggleButton}">
+                    <Grid Background="{TemplateBinding Background}">
+                        <Border  CornerRadius="3" BorderThickness="1 1 0 0" BorderBrush="{StaticResource PrimaryBrush}">
+                        </Border>
+                        <Border  x:Name="buttonFrame" CornerRadius="3" BorderThickness="0 0 1 1" BorderBrush="{StaticResource PrimaryBrush}">
+                        </Border>
+                        <Border>
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                        </Border>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+
+                        <Trigger Property="IsChecked" Value="True">
+                            <Setter Property="Background" TargetName="buttonFrame" Value="{StaticResource PrimaryBrush}" />
+                            <Setter Property="Foreground" Value="{StaticResource BackgroundBrush}" />
+                        </Trigger>
+
+                        <Trigger Property="IsChecked" Value="false">
+                            <Setter Property="Background" TargetName="buttonFrame" Value="{StaticResource TransparentBrush}" />
+                            <Setter Property="Foreground" Value="{StaticResource PrimaryBrush}" />
+                        </Trigger>
+
+                        <Trigger Property="IsEnabled" Value="False">
+                            <Setter Property="Border.BorderBrush" TargetName="buttonFrame" Value="{StaticResource DisabledBrush}" />
+                            <Setter Property="Border.Background" TargetName="buttonFrame" Value="{StaticResource DisabledBrush}" />
+                            <Setter Property="Foreground" Value="{StaticResource BackgroundBrush}" />
+                        </Trigger>
+
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Border.Effect" TargetName="buttonFrame">
+                                <Setter.Value>
+                                    <DropShadowEffect Color="{StaticResource ForegroundMain}" Direction="320" ShadowDepth="2"  Opacity="0.5" />
+                                </Setter.Value>
+                            </Setter>
+                        </Trigger>
+
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter Property="Border.Effect" TargetName="buttonFrame">
+                                <Setter.Value>
+                                    <DropShadowEffect Color="{StaticResource ForegroundMain}" Direction="320" ShadowDepth="2"  Opacity="0" />
+                                </Setter.Value>
+                            </Setter>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style TargetType="{x:Type ToggleButton}" BasedOn="{StaticResource ToggleButtonBase}" />
+
+    <Style x:Key="WindowButton" TargetType="{x:Type Button}" BasedOn="{StaticResource ButtonBase}">
+        <Setter Property="WindowChrome.IsHitTestVisibleInChrome" Value="True" />
+        <Setter Property="Foreground" Value="{StaticResource BackgroundBrush}" />
+        <Setter Property="Background" Value="{StaticResource TransparentBrush}" />
+        <Setter Property="Width" Value="28" />
+        <Setter Property="Height" Value="28" />
+        <Setter Property="FontSize" Value="18" />
+        <Setter Property="Margin" Value="0" />
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="true">
+                <Setter Property="FontWeight" Value="ExtraBold" />
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+</ResourceDictionary>

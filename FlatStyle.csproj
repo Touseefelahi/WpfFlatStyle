@@ -1,0 +1,38 @@
+<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.0</TargetFramework>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Page Update="Style\Button.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Style\BaseStyle.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Style\Fonts.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Style\ComboBox.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Style\Text.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Style\Colors.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Style\CheckBox.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Style\Datagrid.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Style\Scroll.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+
+</Project>
