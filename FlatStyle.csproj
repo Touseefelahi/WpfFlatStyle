@@ -1,8 +1,23 @@
-<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
 
   <PropertyGroup>
-    <TargetFramework>netcoreapp3.0</TargetFramework>
+    <TargetFrameworks>netcoreapp3.0;net45</TargetFrameworks>
     <UseWPF>true</UseWPF>
+    <PackageId>Stira.WpfFlatStyle</PackageId>
+    <Authors>Touseef Elahi</Authors>
+    <Company>Stira.sa</Company>
+    <Product>Wpf Flat Style</Product>
+    <Description>
+      Simple flat theme with changeable color
+      Read the readme file and see example project for help
+      Project URL: https://github.com/Touseefelahi/WpfFlatStyle
+    </Description>
+    <Copyright>Stira.sa</Copyright>
+    <PackageProjectUrl>https://github.com/Touseefelahi/WpfFlatStyle</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/Touseefelahi/WpfFlatStyle</RepositoryUrl>
+    <RepositoryType>Git</RepositoryType>
+    <PackageTags>Wpf, Theme, Flat-Design</PackageTags>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
   </PropertyGroup>
 
   <ItemGroup>
@@ -34,5 +49,4 @@
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>
-
 </Project>
