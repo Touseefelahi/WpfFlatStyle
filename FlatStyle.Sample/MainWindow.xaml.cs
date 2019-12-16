@@ -1,5 +1,6 @@
 ﻿using System.Collections.ObjectModel;
 using System.Windows;
+using System.Windows.Media;
 
 namespace FlatStyle.Sample
 {
@@ -11,6 +12,8 @@ namespace FlatStyle.Sample
         public MainWindow()
         {
             InitializeComponent();
+            ClrPcker_Primary.SelectedColor = FlatStyle.Style.GetColor(ColorFlat.PrimaryColor);
+            ClrPcker_Secondary.SelectedColor = FlatStyle.Style.GetColor(ColorFlat.SecondaryColor);
 
             Dataset dataset1 = new Dataset("Daryl", "MacDavitt", "dmacdavitt0@fema.gov", "Male", "165.132.34.62");
             Dataset dataset2 = new Dataset("Sherwood", "Conan", "sconan1@dell.com", "Male", "34.97.62.115");
@@ -40,11 +43,48 @@ namespace FlatStyle.Sample
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            FlatStyle.Style.SetColor(ColorFlat.PrimaryColor, "14213D");
-            FlatStyle.Style.SetColor(ColorFlat.AccentColor, "FF213D");
-            FlatStyle.Style.SetColor(ColorFlat.SecondaryColor, "FF21FF");
-            FlatStyle.Style.SetColor(ColorFlat.BackgroundColor, "101010");
-            FlatStyle.Style.SetColor(ColorFlat.ForegroundMainColor, "f3f3f3");
+            // FlatStyle.Style.SetTheme();
+            var currentBackGroundColor = FlatStyle.Style.GetColor(ColorFlat.BackgroundColor);
+            var currentForeGroundColor = FlatStyle.Style.GetColor(ColorFlat.ForegroundMainColor);
+
+            FlatStyle.Style.SetColor(ColorFlat.BackgroundColor, currentForeGroundColor);
+            FlatStyle.Style.SetColor(ColorFlat.ForegroundMainColor, currentBackGroundColor);
+        }
+
+        private void CloseWindow(object sender, RoutedEventArgs e)
+        {
+            Close();
+        }
+
+        private void MinimizeWindow(object sender, RoutedEventArgs e)
+        {
+            WindowState = WindowState.Minimized;
+        }
+
+        private void MaximizeWindow(object sender, RoutedEventArgs e)
+        {
+            switch (WindowState)
+            {
+                case WindowState.Normal:
+                    WindowState = WindowState.Maximized;
+                    break;
+
+                case WindowState.Maximized:
+                    WindowState = WindowState.Normal;
+                    break;
+            }
+        }
+
+        private void ClrPcker_Background_SelectedColorChanged(object sender, RoutedPropertyChangedEventArgs<Color?> e)
+        {
+            if (ClrPcker_Secondary.SelectedColor.HasValue)
+                FlatStyle.Style.SetTheme(e.NewValue.Value, ClrPcker_Secondary.SelectedColor.Value, true);
+        }
+
+        private void ClrPcker_Secondary_SelectedColorChanged(object sender, RoutedPropertyChangedEventArgs<Color?> e)
+        {
+            if (ClrPcker_Primary.SelectedColor.HasValue)
+                FlatStyle.Style.SetTheme(ClrPcker_Primary.SelectedColor.Value, e.NewValue.Value, true);
         }
     }
 }

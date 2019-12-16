@@ -31,7 +31,7 @@
         <Setter Property="FontFamily" Value="{DynamicResource fontPrimary}" />
         <Style.Triggers>
             <Trigger Property="IsSelected" Value="True">
-                <Setter Property="Background" Value="{DynamicResource SecondaryBrush}" />
+                <Setter Property="Background" Value="{DynamicResource PrimaryLightBrush}" />
             </Trigger>
         </Style.Triggers>
     </Style>
@@ -44,7 +44,7 @@
 
         <Style.Triggers>
             <Trigger Property="IsSelected" Value="True">
-                <Setter Property="Background" Value="{DynamicResource SecondaryBrush}" />
+                <Setter Property="Background" Value="{DynamicResource PrimaryLightBrush}" />
             </Trigger>
             <Trigger Property="ItemsControl.AlternationIndex" Value="0">
                 <Setter Property="Background" Value="{DynamicResource BackgroundBrush}" />

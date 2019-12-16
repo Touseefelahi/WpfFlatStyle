@@ -1,25 +1,25 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
 
-    <Color x:Key="BackgroundColor">#E5E5E5</Color>
+    <Color x:Key="BackgroundColor">#FEF6E9</Color>
     <SolidColorBrush x:Key="BackgroundBrush"        Color="{DynamicResource BackgroundColor}" />
 
     <Color x:Key="PrimaryColor">#FCA311</Color>
     <SolidColorBrush x:Key="PrimaryBrush"           Color="{DynamicResource PrimaryColor}" />
 
-    <Color x:Key="AccentColor">#121212</Color>
-    <SolidColorBrush x:Key="AccentBrush"            Color="{DynamicResource AccentColor}" />
+    <Color x:Key="SecondaryColor">#3264D1</Color>
+    <SolidColorBrush x:Key="SecondaryBrush"            Color="{DynamicResource SecondaryColor}" />
 
-    <Color x:Key="SecondaryColor">#14213D</Color>
-    <SolidColorBrush x:Key="SecondaryBrush"         Color="{DynamicResource SecondaryColor}" />
+    <Color x:Key="PrimaryLightColor">#FCBC51</Color>
+    <SolidColorBrush x:Key="PrimaryLightBrush"         Color="{DynamicResource PrimaryLightColor}" />
 
-    <Color x:Key="CautionColor">#FF4444</Color>
-    <SolidColorBrush x:Key="CautionBrush"           Color="{DynamicResource CautionColor}" />
+    <Color x:Key="ErrorColor">#FF4444</Color>
+    <SolidColorBrush x:Key="CautionBrush"           Color="{DynamicResource ErrorColor}" />
 
     <Color x:Key="DisabledColor">#555555</Color>
     <SolidColorBrush x:Key="DisabledBrush"          Color="{DynamicResource DisabledColor}" />
 
-    <Color x:Key="ForegroundMainColor">#131313</Color>
+    <Color x:Key="ForegroundMainColor">#232323</Color>
     <SolidColorBrush x:Key="ForegroundMainBrush"    Color="{DynamicResource ForegroundMainColor}" />
 
     <Color x:Key="TransparentColor">#00000000</Color>

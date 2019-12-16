@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace FlatStyle
+﻿namespace FlatStyle
 {
     public enum ColorFlat
     {
@@ -12,12 +8,12 @@ namespace FlatStyle
         PrimaryColor,
 
         /// <summary>
-        /// This is the secondary color of Flat UI
+        /// This is the primary color of Flat UI with light shade of primary color
         /// </summary>
-        SecondaryColor,
+        PrimaryLightColor,
 
-        AccentColor,
-        CautionColor,
+        SecondaryColor,
+        ErrorColor,
         BackgroundColor,
         DisabledColor,
         ForegroundMainColor,

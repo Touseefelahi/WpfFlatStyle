@@ -12,13 +12,13 @@
                   Grid.ColumnSpan="2"
                   CornerRadius="0"
                   Background="{DynamicResource PrimaryBrush}"
-                  BorderBrush="{DynamicResource SecondaryBrush}"
+                  BorderBrush="{DynamicResource PrimaryLightBrush}"
                   BorderThickness="0" />
             <Border
                   Grid.Column="0"
                   CornerRadius="1"
                   Margin="1"
-                  Background="{DynamicResource SecondaryBrush}"
+                  Background="{DynamicResource PrimaryLightBrush}"
                   BorderBrush="{DynamicResource PrimaryBrush}"
                   BorderThickness="0,0,0,0" />
             <Path
@@ -31,13 +31,13 @@
         </Grid>
         <ControlTemplate.Triggers>
             <Trigger Property="ToggleButton.IsMouseOver" Value="true">
-                <Setter TargetName="Border" Property="Background" Value="{DynamicResource SecondaryBrush}" />
+                <Setter TargetName="Border" Property="Background" Value="{DynamicResource PrimaryLightBrush}" />
             </Trigger>
             <Trigger Property="ToggleButton.IsChecked" Value="true">
-                <Setter TargetName="Border" Property="Background" Value="{DynamicResource AccentBrush}" />
+                <Setter TargetName="Border" Property="Background" Value="{DynamicResource SecondaryBrush}" />
             </Trigger>
             <Trigger Property="IsEnabled" Value="False">
-                <Setter TargetName="Border" Property="Background" Value="{DynamicResource AccentBrush}" />
+                <Setter TargetName="Border" Property="Background" Value="{DynamicResource SecondaryBrush}" />
                 <Setter TargetName="Border" Property="BorderBrush" Value="#AAAAAA" />
                 <Setter Property="Foreground" Value="#888888" />
                 <Setter TargetName="Arrow" Property="Fill" Value="#888888" />
@@ -92,7 +92,7 @@
                               MaxHeight="{TemplateBinding MaxDropDownHeight}">
                                 <Border
                                 x:Name="DropDownBorder"
-                                Background="{DynamicResource AccentBrush}"
+                                Background="{DynamicResource SecondaryBrush}"
                                 HorizontalAlignment="Stretch"
                                 BorderThickness="1"
                                 BorderBrush="{DynamicResource PrimaryBrush}" />
@@ -162,11 +162,11 @@
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsSelected" Value="true">
                             <Setter Property="Foreground" Value="{DynamicResource BackgroundBrush}" />
-                            <Setter Property="Background" Value="{DynamicResource SecondaryBrush}" />
+                            <Setter Property="Background" Value="{DynamicResource PrimaryBrush}" />
                         </Trigger>
 
                         <Trigger Property="IsHighlighted" Value="true">
-                            <Setter TargetName="Border" Property="Background" Value="{DynamicResource SecondaryBrush}" />
+                            <Setter TargetName="Border" Property="Background" Value="{DynamicResource PrimaryLightBrush}" />
                         </Trigger>
 
                         <Trigger Property="IsEnabled" Value="false">

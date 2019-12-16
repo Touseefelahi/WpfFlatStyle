@@ -9,7 +9,7 @@
                 <ControlTemplate TargetType="{x:Type Thumb}">
                     <Border x:Name="rectangle"
                                 SnapsToDevicePixels="True"
-                                Background="{DynamicResource SecondaryBrush}"
+                                Background="{DynamicResource PrimaryLightBrush}"
                                 CornerRadius="2"
                                 Height="{TemplateBinding Height}"
                                 Width="{TemplateBinding Width}" />
