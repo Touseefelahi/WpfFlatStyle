@@ -2,8 +2,8 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
 
     <Style TargetType="{x:Type DataGridColumnHeader}">
-        <Setter Property="Background" Value="{StaticResource PrimaryBrush}" />
-        <Setter Property="Foreground" Value="{StaticResource BackgroundBrush}" />
+        <Setter Property="Background" Value="{DynamicResource PrimaryBrush}" />
+        <Setter Property="Foreground" Value="{DynamicResource BackgroundBrush}" />
         <Setter Property="Height" Value="30" />
         <Setter Property="HorizontalContentAlignment" Value="Center" />
         <Setter Property="Template">
@@ -25,32 +25,32 @@
     </Style>
 
     <Style TargetType="{x:Type DataGridCell}">
-        <Setter Property="Foreground" Value="{StaticResource ForegroundMainBrush}" />
-        <Setter Property="Background" Value="{StaticResource BackgroundBrush}" />
+        <Setter Property="Foreground" Value="{DynamicResource ForegroundMainBrush}" />
+        <Setter Property="Background" Value="{DynamicResource BackgroundBrush}" />
         <Setter Property="HorizontalContentAlignment" Value="Stretch" />
-        <Setter Property="FontFamily" Value="{StaticResource fontPrimary}" />
+        <Setter Property="FontFamily" Value="{DynamicResource fontPrimary}" />
         <Style.Triggers>
             <Trigger Property="IsSelected" Value="True">
-                <Setter Property="Background" Value="{StaticResource SecondaryBrush}" />
+                <Setter Property="Background" Value="{DynamicResource SecondaryBrush}" />
             </Trigger>
         </Style.Triggers>
     </Style>
 
     <Style TargetType="{x:Type DataGridRow}">
-        <Setter Property="Foreground" Value="{StaticResource ForegroundMainBrush}" />
-        <Setter Property="Background" Value="{StaticResource BackgroundBrush}" />
+        <Setter Property="Foreground" Value="{DynamicResource ForegroundMainBrush}" />
+        <Setter Property="Background" Value="{DynamicResource BackgroundBrush}" />
         <Setter Property="Height" Value="auto" />
         <Setter Property="HorizontalContentAlignment" Value="Stretch" />
 
         <Style.Triggers>
             <Trigger Property="IsSelected" Value="True">
-                <Setter Property="Background" Value="{StaticResource SecondaryBrush}" />
+                <Setter Property="Background" Value="{DynamicResource SecondaryBrush}" />
             </Trigger>
             <Trigger Property="ItemsControl.AlternationIndex" Value="0">
-                <Setter Property="Background" Value="{StaticResource BackgroundBrush}" />
+                <Setter Property="Background" Value="{DynamicResource BackgroundBrush}" />
             </Trigger>
             <Trigger Property="ItemsControl.AlternationIndex" Value="1">
-                <Setter Property="Background" Value="{StaticResource BackgroundBrush}" />
+                <Setter Property="Background" Value="{DynamicResource BackgroundBrush}" />
             </Trigger>
         </Style.Triggers>
     </Style>

@@ -20,7 +20,7 @@ namespace FlatStyle
         CautionColor,
         BackgroundColor,
         DisabledColor,
-        ForegroundMain,
+        ForegroundMainColor,
         TransparentColor,
     }
 }

@@ -6,14 +6,16 @@
         xmlns:local="clr-namespace:FlatStyle.Sample"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        <StackPanel>
-            <Button Content="Sample" HorizontalAlignment="Center" VerticalAlignment="Center" />
-            <ComboBox Text="Combobox">
-                <ComboBoxItem Content="Item 1" />
+    <Grid Background="{DynamicResource BackgroundBrush}">
+        <StackPanel HorizontalAlignment="Center">
+            <Button Content="Change Color" Click="Button_Click" HorizontalAlignment="Center" Width="100" Height="30"  VerticalAlignment="Center" />
+            <ComboBox>
+                <ComboBoxItem IsSelected="True" Content="Item 1" />
                 <ComboBoxItem Content="Item 2" />
                 <ComboBoxItem Content="Item 3" />
             </ComboBox>
+            <CheckBox IsChecked="True" Style="{StaticResource TickCheckBox}" />
+            <DataGrid x:Name="datagrid" Height="150" />
         </StackPanel>
     </Grid>
 </Window>

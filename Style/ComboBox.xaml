@@ -19,7 +19,7 @@
                   CornerRadius="1"
                   Margin="1"
                   Background="{DynamicResource SecondaryBrush}"
-                  BorderBrush="#FF97A0A5"
+                  BorderBrush="{DynamicResource PrimaryBrush}"
                   BorderThickness="0,0,0,0" />
             <Path
                   x:Name="Arrow"

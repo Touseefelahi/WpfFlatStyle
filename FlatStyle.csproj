@@ -7,11 +7,10 @@
     <Authors>Touseef Elahi</Authors>
     <Company>Stira.sa</Company>
     <Product>Wpf Flat Style</Product>
-    <Description>
-      Simple flat theme with changeable color
+    <Description>Simple flat theme with changeable color
       Read the readme file and see example project for help
       Project URL: https://github.com/Touseefelahi/WpfFlatStyle
-    </Description>
+</Description>
     <Copyright>Stira.sa</Copyright>
     <PackageProjectUrl>https://github.com/Touseefelahi/WpfFlatStyle</PackageProjectUrl>
     <RepositoryUrl>https://github.com/Touseefelahi/WpfFlatStyle</RepositoryUrl>

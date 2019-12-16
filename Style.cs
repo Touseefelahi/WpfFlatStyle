@@ -42,17 +42,20 @@ namespace FlatStyle
         private static void SetColor(Color color, ColorFlat colorName)
         {
             Application.Current.Resources[colorName.ToString()] = color;
+            Application.Current.Resources[colorName.ToString().Replace("Color", "Brush")] = new SolidColorBrush(color);
         }
 
         private static void SetColor(byte a, byte r, byte g, byte b, string colorName)
         {
-            Application.Current.Resources[colorName] = new Color
+            var color = new Color
             {
                 A = a,
                 R = r,
                 G = g,
                 B = b
             };
+            Application.Current.Resources[colorName] = color;
+            Application.Current.Resources[colorName.Replace("Color", "Brush")] = new SolidColorBrush(color);
         }
     }
 }
