@@ -21,6 +21,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="FlatStyle.Sample\**" />
+    <EmbeddedResource Remove="FlatStyle.Sample\**" />
+    <None Remove="FlatStyle.Sample\**" />
+    <Page Remove="FlatStyle.Sample\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Page Update="Style\Button.xaml">
       <SubType>Designer</SubType>
     </Page>
