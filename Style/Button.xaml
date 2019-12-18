@@ -3,7 +3,7 @@
 
     <Style x:Key="ButtonBase" TargetType="{x:Type Button}" BasedOn="{StaticResource BaseStyle}">
         <Setter Property="Background" Value="{DynamicResource PrimaryBrush}" />
-        <Setter Property="Foreground" Value="{DynamicResource BackgroundBrush}" />
+        <Setter Property="Foreground" Value="{DynamicResource ControlForegroundBrush}" />
         <Setter Property="TextOptions.TextFormattingMode" Value="Display" />
         <Setter Property="UseLayoutRounding" Value="True" />
         <Setter Property="Template">
@@ -19,14 +19,14 @@
                         <Trigger Property="IsMouseOver" Value="True">
                             <Setter Property="Border.Effect" TargetName="buttonFrame">
                                 <Setter.Value>
-                                    <DropShadowEffect Color="{DynamicResource ForegroundMain}" Direction="320" ShadowDepth="2"  Opacity="0.5" />
+                                    <DropShadowEffect Color="{DynamicResource ForegroundMainColor}" Direction="320" ShadowDepth="2"  Opacity="0.5" />
                                 </Setter.Value>
                             </Setter>
                         </Trigger>
                         <Trigger Property="IsPressed" Value="True">
                             <Setter Property="Border.Effect" TargetName="buttonFrame">
                                 <Setter.Value>
-                                    <DropShadowEffect Color="{DynamicResource ForegroundMain}" Direction="320" ShadowDepth="2"  Opacity="0" />
+                                    <DropShadowEffect Color="{DynamicResource ForegroundMainColor}" Direction="320" ShadowDepth="2"  Opacity="0" />
                                 </Setter.Value>
                             </Setter>
                         </Trigger>
@@ -101,7 +101,7 @@
 
     <Style x:Key="WindowButton" TargetType="{x:Type Button}" BasedOn="{StaticResource ButtonBase}">
         <Setter Property="WindowChrome.IsHitTestVisibleInChrome" Value="True" />
-        <Setter Property="Foreground" Value="{DynamicResource BackgroundBrush}" />
+        <Setter Property="Foreground" Value="{DynamicResource ControlForegroundBrush}" />
         <Setter Property="Background" Value="{DynamicResource TransparentBrush}" />
         <Setter Property="Width" Value="28" />
         <Setter Property="Height" Value="28" />

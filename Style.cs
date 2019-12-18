@@ -11,7 +11,13 @@ namespace FlatStyle
         {
             SetColor(ColorFlat.PrimaryColor, primaryColor);
             SetColor(ColorFlat.SecondaryColor, secondaryColor);
+
+            SetColor(ColorFlat.SecondaryMidColor, GetBrightColor(secondaryColor, 30));
+            SetColor(ColorFlat.SecondaryLightColor, GetBrightColor(secondaryColor, 50));
+
+            SetColor(ColorFlat.PrimaryMidColor, GetBrightColor(primaryColor, 30));
             SetColor(ColorFlat.PrimaryLightColor, GetBrightColor(primaryColor, 50));
+
             if (isLightTheme)
             {
                 SetColor(ColorFlat.BackgroundColor, GetBrightColor(primaryColor, 90));

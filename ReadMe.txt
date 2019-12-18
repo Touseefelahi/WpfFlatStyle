@@ -9,9 +9,11 @@
 				
                 <ResourceDictionary Source="pack://application:,,,/FlatStyle;component/Style/Colors.xaml" />
                 <ResourceDictionary Source="pack://application:,,,/FlatStyle;component/Style/Fonts.xaml" />
-                <ResourceDictionary Source="pack://application:,,,/FlatStyle;component/Style/BaseStyle.xaml" />
-																					  
+                <ResourceDictionary Source="pack://application:,,,/FlatStyle;component/Style/BaseStyle.xaml" />                
+                <ResourceDictionary Source="pack://application:,,,/FlatStyle;component/Style/Icons.xaml" />
+
                 <ResourceDictionary Source="pack://application:,,,/FlatStyle;component/Style/Button.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/FlatStyle;component/Style/ButtonIconBased.xaml" />
                 <ResourceDictionary Source="pack://application:,,,/FlatStyle;component/Style/Text.xaml" />
                 <ResourceDictionary Source="pack://application:,,,/FlatStyle;component/Style/Scroll.xaml" />
                 <ResourceDictionary Source="pack://application:,,,/FlatStyle;component/Style/Datagrid.xaml" />
@@ -26,6 +28,9 @@
   For Chrome window use this:
   //Xaml
     <Window.Resources>
+      <Style TargetType="{x:Type TextBlock}">
+            <Setter Property="Foreground" Value="{DynamicResource ForegroundMainBrush}" />
+        </Style>
         <Style TargetType="{x:Type local:MainWindow}">
             <Setter Property="WindowChrome.WindowChrome">
                 <Setter.Value>
@@ -40,7 +45,7 @@
                                 <ContentPresenter Content="{TemplateBinding Content}" />
                             </Border>
                             <TextBlock Text="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=Title}"
-                               VerticalAlignment="Top" HorizontalAlignment="Left" Foreground="{StaticResource BackgroundBrush}" FontWeight="Black"
+                               VerticalAlignment="Top" HorizontalAlignment="Left" Foreground="{StaticResource ControlForegroundBrush}" FontWeight="Black"
                                Margin="12,8,0,0" />
                             <Image Source="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=Icon}" VerticalAlignment="Top" HorizontalAlignment="Left" WindowChrome.IsHitTestVisibleInChrome="True" />
                             <StackPanel Orientation="Horizontal" VerticalAlignment="Top" HorizontalAlignment="Right">

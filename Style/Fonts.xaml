@@ -1,5 +1,15 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:system="clr-namespace:System;assembly=System.Runtime">
 
-    <FontFamily x:Key="fontPrimary">Lucida Sans</FontFamily>
+    <!--<FontFamily x:Key="FontPrimary">Lucida Sans</FontFamily>-->
+    <FontFamily x:Key="FontPrimary">pack://application;,,,/FlatStyle;component/Fonts/QuickSand/#Quicksand</FontFamily>
+    <FontFamily x:Key="FontAwesome">pack://application;,,,/FlatStyle;component/Fonts/#Font Awesome 5 Free Regular</FontFamily>
+    <system:Double x:Key="FontSizeVerySmall">7</system:Double>
+    <system:Double x:Key="FontSizeSmaller">10</system:Double>
+    <system:Double x:Key="FontSizeSmall">12</system:Double>
+    <system:Double x:Key="FontSizeRegular">14</system:Double>
+    <system:Double x:Key="FontSizeLarge">20</system:Double>
+    <system:Double x:Key="FontSizeXLarge">24</system:Double>
+    <system:Double x:Key="FontSizeXXLarge">30</system:Double>
 </ResourceDictionary>

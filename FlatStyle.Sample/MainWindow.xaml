@@ -10,6 +10,9 @@
         Title="MainWindow" Height="450" Width="800">
 
     <Window.Resources>
+        <Style TargetType="{x:Type TextBlock}">
+            <Setter Property="Foreground" Value="{DynamicResource ForegroundMainBrush}" />
+        </Style>
         <Style TargetType="{x:Type local:MainWindow}">
             <Setter Property="WindowChrome.WindowChrome">
                 <Setter.Value>
@@ -24,7 +27,7 @@
                                 <ContentPresenter Content="{TemplateBinding Content}" />
                             </Border>
                             <TextBlock Text="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=Title}"
-                               VerticalAlignment="Top" HorizontalAlignment="Left" Foreground="{DynamicResource BackgroundBrush}" FontWeight="Black"
+                               VerticalAlignment="Top" HorizontalAlignment="Left" Foreground="{DynamicResource ControlForegroundBrush}" FontWeight="Black"
                                Margin="12,8,0,0" />
                             <Image Source="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=Icon}" VerticalAlignment="Top" HorizontalAlignment="Left" WindowChrome.IsHitTestVisibleInChrome="True" />
                             <StackPanel Orientation="Horizontal" VerticalAlignment="Top" HorizontalAlignment="Right">
@@ -57,6 +60,12 @@
                 <TextBlock Text="Secondary Color" />
                 <xctk:ColorPicker Name="ClrPcker_Secondary" SelectedColorChanged="ClrPcker_Secondary_SelectedColorChanged"></xctk:ColorPicker>
             </StackPanel>
+
+            <Button Style="{StaticResource IconButton}" Content="&#xf086;" Width="50" Height="50" />
+
+            <Button Style="{StaticResource IconButton}" Content="{StaticResource Fa-address-book}" Width="50" Height="50" />
+
+            <Button Style="{StaticResource IconButton}" Content="{StaticResource Fa-address-card}" Width="50" Height="50" />
         </StackPanel>
     </Grid>
 </Window>

@@ -12,7 +12,12 @@
         /// </summary>
         PrimaryLightColor,
 
+        PrimaryMidColor,
+
         SecondaryColor,
+        SecondaryMidColor,
+        SecondaryLightColor,
+
         ErrorColor,
         BackgroundColor,
         DisabledColor,
