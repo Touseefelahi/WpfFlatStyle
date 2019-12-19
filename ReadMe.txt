@@ -9,78 +9,32 @@
 				
                 <ResourceDictionary Source="pack://application:,,,/FlatStyle;component/Style/Colors.xaml" />
                 <ResourceDictionary Source="pack://application:,,,/FlatStyle;component/Style/Fonts.xaml" />
-                <ResourceDictionary Source="pack://application:,,,/FlatStyle;component/Style/BaseStyle.xaml" />                
-                <ResourceDictionary Source="pack://application:,,,/FlatStyle;component/Style/Icons.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/FlatStyle;component/Style/BaseStyle.xaml" />
 
+                <ResourceDictionary Source="pack://application:,,,/FlatStyle;component/Style/Icons.xaml" />
                 <ResourceDictionary Source="pack://application:,,,/FlatStyle;component/Style/Button.xaml" />
                 <ResourceDictionary Source="pack://application:,,,/FlatStyle;component/Style/ButtonIconBased.xaml" />
                 <ResourceDictionary Source="pack://application:,,,/FlatStyle;component/Style/Text.xaml" />
                 <ResourceDictionary Source="pack://application:,,,/FlatStyle;component/Style/Scroll.xaml" />
                 <ResourceDictionary Source="pack://application:,,,/FlatStyle;component/Style/Datagrid.xaml" />
-                <ResourceDictionary Source="pack://application:,,,/FlatStyle;component/Style/ComboBox.xaml" />				
+                <ResourceDictionary Source="pack://application:,,,/FlatStyle;component/Style/ComboBox.xaml" />
                 <ResourceDictionary Source="pack://application:,,,/FlatStyle;component/Style/CheckBox.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/FlatStyle;component/Style/WindowStyle.xaml" />
 
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
   </Application.Resources>
 
+  Set Style As flat window as shown below for Cool Chrome Window
 
-  For Chrome window use this:
-  //Xaml
-    <Window.Resources>
-      <Style TargetType="{x:Type TextBlock}">
-            <Setter Property="Foreground" Value="{DynamicResource ForegroundMainBrush}" />
-        </Style>
-        <Style TargetType="{x:Type local:MainWindow}">
-            <Setter Property="WindowChrome.WindowChrome">
-                <Setter.Value>
-                    <WindowChrome />
-                </Setter.Value>
-            </Setter>
-            <Setter Property="Template">
-                <Setter.Value>
-                    <ControlTemplate TargetType="{x:Type local:MainWindow}">
-                        <Grid>
-                            <Border Background="{StaticResource PrimaryBrush}">
-                                <ContentPresenter Content="{TemplateBinding Content}" />
-                            </Border>
-                            <TextBlock Text="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=Title}"
-                               VerticalAlignment="Top" HorizontalAlignment="Left" Foreground="{StaticResource ControlForegroundBrush}" FontWeight="Black"
-                               Margin="12,8,0,0" />
-                            <Image Source="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=Icon}" VerticalAlignment="Top" HorizontalAlignment="Left" WindowChrome.IsHitTestVisibleInChrome="True" />
-                            <StackPanel Orientation="Horizontal" VerticalAlignment="Top" HorizontalAlignment="Right">
-                                <Button Content="_" Style="{StaticResource WindowButton}" Click="MinimizeWindow" />
-                                <Button Content="☐" Style="{StaticResource WindowButton}" Click="MaximizeWindow" />
-                                <Button Content="X" Style="{StaticResource WindowButton}" Click="CloseWindow" />
-                            </StackPanel>
-                        </Grid>
-                    </ControlTemplate>
-                </Setter.Value>
-            </Setter>
-        </Style>
-    </Window.Resources>
-
-	//Code Behind
-	  private void CloseWindow(object sender, RoutedEventArgs e)
-        {
-            Close();
-        }
-
-      private void MinimizeWindow(object sender, RoutedEventArgs e)
-        {
-            WindowState = WindowState.Minimized;
-        }
-
-      private void MaximizeWindow(object sender, RoutedEventArgs e)
-        {
-            switch (WindowState)
-            {
-                case WindowState.Normal:
-                    WindowState = WindowState.Maximized;
-                    break;
-
-                case WindowState.Maximized:
-                    WindowState = WindowState.Normal;
-                    break;
-            }
-        }
+   <Window x:Class="FlatStyle.Sample.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
+        mc:Ignorable="d"
+        xmlns:flatStyle="clr-namespace:FlatStyle;assembly=FlatStyle"
+        Style="{StaticResource FlatWindow}"
+        flatStyle:TitleBar.Value="30"
+        Title="MainWindow" Height="450" Width="800">

@@ -5,12 +5,12 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
         mc:Ignorable="d"
+        xmlns:flatStyle="clr-namespace:FlatStyle;assembly=FlatStyle"
         Style="{StaticResource FlatWindow}"
-        WindowStyle="None"
-        ResizeMode="CanResize"
+        flatStyle:TitleBar.Value="30"
         Title="MainWindow" Height="450" Width="800">
 
-    <Grid>
+    <DockPanel>
         <StackPanel HorizontalAlignment="Center">
             <ToggleButton Content="Switch Theme" Click="Button_Click" HorizontalAlignment="Center" Width="100" Height="30"  VerticalAlignment="Center" />
 
@@ -39,15 +39,16 @@
                 <ComboBoxItem Content="Item 2" />
                 <ComboBoxItem Content="Item 3" />
             </ComboBox>
-            <CheckBox IsChecked="True" Style="{StaticResource TickCheckBox}" />
             <DataGrid x:Name="datagrid" Height="150" />
-            <StackPanel Orientation="Horizontal">
-                <TextBlock Text="Primary Color" />
-                <xctk:ColorPicker Name="ClrPcker_Primary" SelectedColorChanged="ClrPcker_Background_SelectedColorChanged"></xctk:ColorPicker>
-            </StackPanel>
-            <StackPanel Orientation="Horizontal">
-                <TextBlock Text="Secondary Color" />
-                <xctk:ColorPicker Name="ClrPcker_Secondary" SelectedColorChanged="ClrPcker_Secondary_SelectedColorChanged"></xctk:ColorPicker>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="Primary Color" />
+                    <xctk:ColorPicker Name="ClrPcker_Primary" SelectedColorChanged="ClrPcker_Background_SelectedColorChanged"></xctk:ColorPicker>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="Secondary Color" />
+                    <xctk:ColorPicker Name="ClrPcker_Secondary" SelectedColorChanged="ClrPcker_Secondary_SelectedColorChanged"></xctk:ColorPicker>
+                </StackPanel>
             </StackPanel>
 
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
@@ -60,5 +61,5 @@
 
             <TextBox Text="This is textbox" />
         </StackPanel>
-    </Grid>
+    </DockPanel>
 </Window>

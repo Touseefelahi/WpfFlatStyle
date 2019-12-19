@@ -3,16 +3,16 @@
                     xmlns:local="clr-namespace:FlatStyle">
 
     <Style x:Key="FlatWindow" TargetType="{x:Type Window}">
+
         <Setter Property="WindowStyle" Value="None" />
         <Setter Property="AllowsTransparency" Value="True" />
+        <Setter Property="local:TitleBar.Value" Value="22" />
         <Setter Property="Background" Value="{DynamicResource BackgroundBrush}" />
         <Setter Property="TextBlock.Foreground" Value="{DynamicResource ForegroundMainBrush}" />
 
         <Setter Property="WindowChrome.WindowChrome">
             <Setter.Value>
-                <WindowChrome
-                    ResizeBorderThickness="5"
-                    CaptionHeight="22" />
+                <WindowChrome ResizeBorderThickness="5" CaptionHeight="22" />
             </Setter.Value>
         </Setter>
 
@@ -40,7 +40,6 @@
                             <!-- The main window content -->
                             <Border>
                                 <Grid>
-
                                     <!-- Corner clipping -->
                                     <Grid.OpacityMask>
                                         <VisualBrush Visual="{Binding ElementName=Container}" />
@@ -49,7 +48,7 @@
                                     <Grid.RowDefinitions>
 
                                         <!-- Title Bar -->
-                                        <RowDefinition Height="22" />
+                                        <RowDefinition Height="{TemplateBinding Property=local:TitleBar.Value}" />
 
                                         <!-- Window Content -->
                                         <RowDefinition Height="*" />
@@ -72,13 +71,14 @@
                                                VerticalAlignment="Top" HorizontalAlignment="Left" WindowChrome.IsHitTestVisibleInChrome="True" />
 
                                         <!-- Title -->
-
-                                        <TextBlock Grid.Column="0" HorizontalAlignment="Center" Grid.ColumnSpan="3" FontSize="17" FontWeight="Bold"
+                                        <Viewbox Grid.Column="0" HorizontalAlignment="Center" Grid.ColumnSpan="3">
+                                            <TextBlock  FontSize="17" FontWeight="Bold"
                                                    Text="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=Title}"
                                                    Foreground="{DynamicResource ForegroundMainBrush}" TextAlignment="Center" />
+                                        </Viewbox>
 
                                         <!-- Window Buttons -->
-                                        <StackPanel Orientation="Horizontal" Grid.Column="2" VerticalAlignment="Top" HorizontalAlignment="Right">
+                                        <StackPanel Orientation="Horizontal" Grid.Column="2"  VerticalAlignment="Center" HorizontalAlignment="Right">
                                             <Button Content="_" Style="{DynamicResource WindowButton}" Margin="0,0,0,4" Width="22" Command="{x:Static local:Command.Minimize}"
                                     CommandParameter="{Binding RelativeSource= {RelativeSource Mode=FindAncestor, AncestorType={x:Type Window}}}" />
                                             <Button Content="☐" Style="{DynamicResource WindowButton}" Width="22"  Command="{x:Static local:Command.Maximize}"
@@ -99,7 +99,7 @@
                                         </Border.Effect>
                                     </Border>
                                     <!-- Page Content -->
-                                    <Border Grid.Row="1" Padding="10">
+                                    <Border Grid.Row="1" Padding="2">
                                         <ContentPresenter Content="{TemplateBinding Content}" />
                                     </Border>
                                 </Grid>
