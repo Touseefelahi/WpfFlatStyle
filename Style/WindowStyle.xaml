@@ -4,36 +4,108 @@
 
     <Style x:Key="FlatWindow" TargetType="{x:Type Window}">
         <Setter Property="WindowStyle" Value="None" />
-        <Setter Property="WindowChrome.GlassFrameThickness" Value="28" />
         <Setter Property="AllowsTransparency" Value="True" />
-        <Setter Property="WindowChrome.CornerRadius" Value="20" />
-        <Setter Property="Background" Value="{StaticResource BackgroundBrush}" />
+        <Setter Property="Background" Value="{DynamicResource BackgroundBrush}" />
+        <Setter Property="TextBlock.Foreground" Value="{DynamicResource ForegroundMainBrush}" />
+
         <Setter Property="WindowChrome.WindowChrome">
             <Setter.Value>
-                <WindowChrome />
+                <WindowChrome
+                    ResizeBorderThickness="5"
+                    CaptionHeight="22" />
             </Setter.Value>
         </Setter>
 
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type Window}">
-                    <Grid Background="{TemplateBinding Background}">
-                        <Border Background="{StaticResource PrimaryBrush}" CornerRadius="10">
-                            <ContentPresenter Content="{TemplateBinding Content}" />
-                        </Border>
-                        <TextBlock Text="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=Title}"
-                               VerticalAlignment="Top" HorizontalAlignment="Left" Foreground="{StaticResource ControlForegroundBrush}" FontWeight="Black"
-                               Margin="12,8,0,0" />
-                        <Image Source="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=Icon}" VerticalAlignment="Top" HorizontalAlignment="Left" WindowChrome.IsHitTestVisibleInChrome="True" />
-                        <StackPanel Orientation="Horizontal" VerticalAlignment="Top" HorizontalAlignment="Right">
-                            <Button Content="_" Style="{StaticResource WindowButton}" Command="{x:Static local:Command.Minimize}"
+                    <Border Padding="3">
+
+                        <!-- Main window outline -->
+                        <Grid>
+
+                            <!-- Opacity mask for corners on grid -->
+                            <Border x:Name="Container"
+                                        Background="{DynamicResource BackgroundBrush}"
+                                        CornerRadius="10" />
+
+                            <!-- Window border and dropshadown -->
+                            <Border CornerRadius="10"
+                                   Background="{DynamicResource BackgroundBrush}">
+                                <Border.Effect>
+                                    <DropShadowEffect ShadowDepth="0" Opacity="0.2" Color="{DynamicResource ForegroundMainColor}" />
+                                </Border.Effect>
+                            </Border>
+
+                            <!-- The main window content -->
+                            <Border>
+                                <Grid>
+
+                                    <!-- Corner clipping -->
+                                    <Grid.OpacityMask>
+                                        <VisualBrush Visual="{Binding ElementName=Container}" />
+                                    </Grid.OpacityMask>
+
+                                    <Grid.RowDefinitions>
+
+                                        <!-- Title Bar -->
+                                        <RowDefinition Height="22" />
+
+                                        <!-- Window Content -->
+                                        <RowDefinition Height="*" />
+                                    </Grid.RowDefinitions>
+
+                                    <!-- Title Bar -->
+                                    <Grid Grid.Column="0" Panel.ZIndex="1">
+
+                                        <Grid.ColumnDefinitions>
+                                            <!-- Icon -->
+                                            <ColumnDefinition Width="Auto" />
+                                            <!-- Title -->
+                                            <ColumnDefinition Width="*" />
+                                            <!-- Windows Button -->
+                                            <ColumnDefinition Width="Auto" />
+                                        </Grid.ColumnDefinitions>
+
+                                        <!-- Icon -->
+                                        <Image Source="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=Icon}"
+                                               VerticalAlignment="Top" HorizontalAlignment="Left" WindowChrome.IsHitTestVisibleInChrome="True" />
+
+                                        <!-- Title -->
+
+                                        <TextBlock Grid.Column="0" HorizontalAlignment="Center" Grid.ColumnSpan="3" FontSize="17" FontWeight="Bold"
+                                                   Text="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=Title}"
+                                                   Foreground="{DynamicResource ForegroundMainBrush}" TextAlignment="Center" />
+
+                                        <!-- Window Buttons -->
+                                        <StackPanel Orientation="Horizontal" Grid.Column="2" VerticalAlignment="Top" HorizontalAlignment="Right">
+                                            <Button Content="_" Style="{DynamicResource WindowButton}" Margin="0,0,0,4" Width="22" Command="{x:Static local:Command.Minimize}"
                                     CommandParameter="{Binding RelativeSource= {RelativeSource Mode=FindAncestor, AncestorType={x:Type Window}}}" />
-                            <Button Content="☐" Style="{StaticResource WindowButton}" Command="{x:Static local:Command.Maximize}"
+                                            <Button Content="☐" Style="{DynamicResource WindowButton}" Width="22"  Command="{x:Static local:Command.Maximize}"
                                     CommandParameter="{Binding RelativeSource= {RelativeSource Mode=FindAncestor, AncestorType={x:Type Window}}}" />
-                            <Button Content="X" Style="{StaticResource WindowButton}" Command="{x:Static local:Command.Close}"
+                                            <Button Content="X" Style="{DynamicResource WindowButton}" Width="22"  Command="{x:Static local:Command.Close}"
                                     CommandParameter="{Binding RelativeSource= {RelativeSource Mode=FindAncestor, AncestorType={x:Type Window}}}" />
-                        </StackPanel>
-                    </Grid>
+                                        </StackPanel>
+                                    </Grid>
+
+                                    <!--Shadow -->
+                                    <Border
+                                        Background="{DynamicResource ForegroundMainBrush}"
+                                        CornerRadius="10" />
+                                    <Border CornerRadius="10"
+                                    Background="{DynamicResource BackgroundBrush}">
+                                        <Border.Effect>
+                                            <DropShadowEffect ShadowDepth="0" Opacity="0.2"  Color="{DynamicResource ForegroundMainColor}" />
+                                        </Border.Effect>
+                                    </Border>
+                                    <!-- Page Content -->
+                                    <Border Grid.Row="1" Padding="10">
+                                        <ContentPresenter Content="{TemplateBinding Content}" />
+                                    </Border>
+                                </Grid>
+                            </Border>
+                        </Grid>
+                    </Border>
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
