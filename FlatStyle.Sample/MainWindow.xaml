@@ -3,44 +3,11 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:FlatStyle.Sample"
         xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
         mc:Ignorable="d"
+        Style="{StaticResource FlatWindow}"
         WindowStyle="None"
         Title="MainWindow" Height="450" Width="800">
-
-    <Window.Resources>
-        <Style TargetType="{x:Type TextBlock}">
-            <Setter Property="Foreground" Value="{DynamicResource ForegroundMainBrush}" />
-        </Style>
-        <Style TargetType="{x:Type local:MainWindow}">
-            <Setter Property="WindowChrome.WindowChrome">
-                <Setter.Value>
-                    <WindowChrome />
-                </Setter.Value>
-            </Setter>
-            <Setter Property="Template">
-                <Setter.Value>
-                    <ControlTemplate TargetType="{x:Type local:MainWindow}">
-                        <Grid>
-                            <Border Background="{DynamicResource PrimaryBrush}">
-                                <ContentPresenter Content="{TemplateBinding Content}" />
-                            </Border>
-                            <TextBlock Text="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=Title}"
-                               VerticalAlignment="Top" HorizontalAlignment="Left" Foreground="{DynamicResource ControlForegroundBrush}" FontWeight="Black"
-                               Margin="12,8,0,0" />
-                            <Image Source="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=Icon}" VerticalAlignment="Top" HorizontalAlignment="Left" WindowChrome.IsHitTestVisibleInChrome="True" />
-                            <StackPanel Orientation="Horizontal" VerticalAlignment="Top" HorizontalAlignment="Right">
-                                <Button Content="_" Style="{StaticResource WindowButton}" Click="MinimizeWindow" />
-                                <Button Content="☐" Style="{StaticResource WindowButton}" Click="MaximizeWindow" />
-                                <Button Content="X" Style="{StaticResource WindowButton}" Click="CloseWindow" />
-                            </StackPanel>
-                        </Grid>
-                    </ControlTemplate>
-                </Setter.Value>
-            </Setter>
-        </Style>
-    </Window.Resources>
 
     <Grid Margin="0,28,0,0" Background="{DynamicResource BackgroundBrush}">
         <StackPanel HorizontalAlignment="Center">
@@ -61,11 +28,15 @@
                 <xctk:ColorPicker Name="ClrPcker_Secondary" SelectedColorChanged="ClrPcker_Secondary_SelectedColorChanged"></xctk:ColorPicker>
             </StackPanel>
 
-            <Button Style="{StaticResource IconButton}" Content="&#xf086;" Width="50" Height="50" />
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <Button Style="{StaticResource IconButton}" Margin="5" Content="&#xf086;" Width="20" />
 
-            <Button Style="{StaticResource IconButton}" Content="{StaticResource Fa-address-book}" Width="50" Height="50" />
+                <Button Style="{StaticResource IconButton}" Margin="5" Content="{StaticResource Fa-address-book}" Width="20" />
 
-            <Button Style="{StaticResource IconButton}" Content="{StaticResource Fa-address-card}" Width="50" Height="50" />
+                <Button Style="{StaticResource IconButton}" Margin="5" Content="{StaticResource Fa-address-card}" Width="20" />
+            </StackPanel>
+
+            <TextBox Text="This is textbox" />
         </StackPanel>
     </Grid>
 </Window>
