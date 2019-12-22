@@ -17,7 +17,7 @@
     <RepositoryType>Git</RepositoryType>
     <PackageTags>Wpf, Theme, Flat-Design</PackageTags>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <Version>1.2.0</Version>
+    <Version>1.2.1</Version>
   </PropertyGroup>
 
   <ItemGroup>
@@ -52,6 +52,12 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Page Update="Style\ToolTip.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Style\IconsSolid.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Style\WindowStyle.xaml">
       <SubType>Designer</SubType>
     </Page>

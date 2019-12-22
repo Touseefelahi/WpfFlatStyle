@@ -11,7 +11,8 @@
                 <ResourceDictionary Source="pack://application:,,,/FlatStyle;component/Style/Fonts.xaml" />
                 <ResourceDictionary Source="pack://application:,,,/FlatStyle;component/Style/BaseStyle.xaml" />
 
-                <ResourceDictionary Source="pack://application:,,,/FlatStyle;component/Style/Icons.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/FlatStyle;component/Style/Icons.xaml" />                
+                <ResourceDictionary Source="pack://application:,,,/FlatStyle;component/Style/IconsSolid.xaml" />
                 <ResourceDictionary Source="pack://application:,,,/FlatStyle;component/Style/Button.xaml" />
                 <ResourceDictionary Source="pack://application:,,,/FlatStyle;component/Style/ButtonIconBased.xaml" />
                 <ResourceDictionary Source="pack://application:,,,/FlatStyle;component/Style/Text.xaml" />

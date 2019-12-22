@@ -14,6 +14,8 @@
 
                 <ResourceDictionary Source="pack://application:,,,/FlatStyle;component/Style/Icons.xaml" />
                 <ResourceDictionary Source="pack://application:,,,/FlatStyle;component/Style/Button.xaml" />
+
+                <ResourceDictionary Source="pack://application:,,,/FlatStyle;component/Style/ToolTip.xaml" />
                 <ResourceDictionary Source="pack://application:,,,/FlatStyle;component/Style/ButtonIconBased.xaml" />
                 <ResourceDictionary Source="pack://application:,,,/FlatStyle;component/Style/Text.xaml" />
                 <ResourceDictionary Source="pack://application:,,,/FlatStyle;component/Style/Scroll.xaml" />
