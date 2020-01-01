@@ -3,15 +3,17 @@
 
     <Style x:Key="ButtonBase" TargetType="{x:Type Button}" BasedOn="{StaticResource BaseStyle}">
         <Setter Property="Background" Value="{DynamicResource PrimaryBrush}" />
+        <Setter Property="FontWeight" Value="Black" />
         <Setter Property="Foreground" Value="{DynamicResource ControlForegroundBrush}" />
         <Setter Property="TextOptions.TextFormattingMode" Value="Display" />
         <Setter Property="UseLayoutRounding" Value="True" />
+        <Setter Property="Padding" Value="5" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type Button}">
                     <Grid>
                         <Border CornerRadius="3"  x:Name="buttonFrame" Background="{TemplateBinding Background}" />
-                        <Border>
+                        <Border Padding="{TemplateBinding Padding}">
                             <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
                         </Border>
                     </Grid>
@@ -22,6 +24,7 @@
                                     <DropShadowEffect Color="{DynamicResource ForegroundMainColor}" Direction="320" ShadowDepth="2"  Opacity="0.5" />
                                 </Setter.Value>
                             </Setter>
+                            <Setter Property="Cursor" Value="Hand" />
                         </Trigger>
                         <Trigger Property="IsPressed" Value="True">
                             <Setter Property="Border.Effect" TargetName="buttonFrame">
@@ -33,6 +36,7 @@
                         <Trigger Property="IsEnabled" Value="False">
                             <Setter Property="Border.BorderBrush" TargetName="buttonFrame" Value="{DynamicResource DisabledBrush}" />
                             <Setter Property="Border.Background" TargetName="buttonFrame" Value="{DynamicResource DisabledBrush}" />
+                            <Setter Property="Foreground" Value="{DynamicResource ControlForegroundBrush}" />
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
@@ -50,6 +54,8 @@
         <Setter Property="Foreground" Value="{DynamicResource PrimaryBrush}" />
         <Setter Property="TextOptions.TextFormattingMode" Value="Display" />
         <Setter Property="UseLayoutRounding" Value="True" />
+        <Setter Property="FontWeight" Value="Black" />
+        <Setter Property="Padding" Value="5" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type ToggleButton}">
@@ -58,7 +64,7 @@
                         </Border>
                         <Border  x:Name="buttonFrame" CornerRadius="3" BorderThickness="0 0 1 1" BorderBrush="{DynamicResource PrimaryBrush}">
                         </Border>
-                        <Border>
+                        <Border Padding="{TemplateBinding Padding}">
                             <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
                         </Border>
                     </Grid>
@@ -86,6 +92,8 @@
                                     <DropShadowEffect Color="{DynamicResource ForegroundMain}" Direction="320" ShadowDepth="2"  Opacity="0.5" />
                                 </Setter.Value>
                             </Setter>
+
+                            <Setter Property="Cursor" Value="Hand" />
                         </Trigger>
 
                         <Trigger Property="IsPressed" Value="True">
@@ -107,6 +115,8 @@
         <Setter Property="Foreground" Value="{DynamicResource SecondaryBrush}" />
         <Setter Property="TextOptions.TextFormattingMode" Value="Display" />
         <Setter Property="UseLayoutRounding" Value="True" />
+        <Setter Property="FontWeight" Value="Black" />
+        <Setter Property="Padding" Value="5" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type ToggleButton}">
@@ -115,7 +125,7 @@
                         </Border>
                         <Border  x:Name="buttonFrame" CornerRadius="3" BorderThickness="0 0 1 1" BorderBrush="{DynamicResource SecondaryBrush}">
                         </Border>
-                        <Border>
+                        <Border Padding="{TemplateBinding Padding}">
                             <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
                         </Border>
                     </Grid>
@@ -143,6 +153,7 @@
                                     <DropShadowEffect Color="{DynamicResource ForegroundMain}" Direction="320" ShadowDepth="2"  Opacity="0.5" />
                                 </Setter.Value>
                             </Setter>
+                            <Setter Property="Cursor" Value="Hand" />
                         </Trigger>
 
                         <Trigger Property="IsPressed" Value="True">
@@ -168,6 +179,7 @@
         <Setter Property="Height" Value="28" />
         <Setter Property="FontSize" Value="18" />
         <Setter Property="Margin" Value="0" />
+        <Setter Property="Padding" Value="0" />
         <Style.Triggers>
             <Trigger Property="IsMouseOver" Value="true">
                 <Setter Property="FontWeight" Value="ExtraBold" />

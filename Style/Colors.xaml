@@ -44,7 +44,7 @@
     <SolidColorBrush x:Key="CautionBrush"           Color="{DynamicResource ErrorColor}" />
 
     <!--Disabled color-->
-    <Color x:Key="DisabledColor">#555555</Color>
+    <Color x:Key="DisabledColor">#AAAAAA</Color>
     <SolidColorBrush x:Key="DisabledBrush"          Color="{DynamicResource DisabledColor}" />
 
     <!--Transparent Color-->

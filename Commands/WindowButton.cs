@@ -1,4 +1,5 @@
-﻿using System.Windows;
+﻿using System;
+using System.Windows;
 
 namespace FlatStyle
 {
@@ -8,6 +9,17 @@ namespace FlatStyle
         public static ParameterizedDelegateCommand Maximize = new ParameterizedDelegateCommand((parameter) => MaximizeWindow(parameter));
 
         public static ParameterizedDelegateCommand Minimize = new ParameterizedDelegateCommand((parameter) => MinimizeWindow(parameter));
+
+        public static ParameterizedDelegateCommand Theme =
+            new ParameterizedDelegateCommand(
+            (parameter) =>
+            ThemeSetter(parameter)
+            );
+
+        private static void ThemeSetter(object parameter)
+        {
+            Style.SwitchTheme(!Style.IsLightTheme);
+        }
 
         private static void MaximizeWindow(object sender)
         {

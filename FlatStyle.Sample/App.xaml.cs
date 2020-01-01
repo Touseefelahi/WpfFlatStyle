@@ -13,15 +13,5 @@ namespace FlatStyle.Sample
     /// </summary>
     public partial class App : Application
     {
-        protected override void OnStartup(StartupEventArgs e)
-        {
-            //Style.SetColor(ColorFlat.PrimaryLightColor, "14213D");
-            //Style.SetColor(ColorFlat.SecondaryColor, "000000");
-            //Style.SetColor(ColorFlat.PrimaryColor, "FCA311");
-            //Style.SetColor(ColorFlat.BackgroundColor, "E5E5E5");
-            //Style.SetColor(ColorFlat.ForegroundMain, "131313");
-
-            base.OnStartup(e);
-        }
     }
 }

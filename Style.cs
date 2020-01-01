@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Linq;
 using System.Windows;
 using System.Windows.Media;
@@ -7,6 +8,68 @@ namespace FlatStyle
 {
     public static class Style
     {
+        private static string lightThemeIdentifier = "IsLightTheme";
+        public static bool IsLightTheme { get; private set; }
+
+        public static void SaveTheme()
+        {
+            var colorValues = Enum.GetNames(typeof(ColorFlat));
+            using (StreamWriter sw = File.CreateText($"{Environment.CurrentDirectory}\\Theme.te"))
+            {
+                try
+                {
+                    sw.WriteLine($"{ColorFlat.PrimaryColor}:{GetColor(ColorFlat.PrimaryColor)}");
+                    sw.WriteLine($"{ColorFlat.SecondaryColor}:{GetColor(ColorFlat.SecondaryColor)}");
+                    sw.WriteLine($"lightThemeIdentifier:{IsLightTheme}");
+                }
+                catch (Exception)
+                {
+                }
+            }
+        }
+
+        public static bool LoadTheme()
+        {
+            try
+            {
+                var fileData = File.ReadAllText($"{Environment.CurrentDirectory}\\Theme.te");
+                var dataTypes = fileData.Split('\n');
+                int index = 0;
+                foreach (var dataType in dataTypes)
+                {
+                    dataTypes[index++] = dataType.Replace("\r", "");
+                }
+
+                foreach (var data in dataTypes)
+                {
+                    var dataContent = data.Split(':');
+                    if (dataContent.Length == 2)
+                    {
+                        if (dataContent[0] == lightThemeIdentifier)
+                        {
+                            SwitchTheme(Convert.ToBoolean(dataContent[1]));
+                        }
+                        else
+                        {
+                            try
+                            {
+                                var colorName = (ColorFlat)Enum.Parse(typeof(ColorFlat), dataContent[0], true);
+                                SetColor(colorName, dataContent[1]);
+                            }
+                            catch (Exception)
+                            {
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+            return true;
+        }
+
         public static void SetTheme(Color primaryColor, Color secondaryColor, bool isLightTheme = true)
         {
             SetColor(ColorFlat.PrimaryColor, primaryColor);
@@ -28,6 +91,23 @@ namespace FlatStyle
                 SetColor(ColorFlat.ForegroundMainColor, GetBrightColor(primaryColor, 90));
                 SetColor(ColorFlat.BackgroundColor, "232323");
             }
+            IsLightTheme = isLightTheme;
+        }
+
+        public static void SwitchTheme(bool isLightTheme)
+        {
+            var primaryColor = GetColor(ColorFlat.PrimaryColor);
+            if (isLightTheme)
+            {
+                SetColor(ColorFlat.BackgroundColor, GetBrightColor(primaryColor, 90));
+                SetColor(ColorFlat.ForegroundMainColor, "232323");
+            }
+            else
+            {
+                SetColor(ColorFlat.ForegroundMainColor, GetBrightColor(primaryColor, 90));
+                SetColor(ColorFlat.BackgroundColor, "232323");
+            }
+            IsLightTheme = isLightTheme;
         }
 
         public static void SetTheme(string primaryColor, string secondaryColor, bool isLightTheme = true)

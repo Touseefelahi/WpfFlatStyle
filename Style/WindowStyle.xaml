@@ -7,9 +7,10 @@
         <Setter Property="WindowStyle" Value="None" />
         <Setter Property="AllowsTransparency" Value="True" />
         <Setter Property="local:TitleBar.Value" Value="22" />
+        <Setter Property="local:OnloadThemeUpdate.Value" Value="True" />
         <Setter Property="Background" Value="{DynamicResource BackgroundBrush}" />
         <Setter Property="TextBlock.Foreground" Value="{DynamicResource ForegroundMainBrush}" />
-
+        <Setter Property="Padding" Value="5" />
         <Setter Property="WindowChrome.WindowChrome">
             <Setter.Value>
                 <WindowChrome ResizeBorderThickness="5" CaptionHeight="22" />
@@ -69,7 +70,9 @@
                                         <!-- Icon -->
                                         <Image Source="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=Icon}"
                                                VerticalAlignment="Top" HorizontalAlignment="Left" WindowChrome.IsHitTestVisibleInChrome="True" />
-
+                                        <Button Content="{StaticResource Fa-moon}" Style="{DynamicResource WindowIconButton}" Margin="0,0,0,2" Width="20"
+                                                Command="{x:Static local:Command.Theme}" HorizontalAlignment="Left" VerticalAlignment="Center"
+                                                CommandParameter="{Binding RelativeSource= {RelativeSource Mode=FindAncestor, AncestorType={x:Type Window}}}" />
                                         <!-- Title -->
                                         <Viewbox Grid.Column="0" HorizontalAlignment="Center" Grid.ColumnSpan="3">
                                             <TextBlock  FontSize="17" FontWeight="Bold"
@@ -99,7 +102,7 @@
                                         </Border.Effect>
                                     </Border>
                                     <!-- Page Content -->
-                                    <Border Grid.Row="1" Padding="2">
+                                    <Border Grid.Row="1" Padding="{TemplateBinding Padding}">
                                         <ContentPresenter Content="{TemplateBinding Content}" />
                                     </Border>
                                 </Grid>
