@@ -6,25 +6,28 @@
         xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
         mc:Ignorable="d"
         xmlns:flatStyle="clr-namespace:FlatStyle;assembly=FlatStyle"
-        Style="{StaticResource FlatWindow}"
         flatStyle:TitleBar.Value="30"
-        Title="MainWindow" Height="450" Width="800">
+        flatStyle:OnloadThemeUpdate.Value="True"
+        Style="{StaticResource FlatWindow}"
+        Title="MainWindow" Height="600" Width="800">
+    <!--Icon="C:\\stira.ico"-->
 
     <DockPanel>
         <StackPanel HorizontalAlignment="Center">
-            <ToggleButton Content="Switch Theme" ToolTip="Switch dark/day theme" Click="Button_Click" HorizontalAlignment="Center" Width="100" Height="30"  VerticalAlignment="Center" />
+            <ToggleButton x:Name="ai" Content="Switch Theme" ToolTip="Switch dark/day theme" Click="Button_Click" HorizontalAlignment="Center" Width="100" Height="30"  VerticalAlignment="Center" />
 
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                <ToggleButton Content="Toggle" HorizontalAlignment="Center"  Height="30"  VerticalAlignment="Center" />
-                <ToggleButton Content="Toggle disabled" IsEnabled="False" HorizontalAlignment="Center"  Height="30"  VerticalAlignment="Center" />
+                <ToggleButton flatStyle:IsCheckedText.Value="Something"  flatStyle:IsUnCheckedText.Value="Something2"   HorizontalAlignment="Center"  Height="30"  VerticalAlignment="Center" />
+                <ToggleButton IsEnabled="False" Content="isNotEnabled" HorizontalAlignment="Center"  Height="30"  VerticalAlignment="Center">
+                </ToggleButton>
             </StackPanel>
 
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                 <ToggleButton Content="Toggle Secondary" Style="{StaticResource SecondaryToggleButton}" HorizontalAlignment="Center"  Height="30"  VerticalAlignment="Center" />
                 <ToggleButton Content="Toggle Secondary disabled" Style="{StaticResource SecondaryToggleButton}" IsEnabled="False" HorizontalAlignment="Center"  Height="30"  VerticalAlignment="Center" />
             </StackPanel>
-            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
 
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                 <Button Content="Normal Button" HorizontalAlignment="Center"  Height="30"  VerticalAlignment="Center" />
                 <Button Content="Normal Button disabled" IsEnabled="False" HorizontalAlignment="Center"  Height="30"  VerticalAlignment="Center" />
             </StackPanel>
@@ -59,7 +62,9 @@
                 <Button Style="{StaticResource IconButton}" Margin="5" Content="{StaticResource Fa-address-card}" Width="20" />
             </StackPanel>
 
-            <TextBox Text="This is textbox" />
+            <CheckBox  Content="this g check" HorizontalAlignment="Left" />
+            <TextBox Text="This is textbox text" flatStyle:PlaceHoldingText.Value="This is placeholder" />
+            <TextBox  flatStyle:PlaceHoldingText.Value="This is placeholder" />
         </StackPanel>
     </DockPanel>
 </Window>

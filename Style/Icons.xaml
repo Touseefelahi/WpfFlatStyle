@@ -113,6 +113,7 @@
     <system:String x:Key="Fa-list-alt">&#xf022;</system:String>
     <system:String x:Key="Fa-map">&#xf279;</system:String>
     <system:String x:Key="Fa-meh">&#xf11a;</system:String>
+    <system:String x:Key="Fa-palette">&#xf53f;</system:String>
     <system:String x:Key="Fa-meh-blank">&#xf5a4;</system:String>
     <system:String x:Key="Fa-meh-rolling-eyes">&#xf5a5;</system:String>
     <system:String x:Key="Fa-minus-square">&#xf146;</system:String>

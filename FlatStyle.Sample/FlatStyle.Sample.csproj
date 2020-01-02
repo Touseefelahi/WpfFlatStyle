@@ -4,6 +4,7 @@
     <OutputType>WinExe</OutputType>
     <TargetFramework>netcoreApp3.0</TargetFramework>
     <UseWPF>true</UseWPF>
+    <ApplicationIcon>stira.ico</ApplicationIcon>
   </PropertyGroup>
 
   <ItemGroup>

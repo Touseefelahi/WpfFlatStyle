@@ -1,0 +1,99 @@
+﻿<UserControl x:Class="FlatStyle.Controls.ColorPickerControl"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <Grid Height="220" Background="White" MouseWheel="AlphaSlider_MouseWheel" MouseUp="CanvasImage_MouseUp">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="150" />
+            <RowDefinition Height="25" />
+        </Grid.RowDefinitions>
+
+        <Grid x:Name="MainGrid"
+           MouseDown="CanvasImage_MouseDown"
+          MouseUp="CanvasImage_MouseUp" Grid.RowSpan="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="150" />
+                <ColumnDefinition Width="100" />
+            </Grid.ColumnDefinitions>
+
+            <!-- Colorbox, Column1-->
+            <Grid Grid.Column="0" Grid.Row="0">
+
+                <!-- Selection, Column 0-->
+                <Image x:Name="ColorImage"
+                 Width="150"
+                 Height="150"
+                 HorizontalAlignment="Center"
+                 VerticalAlignment="Top"
+                 Source="pack://application:,,,/FlatStyle;component/Images/ColorSwatchSquare.png" x:Shared="false" />
+                <Canvas x:Name="canvasImage"
+                Width="150"
+                Height="150"
+                HorizontalAlignment="Center"
+                Background="Transparent"
+                VerticalAlignment="Top"
+                MouseDown="CanvasImage_MouseDown"
+                MouseUp="CanvasImage_MouseUp"
+                MouseMove="CanvasImage_MouseMove">
+                    <Ellipse x:Name="ellipsePixel"
+                   Width="8"
+                   Height="8"
+                   Stroke="Black"
+                   Fill="White"
+                   Canvas.Left="0"
+                   Canvas.Top="0" />
+                </Canvas>
+            </Grid>
+
+            <!-- TextBoxes, Column 2-->
+            <StackPanel  Grid.Column="2" Orientation="Vertical" Margin="2">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition />
+                        <RowDefinition />
+                        <RowDefinition />
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+
+                    <TextBlock Text="A"  HorizontalAlignment="Left" VerticalAlignment="Center" />
+                    <TextBlock Grid.Row="1"  Text="R" HorizontalAlignment="Left" VerticalAlignment="Center" />
+                    <TextBlock Grid.Row="2" Text="G" HorizontalAlignment="Left" VerticalAlignment="Center" />
+                    <TextBlock Grid.Row="3" Text="B" HorizontalAlignment="Left" VerticalAlignment="Center" />
+
+                    <TextBox x:Name="txtAlpha" IsReadOnly="True" TextAlignment="Center" HorizontalAlignment="Right"  Width="50" IsTabStop="False" />
+                    <TextBox x:Name="txtRed" IsReadOnly="True" TextAlignment="Center"   Grid.Row="1"  HorizontalAlignment="Right"   Width="50" IsTabStop="False" />
+                    <TextBox x:Name="txtGreen" IsReadOnly="True" TextAlignment="Center" Grid.Row="2"  HorizontalAlignment="Right"   Width="50"  IsTabStop="False" />
+                    <TextBox x:Name="txtBlue" IsReadOnly="True" TextAlignment="Center"  Grid.Row="3"  HorizontalAlignment="Right"   Width="50" IsTabStop="False" />
+                </Grid>
+
+                <StackPanel Orientation="Vertical" HorizontalAlignment="Center" Margin="2">
+                    <Border x:Name="ColorDisplay" Margin="2" CornerRadius="2" BorderBrush="Black" BorderThickness="1" Width="80" Height="22">
+                    </Border>
+                    <TextBox x:Name="txtAll"  IsReadOnly="True" TextAlignment="Center" IsTabStop="False" />
+                </StackPanel>
+            </StackPanel>
+        </Grid>
+
+        <!--AlphaSlider-->
+        <Border x:Name="AlphaBorder"
+                Grid.Row="1"
+                Grid.ColumnSpan="2"
+                BorderBrush="Black"
+                Height="22"
+                BorderThickness="1"
+                CornerRadius="2"
+                MouseWheel="AlphaSlider_MouseWheel"
+                Margin="1">
+            <Slider x:Name="AlphaSlider"
+                    Orientation="Horizontal"
+                    Minimum="0"
+                    Maximum="255"
+                    SmallChange="1"
+                    LargeChange="25"
+                    VerticalAlignment="Center"
+                    Margin="1"
+                    Value="255"
+                    ValueChanged="AlphaSlider_ValueChanged" />
+        </Border>
+    </Grid>
+</UserControl>

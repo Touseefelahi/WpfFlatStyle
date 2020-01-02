@@ -1,0 +1,36 @@
+﻿<Window  x:Class="FlatStyle.Controls.ColorPicker"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local="clr-namespace:FlatStyle.Controls"
+        Title="Pick Color"
+        WindowStyle="ToolWindow"
+        ResizeMode="NoResize"
+        Width="270"
+        Height="250"
+        WindowStartupLocation="CenterOwner" ShowInTaskbar="False"  ShowActivated="False">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="175" />
+            <RowDefinition Height="40" />
+        </Grid.RowDefinitions>
+
+        <local:ColorPickerControl x:Name="colorPicker"   Grid.Row="0" />
+
+        <StackPanel Grid.Row="1"
+                HorizontalAlignment="Right"
+                Orientation="Horizontal"
+                Margin="3">
+            <Button x:Name="btnOK"
+              Content="OK"
+              Click="btnOK_Click"
+              IsDefault="True"
+              TabIndex="0" />
+            <Button x:Name="btnCancel"
+              Content="Cancel"
+              Click="btnCancel_Click"
+              IsCancel="True"
+              TabIndex="1" />
+        </StackPanel>
+    </Grid>
+</Window>

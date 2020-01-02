@@ -11,6 +11,7 @@
         <Setter Property="Background" Value="{DynamicResource BackgroundBrush}" />
         <Setter Property="TextBlock.Foreground" Value="{DynamicResource ForegroundMainBrush}" />
         <Setter Property="Padding" Value="5" />
+        <Setter Property="Icon" Value="pack://application:,,,/FlatStyle;component/Icons/stira.ico" />
         <Setter Property="WindowChrome.WindowChrome">
             <Setter.Value>
                 <WindowChrome ResizeBorderThickness="5" CaptionHeight="22" />
@@ -68,11 +69,14 @@
                                         </Grid.ColumnDefinitions>
 
                                         <!-- Icon -->
-                                        <Image Source="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=Icon}"
+                                        <StackPanel Orientation="Horizontal">
+                                            <Image Source="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=Icon}" Margin="4"
                                                VerticalAlignment="Top" HorizontalAlignment="Left" WindowChrome.IsHitTestVisibleInChrome="True" />
-                                        <Button Content="{StaticResource Fa-moon}" Style="{DynamicResource WindowIconButton}" Margin="0,0,0,2" Width="20"
+
+                                            <Button Content="{StaticResource Fa-palette}" Foreground="{DynamicResource PrimaryBrush}" Style="{DynamicResource WindowIconButton}" Margin="5,0,0,2" Width="20"
                                                 Command="{x:Static local:Command.Theme}" HorizontalAlignment="Left" VerticalAlignment="Center"
                                                 CommandParameter="{Binding RelativeSource= {RelativeSource Mode=FindAncestor, AncestorType={x:Type Window}}}" />
+                                        </StackPanel>
                                         <!-- Title -->
                                         <Viewbox Grid.Column="0" HorizontalAlignment="Center" Grid.ColumnSpan="3">
                                             <TextBlock  FontSize="17" FontWeight="Bold"
@@ -82,11 +86,26 @@
 
                                         <!-- Window Buttons -->
                                         <StackPanel Orientation="Horizontal" Grid.Column="2"  VerticalAlignment="Center" HorizontalAlignment="Right">
-                                            <Button Content="_" Style="{DynamicResource WindowButton}" Margin="0,0,0,4" Width="22" Command="{x:Static local:Command.Minimize}"
+                                            <Button Content="{StaticResource Fa-window-minimize}" Style="{DynamicResource WindowIconButton}" Margin="3" Width="22" Command="{x:Static local:Command.Minimize}"
                                     CommandParameter="{Binding RelativeSource= {RelativeSource Mode=FindAncestor, AncestorType={x:Type Window}}}" />
-                                            <Button Content="☐" Style="{DynamicResource WindowButton}" Width="22"  Command="{x:Static local:Command.Maximize}"
-                                    CommandParameter="{Binding RelativeSource= {RelativeSource Mode=FindAncestor, AncestorType={x:Type Window}}}" />
-                                            <Button Content="X" Style="{DynamicResource WindowButton}" Width="22"  Command="{x:Static local:Command.Close}"
+
+                                            <Button Width="22" Margin="3" Command="{x:Static local:Command.Maximize}"
+                                                    CommandParameter="{Binding RelativeSource= {RelativeSource Mode=FindAncestor, AncestorType={x:Type Window}}}">
+                                                <ContentControl.Style>
+                                                    <Style TargetType="{x:Type Button}" BasedOn="{StaticResource WindowIconButton}">
+                                                        <Style.Triggers>
+                                                            <DataTrigger Binding="{Binding Path=WindowState, RelativeSource= {RelativeSource Mode=FindAncestor, AncestorType={x:Type Window}}}" Value="Maximized">
+                                                                <Setter Property="Content" Value="{StaticResource Fa-window-restore}" />
+                                                            </DataTrigger>
+                                                            <DataTrigger Binding="{Binding Path=WindowState, RelativeSource= {RelativeSource Mode=FindAncestor, AncestorType={x:Type Window}}}" Value="Normal">
+                                                                <Setter Property="Content" Value="{StaticResource Fa-window-maximize}" />
+                                                            </DataTrigger>
+                                                        </Style.Triggers>
+                                                    </Style>
+                                                </ContentControl.Style>
+                                            </Button>
+
+                                            <Button Content="{StaticResource Fa-window-close}" Style="{DynamicResource WindowIconButton}" Width="22" Margin="3" Command="{x:Static local:Command.Close}"
                                     CommandParameter="{Binding RelativeSource= {RelativeSource Mode=FindAncestor, AncestorType={x:Type Window}}}" />
                                         </StackPanel>
                                     </Grid>

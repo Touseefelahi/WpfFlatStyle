@@ -23,5 +23,6 @@
         DisabledColor,
         ForegroundMainColor,
         TransparentColor,
+        ControlForegroundColor,
     }
 }

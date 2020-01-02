@@ -1,4 +1,5 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:local="clr-namespace:FlatStyle"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
 
     <Style TargetType="{x:Type TextBlock}" BasedOn="{StaticResource BaseTextBlock}" />
@@ -33,7 +34,7 @@
                         </Border>
 
                         <TextBlock IsHitTestVisible="False"
-                                   Text="{TemplateBinding Tag}"
+                                   Text="{Binding Path=(local:PlaceHoldingText.Value), RelativeSource={RelativeSource TemplatedParent}}"
                                    x:Name="placeholder"
                                    VerticalAlignment="Bottom"
                                    Padding="{TemplateBinding Padding}"

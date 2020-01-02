@@ -16,9 +16,38 @@ namespace FlatStyle
             ThemeSetter(parameter)
             );
 
+        private static Window windowContact;
+
         private static void ThemeSetter(object parameter)
         {
-            Style.SwitchTheme(!Style.IsLightTheme);
+            if (windowContact != null)
+            {
+                if (!windowContact.IsLoaded)
+                {
+                    ShowThemeWindow();
+                }
+                else
+                {
+                    windowContact.Topmost = true;
+                    windowContact.Topmost = false;
+                }
+            }
+            else
+            {
+                ShowThemeWindow();
+            }
+        }
+
+        private static void ShowThemeWindow()
+        {
+            windowContact = new Window
+            {
+                Content = new ThemeSelector(),
+                Width = 250,
+                Height = 200,
+                ResizeMode = ResizeMode.NoResize,
+            };
+            windowContact.Show();
         }
 
         private static void MaximizeWindow(object sender)

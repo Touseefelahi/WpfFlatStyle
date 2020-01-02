@@ -49,6 +49,7 @@ namespace FlatStyle.Sample
 
             FlatStyle.Style.SetColor(ColorFlat.BackgroundColor, currentForeGroundColor);
             FlatStyle.Style.SetColor(ColorFlat.ForegroundMainColor, currentBackGroundColor);
+            var button = ai;
         }
 
         private void CloseWindow(object sender, RoutedEventArgs e)
@@ -78,13 +79,13 @@ namespace FlatStyle.Sample
         private void ClrPcker_Background_SelectedColorChanged(object sender, RoutedPropertyChangedEventArgs<Color?> e)
         {
             if (ClrPcker_Secondary.SelectedColor.HasValue)
-                FlatStyle.Style.SetTheme(e.NewValue.Value, ClrPcker_Secondary.SelectedColor.Value, true);
+                FlatStyle.Style.SetTheme(e.NewValue.Value, ClrPcker_Secondary.SelectedColor.Value, FlatStyle.Style.IsLightTheme);
         }
 
         private void ClrPcker_Secondary_SelectedColorChanged(object sender, RoutedPropertyChangedEventArgs<Color?> e)
         {
             if (ClrPcker_Primary.SelectedColor.HasValue)
-                FlatStyle.Style.SetTheme(ClrPcker_Primary.SelectedColor.Value, e.NewValue.Value, true);
+                FlatStyle.Style.SetTheme(ClrPcker_Primary.SelectedColor.Value, e.NewValue.Value, FlatStyle.Style.IsLightTheme);
         }
     }
 }
