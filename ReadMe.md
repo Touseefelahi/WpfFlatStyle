@@ -40,10 +40,10 @@
  # Sample
  
  Light Theme: 
-![alt text](https://github.com/Touseefelahi/WpfFlatStyle/blob/master/BlueLightTheme.png" Light Theme")
+![alt text](https://github.com/Touseefelahi/WpfFlatStyle/blob/master/BlueLightTheme.png " Light Theme")
  
 Dark Theme: 
-![alt text](https://github.com/Touseefelahi/WpfFlatStyle/blob/master/BlueDarkTheme.png" Dark Theme")
+![alt text](https://github.com/Touseefelahi/WpfFlatStyle/blob/master/BlueDarkTheme.png " Dark Theme")
 
 
 
