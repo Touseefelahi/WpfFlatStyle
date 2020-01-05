@@ -25,20 +25,13 @@
 
 
  # Set Style As flat window
-
-   <Window x:Class="FlatStyle.Sample.MainWindow"
-        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"--
-        
-        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"--
-        
-        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"--
-        
-        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"--
-        
-        xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"--
-        
-        mc:Ignorable="d"--
-        
+   <Window x:Class="FlatStyle.Sample.MainWindow"   
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"        
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"        
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"        
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"        
+        xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"        
+        mc:Ignorable="d"        
         _xmlns:flatStyle="clr-namespace:FlatStyle;assembly=FlatStyle"
         Style="{StaticResource FlatWindow}"'
         flatStyle:TitleBar.Value="30"_
