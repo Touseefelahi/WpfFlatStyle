@@ -31,11 +31,13 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"        
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"        
         xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"        
-        mc:Ignorable="d"   
-        *_
-        xmlns:flatStyle="clr-namespace:FlatStyle;assembly=FlatStyle"        
-        Style="{StaticResource FlatWindow}"        
+        mc:Ignorable="d"        
+        
+        xmlns:flatStyle="clr-namespace:FlatStyle;assembly=FlatStyle"   
+        
+        Style="{StaticResource FlatWindow}"
+        
         flatStyle:TitleBar.Value="30"
-        _*
+        
         Title="MainWindow" Height="450" Width="800">
 
