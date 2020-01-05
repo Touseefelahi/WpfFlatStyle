@@ -1,7 +1,5 @@
-﻿ 
+#Use this text in your App.xaml file
 
- #Use this text in your App.xaml file
-===
  <Application.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
@@ -27,16 +25,22 @@
 
 
  # Set Style As flat window
-===
+
    <Window x:Class="FlatStyle.Sample.MainWindow"
-        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
-        mc:Ignorable="d"
-        'xmlns:flatStyle="clr-namespace:FlatStyle;assembly=FlatStyle"'
-        'Style="{StaticResource FlatWindow}"'
-        'flatStyle:TitleBar.Value="30"'
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"--
+        
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"--
+        
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"--
+        
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"--
+        
+        xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"--
+        
+        mc:Ignorable="d"--
+        
+        _xmlns:flatStyle="clr-namespace:FlatStyle;assembly=FlatStyle"
+        Style="{StaticResource FlatWindow}"'
+        flatStyle:TitleBar.Value="30"_
         Title="MainWindow" Height="450" Width="800">
 
