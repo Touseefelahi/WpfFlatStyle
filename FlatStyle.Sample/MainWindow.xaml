@@ -8,7 +8,7 @@
         flatStyle:TitleBar.Value="30"
         flatStyle:OnloadThemeUpdate.Value="True"
         Style="{StaticResource FlatWindow}"
-        Title="MainWindow" Height="600" Width="800">
+        Title="Stira Flat Style" Height="600" Width="800">
 
     <DockPanel>
         <StackPanel HorizontalAlignment="Center">
