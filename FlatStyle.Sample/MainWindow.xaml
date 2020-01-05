@@ -12,27 +12,27 @@
 
     <DockPanel>
         <StackPanel HorizontalAlignment="Center">
-            <ToggleButton x:Name="ai" Content="Switch Theme" ToolTip="Switch dark/day theme" Click="Button_Click" HorizontalAlignment="Center" Width="100" Height="30"  VerticalAlignment="Center" />
+            <ToggleButton x:Name="ai" Content="Switch Theme" ToolTip="Switch dark/day theme" Click="Button_Click" HorizontalAlignment="Center" />
 
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                <ToggleButton flatStyle:IsCheckedText.Value="Something"  flatStyle:IsUnCheckedText.Value="Something2"   HorizontalAlignment="Center"  Height="30"  VerticalAlignment="Center" />
-                <ToggleButton IsEnabled="False" Content="isNotEnabled" HorizontalAlignment="Center"  Height="30"  VerticalAlignment="Center">
+                <ToggleButton flatStyle:IsCheckedText.Value="Something"  flatStyle:IsUnCheckedText.Value="Something2"   VerticalAlignment="Center" />
+                <ToggleButton IsEnabled="False" Content="isNotEnabled" HorizontalAlignment="Center">
                 </ToggleButton>
             </StackPanel>
 
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                <ToggleButton Content="Toggle Secondary" Style="{StaticResource SecondaryToggleButton}" HorizontalAlignment="Center"  Height="30"  VerticalAlignment="Center" />
-                <ToggleButton Content="Toggle Secondary disabled" Style="{StaticResource SecondaryToggleButton}" IsEnabled="False" HorizontalAlignment="Center"  Height="30"  VerticalAlignment="Center" />
+                <ToggleButton Content="Toggle Secondary" Style="{StaticResource SecondaryToggleButton}" HorizontalAlignment="Center" />
+                <ToggleButton Content="Toggle Secondary disabled" Style="{StaticResource SecondaryToggleButton}" IsEnabled="False" HorizontalAlignment="Center" />
             </StackPanel>
 
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                <Button Content="Normal Button" HorizontalAlignment="Center"  Height="30"  VerticalAlignment="Center" />
-                <Button Content="Normal Button disabled" IsEnabled="False" HorizontalAlignment="Center"  Height="30"  VerticalAlignment="Center" />
+                <Button Content="Normal Button" />
+                <Button Content="Normal Button disabled" IsEnabled="False" />
             </StackPanel>
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
 
-                <Button Content="SecondaryButton" Style="{StaticResource SecondaryButton}" HorizontalAlignment="Center" Height="30"  VerticalAlignment="Center" />
-                <Button Content="SecondaryButton Disabled" IsEnabled="False" Style="{StaticResource SecondaryButton}" HorizontalAlignment="Center" Height="30"  VerticalAlignment="Center" />
+                <Button Content="SecondaryButton" Style="{StaticResource SecondaryButton}" />
+                <Button Content="SecondaryButton Disabled" IsEnabled="False" Style="{StaticResource SecondaryButton}" />
             </StackPanel>
 
             <ComboBox>
@@ -43,11 +43,11 @@
             <DataGrid x:Name="datagrid" Height="150" />
 
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                <Button Style="{StaticResource IconButton}" Margin="5" Content="&#xf086;" Width="20" />
+                <Button Style="{StaticResource IconButton}"  Content="&#xf086;" />
 
-                <Button Style="{StaticResource IconButton}" Margin="5" Content="{StaticResource Fa-address-book}" Width="20" />
+                <Button Style="{StaticResource IconButton}"  Content="{StaticResource Fa-address-book}" />
 
-                <Button Style="{StaticResource IconButton}" Margin="5" Content="{StaticResource Fa-address-card}" Width="20" />
+                <Button Style="{StaticResource IconButton}"  Content="{StaticResource Fa-address-card}" />
             </StackPanel>
 
             <StackPanel Orientation="Horizontal">

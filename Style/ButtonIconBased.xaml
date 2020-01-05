@@ -8,8 +8,10 @@
         <Setter Property="FontSize" Value="{StaticResource FontSizeXXLarge}" />
         <Setter Property="FontFamily" Value="{StaticResource FontAwesome}" />
         <Setter Property="Padding" Value="0" />
-        <Setter Property="Margin" Value="0" />
-        <Setter Property="MinWidth" Value="5" />
+        <Setter Property="Margin" Value="5" />
+        <Setter Property="Width" Value="22" />
+        <Setter Property="Height" Value="22" />
+
         <Setter Property="WindowChrome.IsHitTestVisibleInChrome" Value="True" />
         <Setter Property="Width" Value="{Binding ActualHeight, RelativeSource={RelativeSource Self}}" />
 
