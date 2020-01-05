@@ -47,16 +47,33 @@ Dark Theme:
 
 # Quick Hints
 + [Button](https://github.com/Touseefelahi/WpfFlatStyle#button)
-+ [Toggle Button](https://github.com/Touseefelahi/WpfFlatStyle#Toggle button)
++ [Toggle Button](https://github.com/Touseefelahi/WpfFlatStyle#Toggle-button)
 + [CheckBox](https://github.com/Touseefelahi/WpfFlatStyle#checkbox)
 
 # Button
 
-
+    <Button Content="Normal Button" />
+    <Button Content="SecondaryButton" Style="{StaticResource SecondaryButton}" />
+    <Button Style="{StaticResource IconButton}" Content="{StaticResource Fa-address-book}" />
+    <Button Style="{StaticResource IconButton}"  Content="&#xf086;" />
+    <Button Style="{StaticResource IconButton}"  Content="{StaticResource Fa-address-book}" />
+    <Button Style="{StaticResource IconButton}"  Content="{StaticResource Fa-address-card}" />  
+    
 # Toggle Button
 
-# CheckBox
+    <ToggleButton flatStyle:IsCheckedText.Value="This Text Will Appear when its is checked"  flatStyle:IsUnCheckedText.Value="This Text Will Appear when its is unChecked"  />
+    
+     <ToggleButton flatStyle:IsCheckedText.Value="This Text Will Appear when its is checked"  flatStyle:IsUnCheckedText.Value="This Text Will Appear when its is unChecked" Style="{StaticResource SecondaryToggleButton}"  />
+    <Button Style="{StaticResource IconButtonToggle}"  Content="{StaticResource Fa-address-card}" />              
+ 
 
+# CheckBox
+     <CheckBox  Content="this g check" HorizontalAlignment="Left" />
+     <CheckBox IsChecked="True"  Style="{StaticResource StatusLed}" />
+     <CheckBox IsChecked="True"  Style="{StaticResource StatusLed}" flatStyle:BaseColor.Value="Green" />
+     <CheckBox IsChecked="False" Style="{StaticResource StatusLed}" />
+     <CheckBox IsChecked="False" Style="{StaticResource TickStatus}" />
+     <CheckBox IsChecked="True"  Style="{StaticResource TickStatus}" />
 
 
 
