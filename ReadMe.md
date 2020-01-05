@@ -45,6 +45,19 @@
 Dark Theme: 
 ![alt text](https://github.com/Touseefelahi/WpfFlatStyle/blob/master/BlueDarkTheme.png " Dark Theme")
 
+# Quick Hints
++ [Button](https://github.com/Touseefelahi/WpfFlatStyle#button)
++ [Toggle Button](https://github.com/Touseefelahi/WpfFlatStyle#Toggle button)
++ [CheckBox](https://github.com/Touseefelahi/WpfFlatStyle#checkbox)
+
+# Button
+
+
+# Toggle Button
+
+# CheckBox
+
+
 
 
 
