@@ -1,16 +1,15 @@
 ﻿ 
 
- Use this text in your App.xaml file
- 
+ #Use this text in your App.xaml file
+ ---
+ '''xaml
  <Application.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
-                <!-- Order is important -->
-				
+                <!-- Order is important -->				
                 <ResourceDictionary Source="pack://application:,,,/FlatStyle;component/Style/Colors.xaml" />
                 <ResourceDictionary Source="pack://application:,,,/FlatStyle;component/Style/Fonts.xaml" />
                 <ResourceDictionary Source="pack://application:,,,/FlatStyle;component/Style/BaseStyle.xaml" />
-
                 <ResourceDictionary Source="pack://application:,,,/FlatStyle;component/Style/Icons.xaml" />                
                 <ResourceDictionary Source="pack://application:,,,/FlatStyle;component/Style/IconsSolid.xaml" />
                 <ResourceDictionary Source="pack://application:,,,/FlatStyle;component/Style/Button.xaml" />
@@ -23,13 +22,14 @@
                 <ResourceDictionary Source="pack://application:,,,/FlatStyle;component/Style/ProgressBar.xaml" />                       
                 <ResourceDictionary Source="pack://application:,,,/FlatStyle;component/Style/TabControl.xaml" />
                 <ResourceDictionary Source="pack://application:,,,/FlatStyle;component/Style/WindowStyle.xaml" />
-
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
   </Application.Resources>
+  '''
 
-  Set Style As flat window as shown below for Cool Chrome Window
-
+ # Set Style As flat window as shown below for Cool Chrome Window
+ ---
+ '''xaml
    <Window x:Class="FlatStyle.Sample.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
@@ -41,3 +41,4 @@
         Style="{StaticResource FlatWindow}"
         flatStyle:TitleBar.Value="30"
         Title="MainWindow" Height="450" Width="800">
+'''
