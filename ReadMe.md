@@ -36,4 +36,7 @@
         Style="{StaticResource FlatWindow}"
         flatStyle:TitleBar.Value="30"
         Title="MainWindow" Height="450" Width="800">
-
+        
+ # Sample
+Inline-style: 
+![alt text](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Logo Title Text 1")
