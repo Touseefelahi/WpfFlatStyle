@@ -8,6 +8,7 @@ namespace FlatStyle
 {
     public static class Style
     {
+        public static EventHandler<bool> ThemeSwitched;
         private static string lightThemeIdentifier = "IsLightTheme";
         public static bool IsLightTheme { get; private set; }
 
@@ -20,7 +21,8 @@ namespace FlatStyle
                 {
                     sw.WriteLine($"{ColorFlat.PrimaryColor}:{GetColor(ColorFlat.PrimaryColor)}");
                     sw.WriteLine($"{ColorFlat.SecondaryColor}:{GetColor(ColorFlat.SecondaryColor)}");
-                    sw.WriteLine($"lightThemeIdentifier:{IsLightTheme}");
+                    sw.WriteLine($"{ColorFlat.ControlForegroundColor}:{GetColor(ColorFlat.ControlForegroundColor)}");
+                    sw.WriteLine($"{lightThemeIdentifier}:{IsLightTheme}");
                 }
                 catch (Exception)
                 {
@@ -54,7 +56,20 @@ namespace FlatStyle
                             try
                             {
                                 var colorName = (ColorFlat)Enum.Parse(typeof(ColorFlat), dataContent[0], true);
-                                SetColor(colorName, dataContent[1]);
+                                switch (colorName)
+                                {
+                                    case ColorFlat.PrimaryColor:
+                                        SetPrimaryColor(dataContent[1]);
+                                        break;
+
+                                    case ColorFlat.SecondaryColor:
+                                        SetSecondaryColor(dataContent[1]);
+                                        break;
+
+                                    default:
+                                        SetColor(colorName, dataContent[1]);
+                                        break;
+                                }
                             }
                             catch (Exception)
                             {
@@ -70,6 +85,23 @@ namespace FlatStyle
             return true;
         }
 
+        public static void SetSecondaryColor(string value)
+        {
+            var secondaryColor = FromHtmlHexadecimal(value);
+            SetColor(ColorFlat.SecondaryColor, secondaryColor);
+            SetColor(ColorFlat.SecondaryMidColor, GetBrightColor(secondaryColor, 30));
+            SetColor(ColorFlat.SecondaryLightColor, GetBrightColor(secondaryColor, 50));
+        }
+
+        public static void SetPrimaryColor(string value)
+        {
+            var primaryColor = FromHtmlHexadecimal(value);
+            SetColor(ColorFlat.PrimaryColor, primaryColor);
+            SetColor(ColorFlat.PrimaryMidColor, GetBrightColor(primaryColor, 30));
+            SetColor(ColorFlat.PrimaryLightColor, GetBrightColor(primaryColor, 50));
+            SwitchTheme(IsLightTheme);
+        }
+
         public static void SetTheme(Color primaryColor, Color secondaryColor, bool isLightTheme = true)
         {
             SetColor(ColorFlat.PrimaryColor, primaryColor);
@@ -81,17 +113,7 @@ namespace FlatStyle
             SetColor(ColorFlat.PrimaryMidColor, GetBrightColor(primaryColor, 30));
             SetColor(ColorFlat.PrimaryLightColor, GetBrightColor(primaryColor, 50));
 
-            if (isLightTheme)
-            {
-                SetColor(ColorFlat.BackgroundColor, GetBrightColor(primaryColor, 90));
-                SetColor(ColorFlat.ForegroundMainColor, "232323");
-            }
-            else
-            {
-                SetColor(ColorFlat.ForegroundMainColor, GetBrightColor(primaryColor, 90));
-                SetColor(ColorFlat.BackgroundColor, "232323");
-            }
-            IsLightTheme = isLightTheme;
+            SwitchTheme(isLightTheme);
         }
 
         public static void SwitchTheme(bool isLightTheme)
@@ -108,6 +130,7 @@ namespace FlatStyle
                 SetColor(ColorFlat.BackgroundColor, "232323");
             }
             IsLightTheme = isLightTheme;
+            ThemeSwitched?.Invoke(null, IsLightTheme);
         }
 
         public static void SetTheme(string primaryColor, string secondaryColor, bool isLightTheme = true)
@@ -139,20 +162,27 @@ namespace FlatStyle
 
         private static Color FromHtmlHexadecimal(string colorStringInput)
         {
-            string colorString = colorStringInput.ToLower().Replace("#", "");
-            byte[] color = Enumerable.Range(0, colorString.Length)
-                             .Where(x => x % 2 == 0)
-                             .Select(x => Convert.ToByte(colorString.Substring(x, 2), 16))
-                             .ToArray();
-            if (color.Length == 3)
+            try
             {
-                return Color.FromRgb(color[0], color[1], color[2]);
+                string colorString = colorStringInput.ToLower().Replace("#", "");
+                byte[] color = Enumerable.Range(0, colorString.Length)
+                                 .Where(x => x % 2 == 0)
+                                 .Select(x => Convert.ToByte(colorString.Substring(x, 2), 16))
+                                 .ToArray();
+                if (color.Length == 3)
+                {
+                    return Color.FromRgb(color[0], color[1], color[2]);
+                }
+                else if (color.Length == 4)
+                {
+                    return Color.FromArgb(color[0], color[1], color[2], color[3]);
+                }
+                else
+                {
+                    return new Color();
+                }
             }
-            else if (color.Length == 4)
-            {
-                return Color.FromArgb(color[0], color[1], color[2], color[3]);
-            }
-            else
+            catch
             {
                 return new Color();
             }

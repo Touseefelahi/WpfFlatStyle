@@ -2,6 +2,23 @@
 <Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup />
   <ItemGroup>
+    <Compile Update="Controls\ColorPicker.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Controls\ColorPickerControl.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Controls\ThemeSelector.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Update="Controls\ColorPicker.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Controls\ColorPickerControl.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Style\ToolTip.xaml">
       <SubType>Designer</SubType>
     </Page>
@@ -42,6 +59,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Style\Scroll.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Controls\ThemeSelector.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>
