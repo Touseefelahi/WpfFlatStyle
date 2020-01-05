@@ -1,12 +1,14 @@
 # Content
 + [How to use](https://github.com/Touseefelahi/WpfFlatStyle#How-To-Use)
 + [Chrome Window](https://github.com/Touseefelahi/WpfFlatStyle#Chrome-Window)
++ [Sample](https://github.com/Touseefelahi/WpfFlatStyle#Sample)
 + [Button](https://github.com/Touseefelahi/WpfFlatStyle#button)
 + [Toggle Button](https://github.com/Touseefelahi/WpfFlatStyle#Toggle-button)
 + [CheckBox](https://github.com/Touseefelahi/WpfFlatStyle#checkbox)
 
 # How To Use
 Add This In your App.xaml file
+
     <Application.Resources>
            <ResourceDictionary>
                <ResourceDictionary.MergedDictionaries>
@@ -22,7 +24,7 @@ Add This In your App.xaml file
                    <ResourceDictionary Source="pack://application:,,,/FlatStyle;component/Style/Datagrid.xaml" />
                    <ResourceDictionary Source="pack://application:,,,/FlatStyle;component/Style/ComboBox.xaml" />
                    <ResourceDictionary Source="pack://application:,,,/FlatStyle;component/Style/CheckBox.xaml" />                
-                   <ResourceDictionary Source="pack://application:,,,/FlatStyle;component/Style/ProgressBar.xaml" />                       
+                   <ResourceDictionary Source="pack://application:,,,/FlatStyle;component/Style/ProgressBar.xaml" />  
                    <ResourceDictionary Source="pack://application:,,,/FlatStyle;component/Style/TabControl.xaml" />
                    <ResourceDictionary Source="pack://application:,,,/FlatStyle;component/Style/WindowStyle.xaml" />
                </ResourceDictionary.MergedDictionaries>
@@ -59,15 +61,18 @@ Dark Theme:
 ![alt text](https://github.com/Touseefelahi/WpfFlatStyle/blob/master/BlueDarkTheme.png " Dark Theme")
 
 # Button
-
++[Button Style Sheet](https://github.com/Touseefelahi/WpfFlatStyle/blob/master/Style/Button.xaml#StyleSheet)
++[Icon Button Style Sheet](https://github.com/Touseefelahi/WpfFlatStyle/blob/master/Style/ButtonIconBased.xaml#StyleSheet)
+ 
     <Button Content="Normal Button" />
     <Button Content="SecondaryButton" Style="{StaticResource SecondaryButton}" />
     <Button Style="{StaticResource IconButton}" Content="{StaticResource Fa-address-book}" />
     <Button Style="{StaticResource IconButton}"  Content="&#xf086;" />
     <Button Style="{StaticResource IconButton}"  Content="{StaticResource Fa-address-book}" />
     <Button Style="{StaticResource IconButton}"  Content="{StaticResource Fa-address-card}" />  
-    
+   
 # Toggle Button
++[Button Style Sheet](https://github.com/Touseefelahi/WpfFlatStyle/blob/master/Style/Button.xaml#StyleSheet)
 
     <ToggleButton flatStyle:IsCheckedText.Value="This Text Will Appear when its is checked"  flatStyle:IsUnCheckedText.Value="This Text Will Appear when its is unChecked"  />
     
@@ -82,7 +87,3 @@ Dark Theme:
      <CheckBox IsChecked="False" Style="{StaticResource StatusLed}" />
      <CheckBox IsChecked="False" Style="{StaticResource TickStatus}" />
      <CheckBox IsChecked="True"  Style="{StaticResource TickStatus}" />
-
-
-
-
