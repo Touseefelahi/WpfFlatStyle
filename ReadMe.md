@@ -38,5 +38,13 @@
         Title="MainWindow" Height="450" Width="800">
         
  # Sample
-Inline-style: 
-![alt text](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Logo Title Text 1")
+ 
+ Light Theme: 
+![alt text](https://github.com/Touseefelahi/WpfFlatStyle/blob/master/BlueLightTheme.png" Light Theme")
+ 
+Dark Theme: 
+![alt text](https://github.com/Touseefelahi/WpfFlatStyle/blob/master/BlueDarkTheme.png" Dark Theme")
+
+
+
+
