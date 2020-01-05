@@ -12,6 +12,17 @@ namespace FlatStyle
         private static string lightThemeIdentifier = "IsLightTheme";
         public static bool IsLightTheme { get; private set; }
 
+        public static void LoadDefaultOnRestart()
+        {
+            try
+            {
+                File.Delete($"{Environment.CurrentDirectory}\\Theme.te");
+            }
+            catch
+            {
+            }
+        }
+
         public static void SaveTheme()
         {
             var colorValues = Enum.GetNames(typeof(ColorFlat));
@@ -19,9 +30,11 @@ namespace FlatStyle
             {
                 try
                 {
-                    sw.WriteLine($"{ColorFlat.PrimaryColor}:{GetColor(ColorFlat.PrimaryColor)}");
-                    sw.WriteLine($"{ColorFlat.SecondaryColor}:{GetColor(ColorFlat.SecondaryColor)}");
-                    sw.WriteLine($"{ColorFlat.ControlForegroundColor}:{GetColor(ColorFlat.ControlForegroundColor)}");
+                    foreach (var color in colorValues)
+                    {
+                        var colorName = (ColorFlat)Enum.Parse(typeof(ColorFlat), color, true);
+                        sw.WriteLine($"{colorName}:{GetColor(colorName)}");
+                    }
                     sw.WriteLine($"{lightThemeIdentifier}:{IsLightTheme}");
                 }
                 catch (Exception)
@@ -130,6 +143,23 @@ namespace FlatStyle
                 SetColor(ColorFlat.BackgroundColor, "232323");
             }
             IsLightTheme = isLightTheme;
+            ThemeSwitched?.Invoke(null, IsLightTheme);
+        }
+
+        public static void ToggleNightMode()
+        {
+            IsLightTheme = !IsLightTheme;
+            var primaryColor = GetColor(ColorFlat.PrimaryColor);
+            if (IsLightTheme)
+            {
+                SetColor(ColorFlat.BackgroundColor, GetBrightColor(primaryColor, 90));
+                SetColor(ColorFlat.ForegroundMainColor, "232323");
+            }
+            else
+            {
+                SetColor(ColorFlat.ForegroundMainColor, GetBrightColor(primaryColor, 90));
+                SetColor(ColorFlat.BackgroundColor, "232323");
+            }
             ThemeSwitched?.Invoke(null, IsLightTheme);
         }
 

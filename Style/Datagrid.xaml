@@ -57,5 +57,6 @@
 
     <Style TargetType="{x:Type DataGrid}">
         <Setter Property="RowHeaderWidth" Value="0" />
+        <Setter Property="Background" Value="{DynamicResource BackgroundBrush}" />
     </Style>
 </ResourceDictionary>

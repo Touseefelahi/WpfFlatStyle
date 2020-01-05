@@ -41,7 +41,7 @@
 
     <!--Error Color-->
     <Color x:Key="ErrorColor">#FF4444</Color>
-    <SolidColorBrush x:Key="CautionBrush"           Color="{DynamicResource ErrorColor}" />
+    <SolidColorBrush x:Key="ErrorBrush"           Color="{DynamicResource ErrorColor}" />
 
     <!--Disabled color-->
     <Color x:Key="DisabledColor">#AAAAAA</Color>

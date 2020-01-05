@@ -3,14 +3,12 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
         mc:Ignorable="d"
         xmlns:flatStyle="clr-namespace:FlatStyle;assembly=FlatStyle"
         flatStyle:TitleBar.Value="30"
         flatStyle:OnloadThemeUpdate.Value="True"
         Style="{StaticResource FlatWindow}"
         Title="MainWindow" Height="600" Width="800">
-    <!--Icon="C:\\stira.ico"-->
 
     <DockPanel>
         <StackPanel HorizontalAlignment="Center">
@@ -43,16 +41,6 @@
                 <ComboBoxItem Content="Item 3" />
             </ComboBox>
             <DataGrid x:Name="datagrid" Height="150" />
-            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                <StackPanel Orientation="Horizontal">
-                    <TextBlock Text="Primary Color" />
-                    <xctk:ColorPicker Name="ClrPcker_Primary" SelectedColorChanged="ClrPcker_Background_SelectedColorChanged"></xctk:ColorPicker>
-                </StackPanel>
-                <StackPanel Orientation="Horizontal">
-                    <TextBlock Text="Secondary Color" />
-                    <xctk:ColorPicker Name="ClrPcker_Secondary" SelectedColorChanged="ClrPcker_Secondary_SelectedColorChanged"></xctk:ColorPicker>
-                </StackPanel>
-            </StackPanel>
 
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                 <Button Style="{StaticResource IconButton}" Margin="5" Content="&#xf086;" Width="20" />
@@ -62,9 +50,25 @@
                 <Button Style="{StaticResource IconButton}" Margin="5" Content="{StaticResource Fa-address-card}" Width="20" />
             </StackPanel>
 
-            <CheckBox  Content="this g check" HorizontalAlignment="Left" />
+            <StackPanel Orientation="Horizontal">
+                <CheckBox  Content="this g check" HorizontalAlignment="Left" />
+                <CheckBox IsChecked="True"  Style="{StaticResource StatusLed}" />
+                <CheckBox IsChecked="True"  Style="{StaticResource StatusLed}" flatStyle:BaseColor.Value="Green" />
+                <CheckBox IsChecked="False"  Style="{StaticResource StatusLed}" flatStyle:BaseColor.Value="Green" />
+                <CheckBox IsChecked="False" Style="{StaticResource StatusLed}" />
+                <CheckBox IsChecked="False" Style="{StaticResource TickStatus}" />
+                <CheckBox IsChecked="True"  Style="{StaticResource TickStatus}" />
+            </StackPanel>
+
             <TextBox Text="This is textbox text" flatStyle:PlaceHoldingText.Value="This is placeholder" />
             <TextBox  flatStyle:PlaceHoldingText.Value="This is placeholder" />
+            <ProgressBar IsEnabled="True"  IsIndeterminate="True" />
+            <ProgressBar IsEnabled="True"  Value="60" />
         </StackPanel>
+        <TabControl  DockPanel.Dock="Right">
+            <TabItem Header="Tab 1">
+            </TabItem>
+            <TabItem Header="Tab 2" />
+        </TabControl>
     </DockPanel>
 </Window>

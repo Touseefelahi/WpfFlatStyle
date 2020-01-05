@@ -1,6 +1,7 @@
 ﻿using FlatStyle.Controls;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Text;
 using System.Windows;
 using System.Windows.Controls;
@@ -33,16 +34,12 @@ namespace FlatStyle
             set => FlatStyle.Style.SetPrimaryColor(value);
         }
 
+        public ColorFlat SelectedColorName { get; set; }
+
         public string SecondaryColor
         {
             get => FlatStyle.Style.GetColor(ColorFlat.SecondaryColor).ToString();
             set => FlatStyle.Style.SetSecondaryColor(value);
-        }
-
-        public string ContentColor
-        {
-            get => FlatStyle.Style.GetColor(ColorFlat.ControlForegroundColor).ToString();
-            set => FlatStyle.Style.SetColor(ColorFlat.ControlForegroundColor, value);
         }
 
         private void SaveTheme(object sender, RoutedEventArgs e)
@@ -52,23 +49,43 @@ namespace FlatStyle
 
         private void TextBox_PreviewMouseDoubleClickPrimary(object sender, MouseButtonEventArgs e)
         {
-            ColorPicker colorPicker = new ColorPicker();
-            colorPicker.ShowDialog();
-            PrimaryColor = colorPicker.SelectedColor.ToString();
+            ColorPicker colorPicker = new ColorPicker(FlatStyle.Style.GetColor(ColorFlat.PrimaryColor));
+            if (colorPicker.ShowDialog().Value)
+            {
+                PrimaryColor = colorPicker.SelectedColor.ToString();
+            }
         }
 
         private void TextBox_PreviewMouseDoubleClickSecondary(object sender, MouseButtonEventArgs e)
         {
-            ColorPicker colorPicker = new ColorPicker();
-            colorPicker.ShowDialog();
-            SecondaryColor = colorPicker.SelectedColor.ToString();
+            ColorPicker colorPicker = new ColorPicker(FlatStyle.Style.GetColor(ColorFlat.SecondaryColor));
+            if (colorPicker.ShowDialog().Value)
+            {
+                SecondaryColor = colorPicker.SelectedColor.ToString();
+            }
         }
 
-        private void TextBox_PreviewMouseDoubleClickContent(object sender, MouseButtonEventArgs e)
+        private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            ColorPicker colorPicker = new ColorPicker();
-            colorPicker.ShowDialog();
-            ContentColor = colorPicker.SelectedColor.ToString();
+            selectedColorText.Text = FlatStyle.Style.GetColor(SelectedColorName).ToString();
+            SelectedColorDisplay.Background = new SolidColorBrush(FlatStyle.Style.GetColor(SelectedColorName));
+        }
+
+        private void TextBox_PreviewMouseDoubleClickCustom(object sender, MouseButtonEventArgs e)
+        {
+            ColorPicker colorPicker = new ColorPicker(FlatStyle.Style.GetColor(SelectedColorName));
+            if (colorPicker.ShowDialog().Value)
+            {
+                selectedColorText.Text = colorPicker.SelectedColor.ToString();
+                FlatStyle.Style.SetColor(SelectedColorName, selectedColorText.Text);
+                SelectedColorDisplay.Background = new SolidColorBrush(FlatStyle.Style.GetColor(SelectedColorName));
+            }
+        }
+
+        private void LoadDefaultOnRestart(object sender, RoutedEventArgs e)
+        {
+            FlatStyle.Style.LoadDefaultOnRestart();
+            MessageBox.Show("Will be effective on restart");
         }
     }
 }

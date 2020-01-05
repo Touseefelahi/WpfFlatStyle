@@ -12,8 +12,6 @@ namespace FlatStyle.Sample
         public MainWindow()
         {
             InitializeComponent();
-            ClrPcker_Primary.SelectedColor = FlatStyle.Style.GetColor(ColorFlat.PrimaryColor);
-            ClrPcker_Secondary.SelectedColor = FlatStyle.Style.GetColor(ColorFlat.SecondaryColor);
 
             Dataset dataset1 = new Dataset("Daryl", "MacDavitt", "dmacdavitt0@fema.gov", "Male", "165.132.34.62");
             Dataset dataset2 = new Dataset("Sherwood", "Conan", "sconan1@dell.com", "Male", "34.97.62.115");
@@ -43,12 +41,10 @@ namespace FlatStyle.Sample
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            // FlatStyle.Style.SetTheme();
             var currentBackGroundColor = FlatStyle.Style.GetColor(ColorFlat.BackgroundColor);
             var currentForeGroundColor = FlatStyle.Style.GetColor(ColorFlat.ForegroundMainColor);
 
-            FlatStyle.Style.SetColor(ColorFlat.BackgroundColor, currentForeGroundColor);
-            FlatStyle.Style.SetColor(ColorFlat.ForegroundMainColor, currentBackGroundColor);
+            FlatStyle.Style.ToggleNightMode();
             var button = ai;
         }
 
@@ -74,18 +70,6 @@ namespace FlatStyle.Sample
                     WindowState = WindowState.Normal;
                     break;
             }
-        }
-
-        private void ClrPcker_Background_SelectedColorChanged(object sender, RoutedPropertyChangedEventArgs<Color?> e)
-        {
-            if (ClrPcker_Secondary.SelectedColor.HasValue)
-                FlatStyle.Style.SetTheme(e.NewValue.Value, ClrPcker_Secondary.SelectedColor.Value, FlatStyle.Style.IsLightTheme);
-        }
-
-        private void ClrPcker_Secondary_SelectedColorChanged(object sender, RoutedPropertyChangedEventArgs<Color?> e)
-        {
-            if (ClrPcker_Primary.SelectedColor.HasValue)
-                FlatStyle.Style.SetTheme(ClrPcker_Primary.SelectedColor.Value, e.NewValue.Value, FlatStyle.Style.IsLightTheme);
         }
     }
 }

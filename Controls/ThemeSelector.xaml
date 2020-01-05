@@ -6,31 +6,51 @@
              xmlns:local="clr-namespace:FlatStyle"
              xmlns:control="clr-namespace:FlatStyle.Controls"
              mc:Ignorable="d"
+               xmlns:sys="clr-namespace:System;assembly=mscorlib"
              d:DesignHeight="450" d:DesignWidth="800">
-    <DockPanel TextBlock.Foreground="{DynamicResource ForegroundMainBrush}" Background="{DynamicResource BackgroundBrush}">
-        <StackPanel DockPanel.Dock="Bottom">
+
+    <UserControl.Resources>
+        <ObjectDataProvider MethodName="GetValues"
+                    ObjectType="{x:Type sys:Enum}"
+                    x:Key="FlatColorNames">
+            <ObjectDataProvider.MethodParameters>
+                <x:Type TypeName="local:ColorFlat" />
+            </ObjectDataProvider.MethodParameters>
+        </ObjectDataProvider>
+    </UserControl.Resources>
+
+    <Grid TextBlock.Foreground="{DynamicResource ForegroundMainBrush}" Background="{DynamicResource BackgroundBrush}">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition Width="22" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+
+        <TextBlock  Text="Primary Color"  Height="20" />
+        <TextBox Text="{Binding PrimaryColor}" Grid.Column="1" PreviewMouseDoubleClick="TextBox_PreviewMouseDoubleClickPrimary" />
+        <Border Width="20" Height="20" Grid.Column="2" BorderBrush="{DynamicResource ForegroundMainBrush}" BorderThickness="1" PreviewMouseDown="TextBox_PreviewMouseDoubleClickPrimary" Background="{DynamicResource PrimaryBrush}" />
+
+        <TextBlock Grid.Row="1" Text="Secondary Color"  Height="20" />
+        <TextBox   Grid.Row="1" Grid.Column="1" Text="{Binding SecondaryColor}" PreviewMouseDoubleClick="TextBox_PreviewMouseDoubleClickSecondary" />
+        <Border    Grid.Row="1" Grid.Column="2" Width="20" Height="20" BorderBrush="{DynamicResource ForegroundMainBrush}" BorderThickness="1" PreviewMouseDown="TextBox_PreviewMouseDoubleClickSecondary" Background="{DynamicResource SecondaryBrush}" />
+
+        <ToggleButton  Grid.Row="3" Grid.ColumnSpan="3" local:IsCheckedText.Value="Light Theme Enabled"
+                       local:IsUnCheckedText.Value="Dark Theme Enabled" IsChecked="{Binding IsLightTheme}" />
+
+        <ComboBox SelectedItem="{Binding SelectedColorName}" Grid.Row="2" ItemsSource="{Binding Source={StaticResource FlatColorNames}}" SelectionChanged="ComboBox_SelectionChanged" />
+        <TextBox x:Name="selectedColorText" Grid.Row="2" Grid.Column="1" PreviewMouseDoubleClick="TextBox_PreviewMouseDoubleClickCustom" />
+        <Border x:Name="SelectedColorDisplay" Grid.Row="2" Grid.Column="2" Width="20" BorderBrush="{DynamicResource ForegroundMainBrush}" BorderThickness="1" Height="20" PreviewMouseDown="TextBox_PreviewMouseDoubleClickCustom" />
+
+        <StackPanel HorizontalAlignment="Center" Grid.Row="4" Grid.ColumnSpan="3"  Orientation="Horizontal">
+            <Button  Content="Load Default" Click="LoadDefaultOnRestart" />
             <Button  Content="Save Theme" Click="SaveTheme" />
         </StackPanel>
-        <StackPanel DockPanel.Dock="Left">
-            <TextBlock  Text="Primary Color" Height="20" />
-            <TextBlock Text="Secondary Color"  Height="20" />
-            <TextBlock Text="Content Color"    Height="20" />
-            <CheckBox  Content="Light Theme" IsChecked="{Binding IsLightTheme}" />
-        </StackPanel>
-
-        <StackPanel DockPanel.Dock="Right">
-            <StackPanel Orientation="Horizontal">
-                <TextBox Text="{Binding PrimaryColor}" PreviewMouseDoubleClick="TextBox_PreviewMouseDoubleClickPrimary" />
-                <Border Width="20" Height="20" BorderBrush="{DynamicResource ForegroundMainBrush}" BorderThickness="1" PreviewMouseDown="TextBox_PreviewMouseDoubleClickPrimary" Background="{DynamicResource PrimaryBrush}" />
-            </StackPanel>
-            <StackPanel Orientation="Horizontal">
-                <TextBox Text="{Binding SecondaryColor}" PreviewMouseDoubleClick="TextBox_PreviewMouseDoubleClickSecondary" />
-                <Border Width="20" Height="20" BorderBrush="{DynamicResource ForegroundMainBrush}" BorderThickness="1" PreviewMouseDown="TextBox_PreviewMouseDoubleClickSecondary" Background="{DynamicResource SecondaryBrush}" />
-            </StackPanel>
-            <StackPanel Orientation="Horizontal">
-                <TextBox Text="{Binding ContentColor}" PreviewMouseDoubleClick="TextBox_PreviewMouseDoubleClickContent" />
-                <Border Width="20" BorderBrush="{DynamicResource ForegroundMainBrush}" BorderThickness="1" Height="20" PreviewMouseDown="TextBox_PreviewMouseDoubleClickContent" Background="{DynamicResource ControlForegroundBrush}" />
-            </StackPanel>
-        </StackPanel>
-    </DockPanel>
+    </Grid>
 </UserControl>

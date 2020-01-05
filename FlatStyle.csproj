@@ -17,7 +17,15 @@
     <RepositoryType>Git</RepositoryType>
     <PackageTags>Wpf, Theme, Flat-Design</PackageTags>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <Version>1.4.1</Version>
+    <Version>1.4.3</Version>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|netcoreapp3.0|AnyCPU'">
+    <OutputPath>D:\VisualStudioProjects\Visual Studio 2019\Nuget Packages\All Packages\</OutputPath>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|netcoreapp3.0|AnyCPU'">
+    <OutputPath>D:\VisualStudioProjects\Visual Studio 2019\Nuget Packages\All Packages\</OutputPath>
   </PropertyGroup>
 
   <ItemGroup>
@@ -56,6 +64,12 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Page Update="Style\TabControl.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Style\ProgressBar.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Style\ToolTip.xaml">
       <SubType>Designer</SubType>
     </Page>

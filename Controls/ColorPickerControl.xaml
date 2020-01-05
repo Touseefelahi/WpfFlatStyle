@@ -4,7 +4,7 @@
 
     <Grid Height="220" Background="White" MouseWheel="AlphaSlider_MouseWheel" MouseUp="CanvasImage_MouseUp">
         <Grid.RowDefinitions>
-            <RowDefinition Height="150" />
+            <RowDefinition Height="152" />
             <RowDefinition Height="25" />
         </Grid.RowDefinitions>
 
@@ -12,7 +12,7 @@
            MouseDown="CanvasImage_MouseDown"
           MouseUp="CanvasImage_MouseUp" Grid.RowSpan="2">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="150" />
+                <ColumnDefinition Width="152" />
                 <ColumnDefinition Width="100" />
             </Grid.ColumnDefinitions>
 
@@ -21,14 +21,14 @@
 
                 <!-- Selection, Column 0-->
                 <Image x:Name="ColorImage"
-                 Width="150"
-                 Height="150"
+                 Width="152"
+                 Height="152"
                  HorizontalAlignment="Center"
                  VerticalAlignment="Top"
                  Source="pack://application:,,,/FlatStyle;component/Images/ColorSwatchSquare.png" x:Shared="false" />
                 <Canvas x:Name="canvasImage"
-                Width="150"
-                Height="150"
+                Width="152"
+                Height="152"
                 HorizontalAlignment="Center"
                 Background="Transparent"
                 VerticalAlignment="Top"
