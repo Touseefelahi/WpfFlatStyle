@@ -61,9 +61,10 @@ Dark Theme:
 ![alt text](https://github.com/Touseefelahi/WpfFlatStyle/blob/master/BlueDarkTheme.png " Dark Theme")
 
 # Button
-+ [Button Style Sheet](https://github.com/Touseefelahi/WpfFlatStyle/blob/master/Style/Button.xaml#StyleSheet)
-+ [Icon Button Style Sheet](https://github.com/Touseefelahi/WpfFlatStyle/blob/master/Style/ButtonIconBased.xaml#StyleSheet)
- 
+[Button Style Sheet](https://github.com/Touseefelahi/WpfFlatStyle/blob/master/Style/Button.xaml#StyleSheet)
+
+[Icon Button Style Sheet](https://github.com/Touseefelahi/WpfFlatStyle/blob/master/Style/ButtonIconBased.xaml#StyleSheet)   
+        
     <Button Content="Normal Button" />
     <Button Content="SecondaryButton" Style="{StaticResource SecondaryButton}" />
     <Button Style="{StaticResource IconButton}" Content="{StaticResource Fa-address-book}" />
@@ -72,7 +73,8 @@ Dark Theme:
     <Button Style="{StaticResource IconButton}"  Content="{StaticResource Fa-address-card}" />  
    
 # Toggle Button
-+ [Button Style Sheet](https://github.com/Touseefelahi/WpfFlatStyle/blob/master/Style/Button.xaml#StyleSheet)
+[Button Style Sheet](https://github.com/Touseefelahi/WpfFlatStyle/blob/master/Style/Button.xaml#StyleSheet)
+
 
     <ToggleButton flatStyle:IsCheckedText.Value="This Text Will Appear when its is checked"  flatStyle:IsUnCheckedText.Value="This Text Will Appear when its is unChecked"  />
     
