@@ -1,5 +1,12 @@
-# Use this text in your App.xaml file
+# Content
++ [How to use](https://github.com/Touseefelahi/WpfFlatStyle#How-To-Use)
++ [Chrome Window](https://github.com/Touseefelahi/WpfFlatStyle#Chrome-Window)
++ [Button](https://github.com/Touseefelahi/WpfFlatStyle#button)
++ [Toggle Button](https://github.com/Touseefelahi/WpfFlatStyle#Toggle-button)
++ [CheckBox](https://github.com/Touseefelahi/WpfFlatStyle#checkbox)
 
+# How To Use
+Add This In your App.xaml file
     <Application.Resources>
            <ResourceDictionary>
                <ResourceDictionary.MergedDictionaries>
@@ -23,7 +30,13 @@
      </Application.Resources>
 
 
- # Set Style As flat window
+ # Chrome Window
+ Add  these three lines in your window
+ 
+        xmlns:flatStyle="clr-namespace:FlatStyle;assembly=FlatStyle"           
+        Style="{StaticResource FlatWindow}"
+        flatStyle:TitleBar.Value="30"
+ As Shown below:
  
         <Window x:Class="FlatStyle.Sample.MainWindow"      
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"        
@@ -44,11 +57,6 @@
  
 Dark Theme: 
 ![alt text](https://github.com/Touseefelahi/WpfFlatStyle/blob/master/BlueDarkTheme.png " Dark Theme")
-
-# Quick Hints
-+ [Button](https://github.com/Touseefelahi/WpfFlatStyle#button)
-+ [Toggle Button](https://github.com/Touseefelahi/WpfFlatStyle#Toggle-button)
-+ [CheckBox](https://github.com/Touseefelahi/WpfFlatStyle#checkbox)
 
 # Button
 
