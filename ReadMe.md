@@ -1,7 +1,7 @@
 ﻿ 
 
  #Use this text in your App.xaml file
- ---
+===
  '''xaml
  <Application.Resources>
         <ResourceDictionary>
@@ -28,7 +28,7 @@
   '''
 
  # Set Style As flat window as shown below for Cool Chrome Window
- ---
+===
  '''xaml
    <Window x:Class="FlatStyle.Sample.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
