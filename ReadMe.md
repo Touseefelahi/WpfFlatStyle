@@ -2,7 +2,6 @@
 
  #Use this text in your App.xaml file
 ===
- '''xml
  <Application.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
@@ -25,11 +24,10 @@
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
   </Application.Resources>
-  '''
 
- # Set Style As flat window as shown below for Cool Chrome Window
+
+ # Set Style As flat window
 ===
- '''xml
    <Window x:Class="FlatStyle.Sample.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
@@ -37,8 +35,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
         mc:Ignorable="d"
-        xmlns:flatStyle="clr-namespace:FlatStyle;assembly=FlatStyle"
-        Style="{StaticResource FlatWindow}"
-        flatStyle:TitleBar.Value="30"
+        'xmlns:flatStyle="clr-namespace:FlatStyle;assembly=FlatStyle"'
+        'Style="{StaticResource FlatWindow}"'
+        'flatStyle:TitleBar.Value="30"'
         Title="MainWindow" Height="450" Width="800">
-'''
+
