@@ -36,7 +36,7 @@
                             KeyboardNavigation.TabIndex="2"
                             BorderBrush="{DynamicResource PrimaryLightBrush}">
                             <ContentPresenter x:Name="PART_SelectedContentHost"
-                                              Margin="4"
+                                              Margin="2,24,2,2"
                                               ContentSource="SelectedContent" />
                         </Border>
                     </Grid>

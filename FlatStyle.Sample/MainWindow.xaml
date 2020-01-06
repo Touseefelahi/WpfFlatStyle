@@ -67,6 +67,12 @@
         </StackPanel>
         <TabControl  DockPanel.Dock="Right">
             <TabItem Header="Tab 1">
+                <StackPanel>
+                    <TextBlock Style="{StaticResource PrimaryText}" Text="This is Primary Text" />
+                    <TextBlock Style="{StaticResource PrimaryBackgroundText}" Text="This is PrimaryBackground Text" />
+                    <TextBlock Style="{StaticResource SecondaryText}" Text="This is Secondary Text" />
+                    <TextBlock Style="{StaticResource SecondaryBackgroundText}" Text="This is SecondaryBackground Text" />
+                </StackPanel>
             </TabItem>
             <TabItem Header="Tab 2" />
         </TabControl>

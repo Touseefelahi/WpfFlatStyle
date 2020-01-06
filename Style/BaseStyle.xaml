@@ -5,7 +5,7 @@
         <Setter Property="Control.Margin" Value="3" />
         <Setter Property="Control.Background" Value="{x:Null}" />
         <Setter Property="Control.BorderBrush" Value="{x:Null}" />
-        <Setter Property="TextElement.FontFamily" Value="{StaticResource FontPrimary}" />
+        <Setter Property="TextElement.FontFamily" Value="{DynamicResource FontPrimary}" />
         <Setter Property="Control.VerticalAlignment" Value="Center" />
     </Style>
 

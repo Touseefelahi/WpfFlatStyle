@@ -8,6 +8,22 @@
         <Setter Property="Foreground" Value="{DynamicResource PrimaryBrush}" />
     </Style>
 
+    <Style x:Key="SecondaryText" TargetType="{x:Type TextBlock}" BasedOn="{StaticResource BaseTextBlock}">
+        <Setter Property="Foreground" Value="{DynamicResource SecondaryBrush}" />
+    </Style>
+
+    <Style x:Key="PrimaryBackgroundText" TargetType="{x:Type TextBlock}" BasedOn="{StaticResource BaseTextBlock}">
+        <Setter Property="Background" Value="{DynamicResource PrimaryBrush}" />
+        <Setter Property="Padding" Value="2" />
+        <Setter Property="Foreground" Value="{DynamicResource ControlForegroundBrush}" />
+    </Style>
+
+    <Style x:Key="SecondaryBackgroundText" TargetType="{x:Type TextBlock}" BasedOn="{StaticResource BaseTextBlock}">
+        <Setter Property="Background" Value="{DynamicResource SecondaryBrush}" />
+        <Setter Property="Padding" Value="2" />
+        <Setter Property="Foreground" Value="{DynamicResource ControlForegroundBrush}" />
+    </Style>
+
     <Style x:Key="PrimaryTextBold" TargetType="{x:Type TextBlock}" BasedOn="{StaticResource PrimaryText}">
         <Setter Property="FontWeight" Value="Bold" />
     </Style>
