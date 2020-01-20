@@ -18,21 +18,29 @@
     <RepositoryType>Git</RepositoryType>
     <PackageTags>Wpf, Theme, Flat-Design</PackageTags>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <Version>1.4.4</Version>
+    <Version>1.4.6</Version>
+    <PackageIcon>Stira.png</PackageIcon>
+    <PackageIconUrl />
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|netcoreapp3.0|AnyCPU'">
     <OutputPath>D:\VisualStudioProjects\Visual Studio 2019\Nuget Packages\All Packages\</OutputPath>
+    <DocumentationFile>D:\VisualStudioProjects\Visual Studio 2019\Nuget Packages\FlatStyle\FlatStyle.xml</DocumentationFile>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|netcoreapp3.0|AnyCPU'">
     <OutputPath>D:\VisualStudioProjects\Visual Studio 2019\Nuget Packages\All Packages\</OutputPath>
+    <DocumentationFile>D:\VisualStudioProjects\Visual Studio 2019\Nuget Packages\FlatStyle\FlatStyle.xml</DocumentationFile>
   </PropertyGroup>
 
   <ItemGroup>
     <Compile Remove="FlatStyle.Sample\**" />
     <EmbeddedResource Remove="FlatStyle.Sample\**" />
     <None Remove="FlatStyle.Sample\**" />
+    <None Include="C:\Users\Touseef\Downloads\Stira.png">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
     <Page Remove="FlatStyle.Sample\**" />
   </ItemGroup>
 
@@ -62,6 +70,22 @@
     <Resource Include="Fonts\QuickSand\Quicksand-SemiBold.ttf" />
     <Resource Include="Icons\stira.ico" />
     <Resource Include="Images\ColorSwatchSquare.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="build\Stira.WpfFlatStyle.targets">
+      <PackagePath>build/</PackagePath>
+      <Pack>true</Pack>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="$(MSBuildThisFileDirectory)\ReadMe.md">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Link>ReadMe.md</Link>
+      <Pack>True</Pack>
+      <Visible>True</Visible>
+    </None>
   </ItemGroup>
 
   <ItemGroup>

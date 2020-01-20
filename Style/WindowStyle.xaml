@@ -2,8 +2,7 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:local="clr-namespace:FlatStyle">
 
-    <Style x:Key="FlatWindow" TargetType="{x:Type Window}">
-
+    <Style x:Key="FlatWindowTransparent" TargetType="{x:Type Window}">
         <Setter Property="WindowStyle" Value="None" />
         <Setter Property="AllowsTransparency" Value="True" />
         <Setter Property="local:TitleBar.Value" Value="22" />
@@ -128,6 +127,78 @@
                             </Border>
                         </Grid>
                     </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="FlatWindow" TargetType="{x:Type Window}">
+        <Setter Property="WindowStyle" Value="None" />
+        <Setter Property="local:TitleBar.Value" Value="30" />
+        <Setter Property="local:OnloadThemeUpdate.Value" Value="True" />
+        <Setter Property="Background" Value="{DynamicResource BackgroundBrush}" />
+        <Setter Property="TextBlock.Foreground" Value="{DynamicResource ForegroundMainBrush}" />
+        <Setter Property="Padding" Value="5" />
+        <Setter Property="Icon" Value="pack://application:,,,/FlatStyle;component/Icons/stira.ico" />
+        <Setter Property="WindowChrome.WindowChrome">
+            <Setter.Value>
+                <WindowChrome ResizeBorderThickness="7" CaptionHeight="25" />
+            </Setter.Value>
+        </Setter>
+
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Window}">
+
+                    <!-- Main window outline -->
+                    <DockPanel Background="{DynamicResource BackgroundBrush}" LastChildFill="True">
+                        <Grid VerticalAlignment="Top" DockPanel.Dock="Top" MaxHeight="{TemplateBinding Property=local:TitleBar.Value}">
+                            <!-- Icon -->
+                            <StackPanel Width="60" MaxHeight="30" HorizontalAlignment="Left" Orientation="Horizontal">
+                                <Image Source="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=Icon}" Margin="2"
+                                               VerticalAlignment="Top" HorizontalAlignment="Left" WindowChrome.IsHitTestVisibleInChrome="True" />
+
+                                <Button Content="{StaticResource Fa-palette}" Foreground="{DynamicResource PrimaryBrush}" Style="{DynamicResource WindowIconButton}" Margin="5,0,0,2" Width="20"
+                                                Command="{x:Static local:Command.Theme}" HorizontalAlignment="Left" VerticalAlignment="Center"
+                                                CommandParameter="{Binding RelativeSource= {RelativeSource Mode=FindAncestor, AncestorType={x:Type Window}}}" />
+                            </StackPanel>
+                            <!-- Title -->
+                            <TextBlock  FontSize="17" HorizontalAlignment="Center"
+                                            FontWeight="Bold"
+                                            Text="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=Title}"
+                                            Foreground="{DynamicResource ForegroundMainBrush}"
+                                            TextAlignment="Center" />
+
+                            <!-- Window Buttons -->
+                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Center">
+                                <Button Content="{StaticResource Fa-window-minimize}" Style="{DynamicResource WindowIconButton}" Margin="3" Width="22" Command="{x:Static local:Command.Minimize}"
+                                    CommandParameter="{Binding RelativeSource= {RelativeSource Mode=FindAncestor, AncestorType={x:Type Window}}}" />
+
+                                <Button Width="22" Margin="3" Command="{x:Static local:Command.Maximize}"
+                                                    CommandParameter="{Binding RelativeSource= {RelativeSource Mode=FindAncestor, AncestorType={x:Type Window}}}">
+                                    <ContentControl.Style>
+                                        <Style TargetType="{x:Type Button}" BasedOn="{StaticResource WindowIconButton}">
+                                            <Style.Triggers>
+                                                <DataTrigger Binding="{Binding Path=WindowState, RelativeSource= {RelativeSource Mode=FindAncestor, AncestorType={x:Type Window}}}" Value="Maximized">
+                                                    <Setter Property="Content" Value="{StaticResource Fa-window-restore}" />
+                                                </DataTrigger>
+                                                <DataTrigger Binding="{Binding Path=WindowState, RelativeSource= {RelativeSource Mode=FindAncestor, AncestorType={x:Type Window}}}" Value="Normal">
+                                                    <Setter Property="Content" Value="{StaticResource Fa-window-maximize}" />
+                                                </DataTrigger>
+                                            </Style.Triggers>
+                                        </Style>
+                                    </ContentControl.Style>
+                                </Button>
+
+                                <Button Content="{StaticResource Fa-window-close}" Style="{DynamicResource WindowIconButton}" Width="22" Margin="3" Command="{x:Static local:Command.Close}"
+                                    CommandParameter="{Binding RelativeSource= {RelativeSource Mode=FindAncestor, AncestorType={x:Type Window}}}" />
+                            </StackPanel>
+                        </Grid>
+
+                        <Border DockPanel.Dock="Bottom" BorderThickness="0,1,0,0" BorderBrush="{DynamicResource PrimaryLightBrush}">
+                            <ContentPresenter   Content="{TemplateBinding Content}" />
+                        </Border>
+                    </DockPanel>
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
