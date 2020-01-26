@@ -32,7 +32,7 @@ Add This In your App.xaml file
      </Application.Resources>
 
 
- # Chrome Window
+# Chrome Window
  Add  these three lines in your window
  
         xmlns:flatStyle="clr-namespace:FlatStyle;assembly=FlatStyle"           
@@ -52,7 +52,7 @@ Add This In your App.xaml file
         flatStyle:TitleBar.Value="30"
         Title="MainWindow" Height="450" Width="800">
         
- # Sample
+# Sample
  
  Light Theme: 
 ![alt text](https://github.com/Touseefelahi/WpfFlatStyle/blob/master/BlueLightTheme.png " Light Theme")
