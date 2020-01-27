@@ -114,6 +114,31 @@
             All custom routed commands
             </summary>
         </member>
+        <member name="F:FlatStyle.Command.UpdateNumericUpDownValue">
+            <summary>
+            It updates the numeric updown value
+            </summary>
+        </member>
+        <member name="F:FlatStyle.Command.Close">
+            <summary>
+            close command for window
+            </summary>
+        </member>
+        <member name="F:FlatStyle.Command.Maximize">
+            <summary>
+            maximize command for window
+            </summary>
+        </member>
+        <member name="F:FlatStyle.Command.Minimize">
+            <summary>
+            Minimize command for window
+            </summary>
+        </member>
+        <member name="F:FlatStyle.Command.Theme">
+            <summary>
+            Theme Setter for Flat window
+            </summary>
+        </member>
         <member name="F:FlatStyle.DelegateCommand.mAction">
             <summary>
             The action to run
