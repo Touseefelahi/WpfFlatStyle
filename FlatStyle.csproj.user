@@ -22,6 +22,9 @@
     <Page Update="Style\ProgressBar.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="Style\Slider.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Style\ToolTip.xaml">
       <SubType>Designer</SubType>
     </Page>

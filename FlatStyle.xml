@@ -75,6 +75,30 @@
             <param name="sender">The UI element that this property was changed for</param>
             <param name="e">The arguments for this event</param>
         </member>
+        <member name="T:FlatStyle.LogUnhandledExceptions">
+            <summary>
+            Logs unhandled exceptions if true in <see cref="F:FlatStyle.LogUnhandledExceptions.fileName"/>
+            </summary>
+        </member>
+        <member name="M:FlatStyle.LogUnhandledExceptions.Log(System.String)">
+            <summary>
+            Logs message in <see cref="F:FlatStyle.LogUnhandledExceptions.fileName"/> file
+            </summary>
+            <param name="message">Message to log</param>
+        </member>
+        <member name="M:FlatStyle.LogUnhandledExceptions.Log(System.Exception)">
+            <summary>
+            Logs message in <see cref="F:FlatStyle.LogUnhandledExceptions.fileName"/> file
+            </summary>
+            <param name="ex">Exception to log</param>
+        </member>
+        <member name="M:FlatStyle.LogUnhandledExceptions.OnValueUpdated(System.Windows.DependencyObject,System.Object)">
+            <summary>
+            Hook all unhandled exceptions to the log method
+            </summary>
+            <param name="sender">Sender</param>
+            <param name="value">bool</param>
+        </member>
         <member name="F:FlatStyle.ColorFlat.PrimaryColor">
             <summary>
             This is the primary color of Flat UI Buttons, Headers
@@ -83,6 +107,11 @@
         <member name="F:FlatStyle.ColorFlat.PrimaryLightColor">
             <summary>
             This is the primary color of Flat UI with light shade of primary color
+            </summary>
+        </member>
+        <member name="T:FlatStyle.Command">
+            <summary>
+            All custom routed commands
             </summary>
         </member>
         <member name="F:FlatStyle.DelegateCommand.mAction">

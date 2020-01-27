@@ -24,6 +24,16 @@
         <Setter Property="Foreground" Value="{DynamicResource ControlForegroundBrush}" />
     </Style>
 
+    <Style x:Key="ErrorText" TargetType="{x:Type TextBlock}" BasedOn="{StaticResource BaseTextBlock}">
+        <Setter Property="Foreground" Value="{DynamicResource ErrorBrush}" />
+    </Style>
+
+    <Style x:Key="ErrorBackgroundText" TargetType="{x:Type TextBlock}" BasedOn="{StaticResource BaseTextBlock}">
+        <Setter Property="Background" Value="{DynamicResource ErrorBrush}" />
+        <Setter Property="Padding" Value="2" />
+        <Setter Property="Foreground" Value="{DynamicResource ControlForegroundBrush}" />
+    </Style>
+
     <Style x:Key="PrimaryTextBold" TargetType="{x:Type TextBlock}" BasedOn="{StaticResource PrimaryText}">
         <Setter Property="FontWeight" Value="Bold" />
     </Style>
@@ -31,22 +41,24 @@
     <Style TargetType="{x:Type TextBox}" BasedOn="{StaticResource BaseStyle}">
         <Setter Property="Foreground" Value="{DynamicResource ForegroundMainBrush}" />
         <Setter Property="CaretBrush" Value="{DynamicResource ForegroundMainBrush}" />
+        <Setter Property="BorderBrush" Value="{DynamicResource PrimaryBrush}" />
+        <Setter Property="BorderThickness" Value="0 0 0 1.5" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type TextBoxBase}">
                     <Grid>
-                        <Border  x:Name="shadowBorder" BorderThickness="0 0 0 1.5"  BorderBrush="{DynamicResource PrimaryBrush}">
+                        <Border  x:Name="shadowBorder" BorderThickness="{TemplateBinding BorderThickness}"  BorderBrush="{TemplateBinding BorderBrush}">
                         </Border>
                         <Border x:Name="border"
-                                BorderBrush="{DynamicResource PrimaryBrush}"
-                                BorderThickness="0 0 0 1.5"
+                                BorderBrush="{TemplateBinding BorderBrush}"
+                                BorderThickness="{TemplateBinding BorderThickness}"
                                 SnapsToDevicePixels="True">
                             <ScrollViewer x:Name="PART_ContentHost"
                                           Focusable="False"
                                           VerticalAlignment="Bottom"
                                           HorizontalScrollBarVisibility="Hidden"
                                           VerticalScrollBarVisibility="Hidden"
-                                          Foreground="{DynamicResource ForegroundMainBrush}" />
+                                          Foreground="{TemplateBinding Foreground}" />
                         </Border>
 
                         <TextBlock IsHitTestVisible="False"
@@ -56,7 +68,7 @@
                                    Padding="{TemplateBinding Padding}"
                                    Margin="2"
                                    HorizontalAlignment="{TemplateBinding HorizontalAlignment}"
-                                   Foreground="{DynamicResource DisabledBrush}">
+                                   Foreground="{TemplateBinding Foreground}">
                             <TextBlock.Style>
                                 <Style TargetType="{x:Type TextBlock}">
                                     <Setter Property="Visibility" Value="Collapsed" />

@@ -1,15 +1,37 @@
 ﻿using System;
 using System.Windows;
+using System.Windows.Controls;
 
 namespace FlatStyle
 {
+    /// <summary>
+    /// All custom routed commands
+    /// </summary>
     public static class Command
     {
+        /// <summary>
+        /// It updates the numeric updown value
+        /// </summary>
+        public static ParameterizedDelegateCommand UpdateNumericUpDownValue = new ParameterizedDelegateCommand((sender) => UpdateValue(sender));
+
+        /// <summary>
+        /// close command for window
+        /// </summary>
         public static ParameterizedDelegateCommand Close = new ParameterizedDelegateCommand((parameter) => CloseWindow(parameter));
+
+        /// <summary>
+        /// maximize command for window
+        /// </summary>
         public static ParameterizedDelegateCommand Maximize = new ParameterizedDelegateCommand((parameter) => MaximizeWindow(parameter));
 
+        /// <summary>
+        /// Minimize command for window
+        /// </summary>
         public static ParameterizedDelegateCommand Minimize = new ParameterizedDelegateCommand((parameter) => MinimizeWindow(parameter));
 
+        /// <summary>
+        /// Theme Setter for Flat window
+        /// </summary>
         public static ParameterizedDelegateCommand Theme =
             new ParameterizedDelegateCommand(
             (parameter) =>
@@ -17,6 +39,27 @@ namespace FlatStyle
             );
 
         private static Window windowContact;
+
+        private static void UpdateValue(object sender)
+        {
+            if (sender is object[] objects && objects[0] is Slider slider && objects[1] is TextBox textBox)
+            {
+                try
+                {
+                    try
+                    {
+                        slider.Value = Convert.ToDouble(textBox.Text.Replace(" ", ""));
+                    }
+                    catch { }
+                    textBox.Text = slider.Value.ToString();
+                    textBox.CaretIndex = textBox.Text.Length;
+                }
+                catch
+                {
+                    throw;
+                }
+            }
+        }
 
         private static void ThemeSetter(object parameter)
         {

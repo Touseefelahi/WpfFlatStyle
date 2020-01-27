@@ -9,17 +9,51 @@ using System.Windows.Threading;
 
 namespace FlatStyle
 {
+    /// <summary>
+    /// Logs unhandled exceptions if true in <see cref="fileName"/>
+    /// </summary>
     public class LogUnhandledExceptions : BaseAttachedProperty<LogUnhandledExceptions, bool>
     {
-        private static string fileName = "Log.txt";
+        private const string fileName = "Exceptions.log";
 
+        /// <summary>
+        /// Logs message in <see cref="fileName"/> file
+        /// </summary>
+        /// <param name="message">Message to log</param>
         public static void Log(string message)
         {
-            using (StreamWriter sw = File.AppendText(fileName))
+            Trace.TraceError(message);
+        }
+
+        /// <summary>
+        /// Logs message in <see cref="fileName"/> file
+        /// </summary>
+        /// <param name="ex">Exception to log</param>
+        public static void Log(Exception ex)
+        {
+            Log(TranslateStack(ex));
+        }
+
+        /// <summary>
+        /// Hook all unhandled exceptions to the log method
+        /// </summary>
+        /// <param name="sender">Sender</param>
+        /// <param name="value">bool</param>
+        public override void OnValueUpdated(DependencyObject sender, object value)
+        {
+            if (value is bool isLoggingRequired)
+            {
+                Trace.Listeners.Add(new TextWriterTraceListener(fileName, "Errors"));
+                Trace.AutoFlush = true;
+                Application.Current.DispatcherUnhandledException += Current_DispatcherUnhandledException;
+                AppDomain.CurrentDomain.UnhandledException += LogExceptions;
+            }
+            else
             {
                 try
                 {
-                    sw.WriteLine($"{DateTime.Now.ToShortDateString()} # {DateTime.Now.TimeOfDay} # {message}");
+                    Application.Current.DispatcherUnhandledException -= Current_DispatcherUnhandledException;
+                    AppDomain.CurrentDomain.UnhandledException -= LogExceptions;
                 }
                 catch
                 {
@@ -27,23 +61,8 @@ namespace FlatStyle
             }
         }
 
-        public static void Log(Exception ex)
-        {
-            Log(TranslateStack(ex));
-        }
-
-        public override void OnValueUpdated(DependencyObject sender, object value)
-        {
-            if (value is bool isLoggingRequired)
-            {
-                Application.Current.DispatcherUnhandledException += Current_DispatcherUnhandledException;
-                AppDomain.CurrentDomain.UnhandledException += LogExceptions;
-            }
-        }
-
         private static string TranslateStack(Exception exception)
         {
-            string format = "{0};{1};{2};{3};{4}";
             StringBuilder builder = new StringBuilder();
             StackTrace trace = new StackTrace(exception, true);
             StackFrame[] stackFrames = trace.GetFrames();
@@ -70,20 +89,20 @@ namespace FlatStyle
                     {
                         subBuilder.Append(", ");
                     }
-                    subBuilder.Append(info.ParameterType.Name + " " + info.Name);
+                    subBuilder.Append(info.ParameterType.Name).Append(' ').Append(info.Name);
                 }
                 if (builder.Length != 0)
                 {
-                    builder.Append("\r\n");
+                    builder.Append(Environment.NewLine);
                 }
-                builder.AppendFormat(CultureInfo.CurrentCulture, format, new object[] { name, subBuilder, fullName, fileName, str });
+                builder.Append(name).Append(", ").Append(subBuilder).Append(", ").Append(fullName).Append(", ").Append(fileName).Append(", ").Append(str);
             }
             return builder.ToString();
         }
 
         private void Current_DispatcherUnhandledException(object sender, DispatcherUnhandledExceptionEventArgs e)
         {
-            Log($"{Environment.NewLine} {sender} {TranslateStack(e.Exception)} {Environment.NewLine}");
+            Log($"{Environment.NewLine}{sender} {TranslateStack(e.Exception)} {Environment.NewLine}");
             e.Handled = false;
         }
 

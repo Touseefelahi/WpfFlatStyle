@@ -1,6 +1,5 @@
 ﻿using System.Collections.ObjectModel;
 using System.Windows;
-using System.Windows.Media;
 
 namespace FlatStyle.Sample
 {
@@ -13,6 +12,8 @@ namespace FlatStyle.Sample
         {
             InitializeComponent();
 
+            //int a = 0;
+            //int b = 1 / a;
             Dataset dataset1 = new Dataset("Daryl", "MacDavitt", "dmacdavitt0@fema.gov", "Male", "165.132.34.62");
             Dataset dataset2 = new Dataset("Sherwood", "Conan", "sconan1@dell.com", "Male", "34.97.62.115");
             Dataset dataset3 = new Dataset("Brooke", "Cluatt", "bcluatt2@bigcartel.com", "Female", "49.208.237.237");
@@ -41,35 +42,8 @@ namespace FlatStyle.Sample
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            var currentBackGroundColor = FlatStyle.Style.GetColor(ColorFlat.BackgroundColor);
-            var currentForeGroundColor = FlatStyle.Style.GetColor(ColorFlat.ForegroundMainColor);
-
             FlatStyle.Style.ToggleNightMode();
-            var button = ai;
-        }
-
-        private void CloseWindow(object sender, RoutedEventArgs e)
-        {
-            Close();
-        }
-
-        private void MinimizeWindow(object sender, RoutedEventArgs e)
-        {
-            WindowState = WindowState.Minimized;
-        }
-
-        private void MaximizeWindow(object sender, RoutedEventArgs e)
-        {
-            switch (WindowState)
-            {
-                case WindowState.Normal:
-                    WindowState = WindowState.Maximized;
-                    break;
-
-                case WindowState.Maximized:
-                    WindowState = WindowState.Normal;
-                    break;
-            }
+            System.Windows.Controls.Primitives.ToggleButton button = ai;
         }
     }
 }

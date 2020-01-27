@@ -15,7 +15,7 @@
 
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                 <ToggleButton flatStyle:IsCheckedText.Value="Something"  flatStyle:IsUnCheckedText.Value="Something2"   VerticalAlignment="Center" />
-                <ToggleButton IsEnabled="False" Content="isNotEnabled" HorizontalAlignment="Center">
+                <ToggleButton IsEnabled="False" Content="IsDisabled" HorizontalAlignment="Center">
                 </ToggleButton>
             </StackPanel>
 
@@ -26,12 +26,19 @@
 
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                 <Button Content="Normal Button" />
+                <Button Content="NormMidButton" Style="{StaticResource PrimaryMidButton}" />
+                <Button Content="NormLightButton" Style="{StaticResource PrimaryLightButton}" />
                 <Button Content="Normal Button disabled" IsEnabled="False" />
             </StackPanel>
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-
                 <Button Content="SecondaryButton" Style="{StaticResource SecondaryButton}" />
+                <Button Content="SecMidButton" Style="{StaticResource SecondaryMidButton}" />
+                <Button Content="SecLightButton" Style="{StaticResource SecondaryLightButton}" />
                 <Button Content="SecondaryButton Disabled" IsEnabled="False" Style="{StaticResource SecondaryButton}" />
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <Button Content="CautionButton" Style="{StaticResource CautionButton}" />
+                <ToggleButton Content="CautionToggle" Style="{StaticResource CautionToggleButton}" />
             </StackPanel>
 
             <ComboBox>
@@ -71,6 +78,10 @@
                     <TextBlock Style="{StaticResource PrimaryBackgroundText}" Text="This is PrimaryBackground Text" />
                     <TextBlock Style="{StaticResource SecondaryText}" Text="This is Secondary Text" />
                     <TextBlock Style="{StaticResource SecondaryBackgroundText}" Text="This is SecondaryBackground Text" />
+                    <TextBlock Style="{StaticResource ErrorText}" Text="This is Error Text" />
+                    <TextBlock Style="{StaticResource ErrorBackgroundText}" Text="This is ErrorBackground Text" />
+                    <Slider />
+                    <Slider Style="{StaticResource NumericUpDown}" />
                 </StackPanel>
             </TabItem>
             <TabItem Header="Tab 2" />

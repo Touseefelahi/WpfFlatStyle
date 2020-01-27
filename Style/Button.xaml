@@ -50,13 +50,76 @@
         <Setter Property="Background" Value="{DynamicResource SecondaryBrush}" />
     </Style>
 
+    <Style x:Key="SecondaryMidButton" TargetType="{x:Type Button}" BasedOn="{StaticResource ButtonBase}">
+        <Setter Property="Background" Value="{DynamicResource SecondaryMidBrush}" />
+    </Style>
+
+    <Style x:Key="SecondaryLightButton" TargetType="{x:Type Button}" BasedOn="{StaticResource ButtonBase}">
+        <Setter Property="Background" Value="{DynamicResource SecondaryLightBrush}" />
+    </Style>
+
+    <Style x:Key="PrimaryMidButton" TargetType="{x:Type Button}" BasedOn="{StaticResource ButtonBase}">
+        <Setter Property="Background" Value="{DynamicResource PrimaryMidBrush}" />
+    </Style>
+
+    <Style x:Key="PrimaryLightButton" TargetType="{x:Type Button}" BasedOn="{StaticResource ButtonBase}">
+        <Setter Property="Background" Value="{DynamicResource PrimaryLightBrush}" />
+    </Style>
+
+    <Style x:Key="CautionButton" TargetType="{x:Type Button}" BasedOn="{StaticResource ButtonBase}">
+        <Setter Property="Background" Value="{DynamicResource ErrorBrush}" />
+    </Style>
+
+    <Style x:Key="RepeatButtonBase" TargetType="{x:Type RepeatButton}" BasedOn="{StaticResource BaseStyle}">
+        <Setter Property="Background" Value="{DynamicResource PrimaryBrush}" />
+        <Setter Property="Foreground" Value="{DynamicResource ControlForegroundBrush}" />
+        <Setter Property="TextOptions.TextFormattingMode" Value="Display" />
+        <Setter Property="UseLayoutRounding" Value="True" />
+        <Setter Property="Padding" Value="3" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type RepeatButton}">
+                    <Grid>
+                        <Border CornerRadius="3"  x:Name="buttonFrame" Background="{TemplateBinding Background}" />
+                        <Border Padding="{TemplateBinding Padding}">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                        </Border>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Border.Effect" TargetName="buttonFrame">
+                                <Setter.Value>
+                                    <DropShadowEffect Color="{DynamicResource ForegroundMainColor}" Direction="320" ShadowDepth="2"  Opacity="0.5" />
+                                </Setter.Value>
+                            </Setter>
+                            <Setter Property="Cursor" Value="Hand" />
+                        </Trigger>
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter Property="Border.Effect" TargetName="buttonFrame">
+                                <Setter.Value>
+                                    <DropShadowEffect Color="{DynamicResource ForegroundMainColor}" Direction="320" ShadowDepth="2"  Opacity="0" />
+                                </Setter.Value>
+                            </Setter>
+                        </Trigger>
+                        <Trigger Property="IsEnabled" Value="False">
+                            <Setter Property="Border.BorderBrush" TargetName="buttonFrame" Value="{DynamicResource DisabledBrush}" />
+                            <Setter Property="Border.Background" TargetName="buttonFrame" Value="{DynamicResource DisabledBrush}" />
+                            <Setter Property="Foreground" Value="{DynamicResource ControlForegroundBrush}" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style TargetType="{x:Type RepeatButton}" BasedOn="{StaticResource RepeatButtonBase}" />
+
     <Style x:Key="ToggleButtonBase" TargetType="{x:Type ToggleButton}" BasedOn="{StaticResource BaseStyle}">
         <Setter Property="Background" Value="{DynamicResource TransparentBrush}" />
         <Setter Property="local:BaseColor.Value" Value="{DynamicResource PrimaryBrush}" />
         <Setter Property="local:IsUnCheckedText.Value" Value="{Binding Path=Content, RelativeSource={x:Static RelativeSource.Self}}" />
         <Setter Property="local:IsCheckedText.Value"  Value="{Binding Path=Content, RelativeSource={x:Static RelativeSource.Self}}" />
         <Setter Property="TextOptions.TextFormattingMode" Value="Display" />
-        <Setter Property="Tag" Value="isTag" />
         <Setter Property="UseLayoutRounding" Value="True" />
         <Setter Property="Padding" Value="3" />
 
@@ -124,6 +187,10 @@
 
     <Style x:Key="SecondaryToggleButton" TargetType="{x:Type ToggleButton}" BasedOn="{StaticResource ToggleButtonBase}">
         <Setter Property="local:BaseColor.Value" Value="{DynamicResource SecondaryBrush}" />
+    </Style>
+
+    <Style x:Key="CautionToggleButton" TargetType="{x:Type ToggleButton}" BasedOn="{StaticResource ToggleButtonBase}">
+        <Setter Property="local:BaseColor.Value" Value="{DynamicResource ErrorBrush}" />
     </Style>
 
     <Style x:Key="WindowButton" TargetType="{x:Type Button}" BasedOn="{StaticResource ButtonBase}">
