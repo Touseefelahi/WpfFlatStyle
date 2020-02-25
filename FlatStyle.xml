@@ -383,6 +383,12 @@
             <param name="culture"></param>
             <returns></returns>
         </member>
+        <member name="T:FlatStyle.Converters.BooleanToVisiblityConverter">
+            <summary>
+            Converts bool to Visibility parameters: | NC = normal collapsed | IC = Inverted Collapsed |
+            NH = Normal Hidden | IH = Inverted Hidden
+            </summary>
+        </member>
         <member name="T:XamlGeneratedNamespace.GeneratedInternalTypeHelper">
             <summary>
             GeneratedInternalTypeHelper

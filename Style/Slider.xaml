@@ -12,15 +12,36 @@
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="Thumb">
-                    <Canvas>
-                        <Path Margin="0,0,0,0" Data="M 0,0 L 10,0 10,20 0,20" Name="Ellipse" Fill="{DynamicResource PrimaryBrush}" />
-                    </Canvas>
+
+                    <Rectangle Width="10" Height="20" Name="canvas" Fill="{DynamicResource PrimaryBrush}">
+                        <Rectangle.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform ScaleX="1" ScaleY="1"  CenterX="5" CenterY="10" />
+                            </TransformGroup>
+                        </Rectangle.RenderTransform>
+                    </Rectangle>
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsMouseOver" Value="True">
-                            <Setter TargetName="Ellipse" Property="Fill" Value="{DynamicResource SecondaryBrush}" />
+                            <Setter TargetName="canvas" Property="Fill" Value="{DynamicResource SecondaryBrush}" />
+                            <Trigger.EnterActions>
+                                <BeginStoryboard Name="EnlargeThumbX">
+                                    <Storyboard TargetName="canvas"  TargetProperty="RenderTransform.Children[0].ScaleX">
+                                        <DoubleAnimation To="1.2" Duration="0:0:.1" />
+                                    </Storyboard>
+                                </BeginStoryboard>
+                                <BeginStoryboard Name="EnlargeThumbY">
+                                    <Storyboard TargetName="canvas"  TargetProperty="RenderTransform.Children[0].ScaleY">
+                                        <DoubleAnimation To="1.2" Duration="0:0:0.1" />
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </Trigger.EnterActions>
+                            <Trigger.ExitActions>
+                                <StopStoryboard BeginStoryboardName="EnlargeThumbX" />
+                                <StopStoryboard BeginStoryboardName="EnlargeThumbY" />
+                            </Trigger.ExitActions>
                         </Trigger>
                         <Trigger Property="IsEnabled" Value="false">
-                            <Setter TargetName="Ellipse" Property="Fill" Value="#EAE9E4" />
+                            <Setter TargetName="canvas" Property="Fill" Value="#EAE9E4" />
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
@@ -80,6 +101,8 @@
         <Setter Property="OverridesDefaultStyle" Value="true" />
         <Setter Property="Foreground" Value="{DynamicResource ForegroundMainBrush}" />
         <Setter Property="Margin" Value="2" />
+        <Setter Property="AutoToolTipPrecision" Value="2" />
+        <Setter Property="SmallChange" Value=".1" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="Slider">
@@ -95,7 +118,7 @@
 
                         <TextBox BorderThickness="0" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,0,0,18"
                                  Foreground="{TemplateBinding Foreground}"
-                                 Text="{Binding Value, RelativeSource ={RelativeSource AncestorType = {x:Type Slider}}, UpdateSourceTrigger=PropertyChanged}" />
+                                 Text="{Binding Value, RelativeSource={RelativeSource AncestorType = {x:Type Slider}}, UpdateSourceTrigger=PropertyChanged}" />
 
                         <Track Name="PART_Track"
                                HorizontalAlignment="Stretch"
@@ -127,6 +150,9 @@
         <Setter Property="Background" Value="{DynamicResource PrimaryBrush}" />
         <Setter Property="Foreground" Value="{DynamicResource ForegroundMainBrush}" />
         <Setter Property="Margin" Value="2" />
+        <Setter Property="IsSnapToTickEnabled" Value="True" />
+        <Setter Property="SmallChange" Value="1" />
+        <Setter Property="TickFrequency" Value="{Binding Path=SmallChange, RelativeSource={x:Static RelativeSource.Self}}" />
         <Setter Property="Height" Value="20" />
         <Setter Property="Width" Value="auto" />
         <Setter Property="Template">
@@ -139,16 +165,29 @@
                             <ColumnDefinition  Width="{Binding Path=Height, RelativeSource={RelativeSource TemplatedParent}}" />
                         </Grid.ColumnDefinitions>
 
-                        <Border BorderThickness="1" BorderBrush="{TemplateBinding Background}" Grid.RowSpan="2" Grid.ColumnSpan="2" />
-                        <RepeatButton Grid.Column="1" Style="{StaticResource NumRepeatButton}" Background="{TemplateBinding Background}" Content="▲"
+                        <Track Name="PART_Track"
+                               Grid.Row="1"
+                               Panel.ZIndex="1"
+                               HorizontalAlignment="Stretch"
+                               VerticalAlignment="Bottom"
+                               Width="{TemplateBinding Width}">
+
+                            <Track.Thumb>
+                                <Thumb Style="{StaticResource SliderThumbStyle}" Opacity="0.5" />
+                            </Track.Thumb>
+                        </Track>
+
+                        <Border BorderThickness="1" BorderBrush="{TemplateBinding Background}" Grid.RowSpan="2" Grid.ColumnSpan="3" />
+                        <RepeatButton Grid.Column="1" Grid.RowSpan="2" Style="{StaticResource NumRepeatButton}" Background="{TemplateBinding Background}" Content="▲"
                                       Command="{Binding IncreaseSmall, RelativeSource={RelativeSource AncestorType = {x:Type Slider}}}" />
-                        <RepeatButton Grid.Column="2" Style="{StaticResource NumRepeatButton}" Background="{TemplateBinding Background}" Grid.Row="1"
+                        <RepeatButton Grid.Column="2"  Grid.RowSpan="2" Style="{StaticResource NumRepeatButton}" Background="{TemplateBinding Background}"
                                       Content="▼"  Command="{Binding DecreaseSmall, RelativeSource={RelativeSource AncestorType = {x:Type Slider}}}" />
 
-                        <TextBox x:Name="ValueText" Margin="0" Padding="0" Grid.RowSpan="2"  DockPanel.Dock="Right" BorderThickness="0"
+                        <TextBox x:Name="ValueText"  Padding="0" Grid.RowSpan="2"  DockPanel.Dock="Right" BorderThickness="0" Margin="0,0,0,0"
                                  VerticalAlignment="Center" HorizontalAlignment="Stretch" TextAlignment="Center"
                                  Foreground="{TemplateBinding Foreground}"
-                                 Text="{Binding Value, StringFormat={}{0:# #.00}, RelativeSource ={RelativeSource AncestorType = {x:Type Slider}}, UpdateSourceTrigger=Explicit}">
+                                 Text="{Binding Value,
+                                 RelativeSource ={RelativeSource AncestorType = {x:Type Slider}}, UpdateSourceTrigger=Explicit}">
                             <TextBox.InputBindings>
                                 <KeyBinding Key="Return" Command="{x:Static local:Command.UpdateNumericUpDownValue}">
                                     <KeyBinding.CommandParameter>
