@@ -5,6 +5,8 @@
 + [Button](https://github.com/Touseefelahi/WpfFlatStyle#button)
 + [Toggle Button](https://github.com/Touseefelahi/WpfFlatStyle#Toggle-button)
 + [CheckBox](https://github.com/Touseefelahi/WpfFlatStyle#checkbox)
++ [Text](https://github.com/Touseefelahi/WpfFlatStyle#textbox)
++ [Slider](https://github.com/Touseefelahi/WpfFlatStyle#slider)
 
 # How To Use
 Add This In your App.xaml file
@@ -84,9 +86,35 @@ Dark Theme:
  
 
 # CheckBox
+[Checkbox Style Sheet](https://github.com/Touseefelahi/WpfFlatStyle/blob/master/Style/Checkbox.xaml#StyleSheet)
      <CheckBox  Content="this g check" HorizontalAlignment="Left" />
      <CheckBox IsChecked="True"  Style="{StaticResource StatusLed}" />
      <CheckBox IsChecked="True"  Style="{StaticResource StatusLed}" flatStyle:BaseColor.Value="Green" />
      <CheckBox IsChecked="False" Style="{StaticResource StatusLed}" />
      <CheckBox IsChecked="False" Style="{StaticResource TickStatus}" />
      <CheckBox IsChecked="True"  Style="{StaticResource TickStatus}" />
+
+# Text
+[Text Style Sheet](https://github.com/Touseefelahi/WpfFlatStyle/blob/master/Style/Text.xaml#StyleSheet)
+
+     <TextBlock Style="{StaticResource PrimaryText}" Text="This is Primary Text" />
+     <TextBlock Style="{StaticResource PrimaryBackgroundText}" Text="This is PrimaryBackground Text" />
+     <TextBlock Style="{StaticResource SecondaryText}" Text="This is Secondary Text" />
+     <TextBlock Style="{StaticResource SecondaryBackgroundText}" Text="This is SecondaryBackground Text" />
+     <TextBlock Style="{StaticResource ErrorText}" Text="This is Error Text" />
+     <TextBlock Style="{StaticResource ErrorBackgroundText}" Text="This is ErrorBackground Text" />
+    
+     <TextBox Style="{StaticResource FieldBox}" flatStyle:FieldName.Value="Email" flatStyle:Placeholder.Value="Enter your email here"  Text="{Binding Email}" />
+     <TextBox Style="{StaticResource FieldBoxVertical}" flatStyle:FieldName.Value="Email vertical" Text="{Binding Email}" />
+
+     <TextBox Style="{StaticResource FieldBoxGetSet}" flatStyle:FieldName.Value="Email" Text="{Binding Email}"
+              flatStyle:GetCommand.Value="{Binding GetCommand}" flatStyle:SetText.Value="Set set"
+              flatStyle:SetCommand.Value="{Binding SetCommand}" />
+
+     <TextBox Style="{StaticResource FieldBoxGetSetVertical}" flatStyle:FieldName.Value="Email vertical" Text="{Binding Email}"
+              flatStyle:GetCommand.Value="{Binding GetCommand}" flatStyle:GetText.Value="Get Control" IsReadOnly="True"
+                             flatStyle:SetCommand.Value="{Binding SetCommand}" />
+
+
+# Slider
+    <Slider Style="{StaticResource NumericUpDown}" />
