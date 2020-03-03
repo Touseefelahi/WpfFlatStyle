@@ -6,6 +6,7 @@
         <Setter Property="Control.Background" Value="{x:Null}" />
         <Setter Property="Control.BorderBrush" Value="{x:Null}" />
         <Setter Property="TextElement.FontFamily" Value="{DynamicResource FontPrimary}" />
+        <Setter Property="TextElement.FontWeight" Value="Medium" />
         <Setter Property="Control.VerticalAlignment" Value="Center" />
     </Style>
 

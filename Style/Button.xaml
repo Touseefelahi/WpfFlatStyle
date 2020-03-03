@@ -5,7 +5,6 @@
     <Style x:Key="ButtonBase" TargetType="{x:Type Button}" BasedOn="{StaticResource BaseStyle}">
         <Setter Property="Background" Value="{DynamicResource PrimaryBrush}" />
         <Setter Property="Foreground" Value="{DynamicResource ControlForegroundBrush}" />
-        <Setter Property="TextOptions.TextFormattingMode" Value="Display" />
         <Setter Property="UseLayoutRounding" Value="True" />
         <Setter Property="Padding" Value="3" />
         <Setter Property="Template">
@@ -73,7 +72,6 @@
     <Style x:Key="RepeatButtonBase" TargetType="{x:Type RepeatButton}" BasedOn="{StaticResource BaseStyle}">
         <Setter Property="Background" Value="{DynamicResource PrimaryBrush}" />
         <Setter Property="Foreground" Value="{DynamicResource ControlForegroundBrush}" />
-        <Setter Property="TextOptions.TextFormattingMode" Value="Display" />
         <Setter Property="UseLayoutRounding" Value="True" />
         <Setter Property="Padding" Value="3" />
         <Setter Property="Template">
@@ -119,7 +117,6 @@
         <Setter Property="local:BaseColor.Value" Value="{DynamicResource PrimaryBrush}" />
         <Setter Property="local:IsUnCheckedText.Value" Value="{Binding Path=Content, RelativeSource={x:Static RelativeSource.Self}}" />
         <Setter Property="local:IsCheckedText.Value"  Value="{Binding Path=Content, RelativeSource={x:Static RelativeSource.Self}}" />
-        <Setter Property="TextOptions.TextFormattingMode" Value="Display" />
         <Setter Property="UseLayoutRounding" Value="True" />
         <Setter Property="Padding" Value="3" />
 
