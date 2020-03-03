@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Data;
 
 namespace FlatStyle
 {
@@ -29,6 +30,8 @@ namespace FlatStyle
         /// </summary>
         public static ParameterizedDelegateCommand Minimize = new ParameterizedDelegateCommand((parameter) => MinimizeWindow(parameter));
 
+        public static ParameterizedDelegateCommand ReturnCommand = new ParameterizedDelegateCommand((parameter) => Return(parameter));
+
         /// <summary>
         /// Theme Setter for Flat window
         /// </summary>
@@ -39,6 +42,14 @@ namespace FlatStyle
             );
 
         private static Window windowContact;
+
+        private static void Return(object sender)
+        {
+            if (sender is TextBox textBox)//Update source
+            {
+                BindingOperations.GetBindingExpression(textBox, TextBox.TextProperty)?.UpdateSource();
+            }
+        }
 
         private static void UpdateValue(object sender)
         {

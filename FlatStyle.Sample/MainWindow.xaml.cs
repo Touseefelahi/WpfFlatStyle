@@ -1,4 +1,6 @@
-﻿using System.Collections.ObjectModel;
+﻿using System;
+using System.Collections.ObjectModel;
+using System.ComponentModel;
 using System.Windows;
 
 namespace FlatStyle.Sample
@@ -6,12 +8,16 @@ namespace FlatStyle.Sample
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class MainWindow : Window, INotifyPropertyChanged
     {
+        private string email;
+
         public MainWindow()
         {
             InitializeComponent();
+            GetCommand = new ParameterizedDelegateCommand((param) => Get(param));
 
+            SetCommand = new ParameterizedDelegateCommand((param) => Set(param));
             //int a = 0;
             //int b = 1 / a;
             Dataset dataset1 = new Dataset("Daryl", "MacDavitt", "dmacdavitt0@fema.gov", "Male", "165.132.34.62");
@@ -38,6 +44,39 @@ namespace FlatStyle.Sample
                 dataset9 ,
                 dataset10
             };
+            DataContext = this;
+        }
+
+        public event PropertyChangedEventHandler PropertyChanged = (sender, e) => { };
+
+        public string Email
+        {
+            get => email; set
+            {
+                email = value;
+                OnPropertyChanged(nameof(Email));
+            }
+        }
+
+        public ParameterizedDelegateCommand GetCommand { get; }
+
+        public ParameterizedDelegateCommand SetCommand { get; }
+
+        /// <summary> Call this to fire a <see cref=”PropertyChanged”/> event </summary> <param name=”name”></param>
+        public void OnPropertyChanged(string name)
+        {
+            PropertyChangedEventHandler handler = PropertyChanged;
+            handler?.Invoke(this, new PropertyChangedEventArgs(name));
+        }
+
+        private void Set(object param)
+        {
+            Email = "Set";
+        }
+
+        private void Get(object param)
+        {
+            Email = "Get";
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)

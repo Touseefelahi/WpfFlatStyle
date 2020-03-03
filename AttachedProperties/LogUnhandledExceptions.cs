@@ -22,7 +22,7 @@ namespace FlatStyle
         /// <param name="message">Message to log</param>
         public static void Log(string message)
         {
-            Trace.TraceError(message);
+            Trace.TraceError($"{DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss")}\t{message}");
         }
 
         /// <summary>

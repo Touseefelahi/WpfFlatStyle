@@ -54,6 +54,8 @@
                 <Button Style="{StaticResource IconButton}"  Content="{StaticResource Fa-address-book}" />
 
                 <Button Style="{StaticResource IconButton}"  Content="{StaticResource Fa-address-card}" />
+
+                <Button Style="{StaticResource IconButtonSecondary}"  Content="{StaticResource Fa-trash-alt}" />
             </StackPanel>
 
             <StackPanel Orientation="Horizontal">
@@ -64,16 +66,18 @@
                 <CheckBox IsChecked="False" Style="{StaticResource StatusLed}" />
                 <CheckBox IsChecked="False" Style="{StaticResource TickStatus}" />
                 <CheckBox IsChecked="True"  Style="{StaticResource TickStatus}" />
+                <TextBlock Text="{Binding Email}"  HorizontalAlignment="Center" VerticalAlignment="Bottom" />
             </StackPanel>
 
-            <TextBox Text="This is textbox text" flatStyle:PlaceHoldingText.Value="This is placeholder" />
-            <TextBox  flatStyle:PlaceHoldingText.Value="This is placeholder" />
+            <TextBox Text="This is textbox text" flatStyle:Placeholder.Value="This is placeholder" />
+            <TextBox  flatStyle:Placeholder.Value="This is placeholder" />
             <ProgressBar IsEnabled="True"  IsIndeterminate="True" />
             <ProgressBar IsEnabled="True"  Value="60" />
         </StackPanel>
         <TabControl  DockPanel.Dock="Right">
             <TabItem Header="Tab 1">
                 <StackPanel>
+                    <TextBlock Text="This is Primary Text" />
                     <TextBlock Style="{StaticResource PrimaryText}" Text="This is Primary Text" />
                     <TextBlock Style="{StaticResource PrimaryBackgroundText}" Text="This is PrimaryBackground Text" />
                     <TextBlock Style="{StaticResource SecondaryText}" Text="This is Secondary Text" />
@@ -82,6 +86,15 @@
                     <TextBlock Style="{StaticResource ErrorBackgroundText}" Text="This is ErrorBackground Text" />
                     <Slider />
                     <Slider Style="{StaticResource NumericUpDown}" />
+                    <TextBox Style="{StaticResource FieldBox}" flatStyle:FieldName.Value="Email" flatStyle:Placeholder.Value="Enter your email here"  Text="{Binding Email}" />
+                    <TextBox Style="{StaticResource FieldBoxVertical}" flatStyle:FieldName.Value="Email vertical" Text="{Binding Email}" />
+
+                    <TextBox Style="{StaticResource FieldBoxGetSet}" flatStyle:FieldName.Value="Email" Text="{Binding Email}"
+                             flatStyle:GetCommand.Value="{Binding GetCommand}" flatStyle:SetText.Value="Set set"
+                             flatStyle:SetCommand.Value="{Binding SetCommand}" />
+                    <TextBox Style="{StaticResource FieldBoxGetSetVertical}" flatStyle:FieldName.Value="Email vertical" Text="{Binding Email}"
+                             flatStyle:GetCommand.Value="{Binding GetCommand}" flatStyle:GetText.Value="Get Control" IsReadOnly="True"
+                             flatStyle:SetCommand.Value="{Binding SetCommand}" />
                 </StackPanel>
             </TabItem>
             <TabItem Header="Tab 2" />
