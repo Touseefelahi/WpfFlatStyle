@@ -5,8 +5,10 @@
 + [Button](https://github.com/Touseefelahi/WpfFlatStyle#button)
 + [Toggle Button](https://github.com/Touseefelahi/WpfFlatStyle#Toggle-button)
 + [CheckBox](https://github.com/Touseefelahi/WpfFlatStyle#checkbox)
-+ [Text](https://github.com/Touseefelahi/WpfFlatStyle#textbox)
++ [Text](https://github.com/Touseefelahi/WpfFlatStyle#text)
 + [Slider](https://github.com/Touseefelahi/WpfFlatStyle#slider)
++ [Icons Style Sheet](https://github.com/Touseefelahi/WpfFlatStyle/blob/master/Style/Icons.xaml#StyleSheet)
++ [Icons Solid Style Sheet](https://github.com/Touseefelahi/WpfFlatStyle/blob/master/Style/IconsSolid.xaml#StyleSheet)
 
 # How To Use
 Add This In your App.xaml file
@@ -86,7 +88,8 @@ Dark Theme:
  
 
 # CheckBox
-[Checkbox Style Sheet](https://github.com/Touseefelahi/WpfFlatStyle/blob/master/Style/Checkbox.xaml#StyleSheet)
+[Checkbox Style Sheet](https://github.com/Touseefelahi/WpfFlatStyle/blob/master/Style/CheckBox.xaml#StyleSheet)
+
      <CheckBox  Content="this g check" HorizontalAlignment="Left" />
      <CheckBox IsChecked="True"  Style="{StaticResource StatusLed}" />
      <CheckBox IsChecked="True"  Style="{StaticResource StatusLed}" flatStyle:BaseColor.Value="Green" />
