@@ -95,6 +95,7 @@
                     <TextBox Style="{StaticResource FieldBoxGetSetVertical}" flatStyle:FieldName.Value="Email vertical" Text="{Binding Email}"
                              flatStyle:GetCommand.Value="{Binding GetCommand}" flatStyle:GetText.Value="Get Control" IsReadOnly="True"
                              flatStyle:SetCommand.Value="{Binding SetCommand}" />
+                    <TextBox Style="{StaticResource mm}" flatStyle:Placeholder.Value="This is placeholder" />
                 </StackPanel>
             </TabItem>
             <TabItem Header="Tab 2" />

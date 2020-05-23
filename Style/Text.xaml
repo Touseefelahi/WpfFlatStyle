@@ -138,7 +138,7 @@
                             <ColumnDefinition Width="*" />
                         </Grid.ColumnDefinitions>
 
-                        <TextBlock FontFamily="{DynamicResource FontPrimary}" VerticalAlignment="Center"  Text="{Binding Path=(local:FieldName.Value), RelativeSource={RelativeSource TemplatedParent}}" />
+                        <TextBlock FontFamily="{DynamicResource FontPrimary}" HorizontalAlignment="Right" VerticalAlignment="Center"  Text="{Binding Path=(local:FieldName.Value), RelativeSource={RelativeSource TemplatedParent}}" />
                         <Border Margin="5,0,0,0" Grid.Column="1" x:Name="shadowBorder" BorderThickness="{TemplateBinding BorderThickness}"
                                 BorderBrush="{TemplateBinding BorderBrush}" />
                         <Border Margin="5,0,0,0" Grid.Column="1" x:Name="border"
@@ -491,6 +491,50 @@
                                     <DropShadowEffect Color="{DynamicResource ForegroundMain}" Direction="320" ShadowDepth="2"  Opacity="0.5" />
                                 </Setter.Value>
                             </Setter>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style TargetType="TextBox" x:Key="mm">
+        <Setter Property="Height" Value="25" />
+        <Setter Property="Width" Value="130" />
+        <Setter Property="Padding" Value="5 5 " />
+        <Setter Property="Cursor" Value="IBeam" />
+        <Setter Property="FontSize" Value="14" />
+        <Setter Property="BorderThickness" Value="1" />
+        <Setter Property="BorderBrush" Value="#ccc" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="TextBox">
+                    <Grid>
+                        <Canvas>
+                            <TextBlock x:Name="textBlock" Text="{TemplateBinding local:Placeholder.Value}" Width="auto"  FontSize="11" FontWeight="Medium" Foreground="#777"
+                                       Canvas.Top="-10" Canvas.Left="3" Background="{TemplateBinding Background}" Padding="2 0 "
+                                       Panel.ZIndex="1" Margin="1" Visibility="Visible" />
+                            <Border x:Name="border"  BorderBrush="{TemplateBinding BorderBrush}" Width="{TemplateBinding Width}" CornerRadius="3" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}">
+                                <Grid>
+                                    <ScrollViewer x:Name="PART_ContentHost" VerticalAlignment="Center" />
+                                    <TextBlock  x:Name="PlaceholderLabel" Padding="{TemplateBinding Padding}"
+                                                Text="{TemplateBinding local:Placeholder.Value}"
+                                                VerticalAlignment="Center" Visibility="Collapsed" Foreground="Gray" FontFamily="Arial" />
+                                </Grid>
+                            </Border>
+                        </Canvas>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="Text" Value="">
+                            <Setter TargetName="textBlock" Property="Visibility" Value="Hidden" />
+                            <Setter Property="Visibility" TargetName="PlaceholderLabel" Value="Visible" />
+                        </Trigger>
+                        <Trigger Property="IsKeyboardFocused" Value="true">
+                            <Setter TargetName="textBlock" Property="Visibility" Value="Visible" />
+                            <Setter Property="Visibility" TargetName="PlaceholderLabel" Value="Hidden" />
+                        </Trigger>
+                        <Trigger Property="IsEnabled" Value="False">
+                            <Setter Property="Foreground" Value="DimGray" />
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>

@@ -74,7 +74,7 @@
         <Setter Property="SnapsToDevicePixels" Value="true" />
         <Setter Property="OverridesDefaultStyle" Value="true" />
         <Setter Property="Background" Value="{DynamicResource PrimaryBrush}" />
-        <Setter Property="Margin" Value="0" />
+        <Setter Property="Margin" Value="3" />
         <Setter Property="Height" Value="18" />
         <Setter Property="Padding" Value="0" />
         <Setter Property="Template">
