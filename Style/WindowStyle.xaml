@@ -86,8 +86,24 @@
 
                                         <!-- Window Buttons -->
                                         <StackPanel Orientation="Horizontal" Grid.Column="2"  VerticalAlignment="Center" HorizontalAlignment="Right">
+                                            <Button Content="&#xf08d;" Margin="3" Width="22" ToolTip="Always on Top Toggle" Command="{x:Static local:Command.AlwaysOnTop}"
+                                            CommandParameter="{Binding RelativeSource= {RelativeSource Mode=FindAncestor, AncestorType={x:Type Window}}}">
+                                                <ContentControl.Style>
+                                                    <Style TargetType="{x:Type Button}" BasedOn="{StaticResource WindowIconButton}">
+                                                        <Style.Triggers>
+                                                            <DataTrigger Binding="{Binding Path=Topmost, RelativeSource= {RelativeSource Mode=FindAncestor, AncestorType={x:Type Window}}}" Value="True">
+                                                                <Setter Property="Foreground" Value="{DynamicResource SecondaryMidBrush}" />
+                                                            </DataTrigger>
+                                                            <!--<DataTrigger Binding="{Binding Path=Topmost, RelativeSource= {RelativeSource Mode=FindAncestor, AncestorType={x:Type Window}}}" Value="False">
+                                                        <Setter Property="Background" Value="{DynamicResource TransparentBrush}" />
+                                                    </DataTrigger>-->
+                                                        </Style.Triggers>
+                                                    </Style>
+                                                </ContentControl.Style>
+                                            </Button>
+
                                             <Button Content="{StaticResource Fa-window-minimize}" Style="{DynamicResource WindowIconButton}" Margin="3" Width="22" Command="{x:Static local:Command.Minimize}"
-                                    CommandParameter="{Binding RelativeSource= {RelativeSource Mode=FindAncestor, AncestorType={x:Type Window}}}" />
+                                            CommandParameter="{Binding RelativeSource= {RelativeSource Mode=FindAncestor, AncestorType={x:Type Window}}}" />
 
                                             <Button Width="22" Margin="3" Command="{x:Static local:Command.Maximize}"
                                                     CommandParameter="{Binding RelativeSource= {RelativeSource Mode=FindAncestor, AncestorType={x:Type Window}}}">
@@ -175,6 +191,22 @@
 
                                 <!-- Window Buttons -->
                                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Center">
+                                    <Button Content="&#xf08d;" Margin="3" Width="22" ToolTip="Always on Top Toggle" Command="{x:Static local:Command.AlwaysOnTop}"
+                                            CommandParameter="{Binding RelativeSource= {RelativeSource Mode=FindAncestor, AncestorType={x:Type Window}}}">
+                                        <ContentControl.Style>
+                                            <Style TargetType="{x:Type Button}" BasedOn="{StaticResource WindowIconButton}">
+                                                <Style.Triggers>
+                                                    <DataTrigger Binding="{Binding Path=Topmost, RelativeSource= {RelativeSource Mode=FindAncestor, AncestorType={x:Type Window}}}" Value="True">
+                                                        <Setter Property="Foreground" Value="{DynamicResource SecondaryMidBrush}" />
+                                                    </DataTrigger>
+                                                    <!--<DataTrigger Binding="{Binding Path=Topmost, RelativeSource= {RelativeSource Mode=FindAncestor, AncestorType={x:Type Window}}}" Value="False">
+                                                        <Setter Property="Background" Value="{DynamicResource TransparentBrush}" />
+                                                    </DataTrigger>-->
+                                                </Style.Triggers>
+                                            </Style>
+                                        </ContentControl.Style>
+                                    </Button>
+
                                     <Button Content="{StaticResource Fa-window-minimize}" Style="{DynamicResource WindowIconButton}" Margin="3" Width="22" Command="{x:Static local:Command.Minimize}"
                                     CommandParameter="{Binding RelativeSource= {RelativeSource Mode=FindAncestor, AncestorType={x:Type Window}}}" />
 

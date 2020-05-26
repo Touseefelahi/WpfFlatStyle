@@ -124,6 +124,11 @@
             close command for window
             </summary>
         </member>
+        <member name="F:FlatStyle.Command.AlwaysOnTop">
+            <summary>
+            Always on top command for window
+            </summary>
+        </member>
         <member name="F:FlatStyle.Command.Maximize">
             <summary>
             maximize command for window

@@ -21,6 +21,11 @@ namespace FlatStyle
         public static ParameterizedDelegateCommand Close = new ParameterizedDelegateCommand((parameter) => CloseWindow(parameter));
 
         /// <summary>
+        /// Always on top command for window
+        /// </summary>
+        public static ParameterizedDelegateCommand AlwaysOnTop = new ParameterizedDelegateCommand((parameter) => AlwaysOnTopWindow(parameter));
+
+        /// <summary>
         /// maximize command for window
         /// </summary>
         public static ParameterizedDelegateCommand Maximize = new ParameterizedDelegateCommand((parameter) => MaximizeWindow(parameter));
@@ -90,6 +95,12 @@ namespace FlatStyle
             {
                 ShowThemeWindow();
             }
+        }
+
+        private static void AlwaysOnTopWindow(object parameter)
+        {
+            Window window = parameter as Window;
+            window.Topmost = !window.Topmost;
         }
 
         private static void ShowThemeWindow()
