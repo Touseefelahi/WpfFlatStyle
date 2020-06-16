@@ -75,6 +75,16 @@
             <param name="sender">The UI element that this property was changed for</param>
             <param name="e">The arguments for this event</param>
         </member>
+        <member name="T:FlatStyle.GetCommand">
+            <summary>
+            Get command will be invoked whenever Get button is pressed from GetSetField Textbox
+            </summary>
+        </member>
+        <member name="T:FlatStyle.SetCommand">
+            <summary>
+            Set command will be invoked whenever Set button is pressed from GetSetField Textbox
+            </summary>
+        </member>
         <member name="T:FlatStyle.LogUnhandledExceptions">
             <summary>
             Logs unhandled exceptions if true in <see cref="F:FlatStyle.LogUnhandledExceptions.fileName"/>
@@ -389,6 +399,12 @@
             <returns></returns>
         </member>
         <member name="T:FlatStyle.Converters.BooleanToVisiblityConverter">
+            <summary>
+            Converts bool to Visibility parameters: | NC = normal collapsed | IC = Inverted Collapsed |
+            NH = Normal Hidden | IH = Inverted Hidden
+            </summary>
+        </member>
+        <member name="T:FlatStyle.Converters.TextboxContentToStringConverter">
             <summary>
             Converts bool to Visibility parameters: | NC = normal collapsed | IC = Inverted Collapsed |
             NH = Normal Hidden | IH = Inverted Hidden

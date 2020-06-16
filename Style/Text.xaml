@@ -63,7 +63,9 @@
                                 <ScrollViewer.InputBindings>
                                     <KeyBinding Key="Return" Command="{x:Static local:Command.ReturnCommand}"
                                                 CommandParameter="{Binding RelativeSource= {RelativeSource Mode=FindAncestor, AncestorType={x:Type TextBox}}}" />
-                                    <KeyBinding Key="Return"  Command="{Binding Path=(local:SetCommand.Value), RelativeSource={RelativeSource TemplatedParent}}" />
+                                    <KeyBinding Key="Return"
+                                                Command="{Binding Path=(local:SetCommand.Value), RelativeSource={RelativeSource TemplatedParent}}"
+                                                CommandParameter="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type TextBox}}, Path=Text}" />
                                 </ScrollViewer.InputBindings>
                             </ScrollViewer>
                         </Border>
