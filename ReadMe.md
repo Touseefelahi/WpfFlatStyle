@@ -7,6 +7,7 @@
 + [CheckBox](https://github.com/Touseefelahi/WpfFlatStyle#checkbox)
 + [Text](https://github.com/Touseefelahi/WpfFlatStyle#text)
 + [Slider](https://github.com/Touseefelahi/WpfFlatStyle#slider)
++ [Layout](https://github.com/Touseefelahi/WpfFlatStyle#layout)
 + [Icons Style Sheet](https://github.com/Touseefelahi/WpfFlatStyle/blob/master/Style/Icons.xaml#StyleSheet)
 + [Icons Solid Style Sheet](https://github.com/Touseefelahi/WpfFlatStyle/blob/master/Style/IconsSolid.xaml#StyleSheet)
 
@@ -121,3 +122,12 @@ Dark Theme:
 
 # Slider
     <Slider Style="{StaticResource NumericUpDown}" />
+
+# Layout
+     <flatStyle:TilePanel Color="{DynamicResource PrimaryBrush}" Margin="10" Title="Super Tile" >
+            <StackPanel HorizontalAlignment="Center">
+                <TextBlock Text="This"/>
+                <TextBlock Text="is"/>
+                <TextBlock Text="Spartaaa"/>
+            </StackPanel>
+     </flatStyle:TilePanel>

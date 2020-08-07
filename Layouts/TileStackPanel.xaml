@@ -7,13 +7,6 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
 
-    <UserControl.Resources>
-        <ResourceDictionary>
-            <ResourceDictionary.MergedDictionaries>
-                <ResourceDictionary Source="pack://application:,,,/FlatStyle;component/Style/Colors.xaml" />
-            </ResourceDictionary.MergedDictionaries>
-        </ResourceDictionary>
-    </UserControl.Resources>
 
     <UserControl.ContentTemplate>
         <DataTemplate>
@@ -24,8 +17,8 @@
                     </Border.Effect>
                 </Border>
                 <Border>
-                    <StackPanel  Orientation="Vertical"  Background="{StaticResource BackgroundBrush}">
-                        <TextBlock Text="{Binding Title, ElementName=root}" TextAlignment="Center" Padding="3" Margin="0" VerticalAlignment="Top" HorizontalAlignment="Stretch"
+                    <StackPanel  Orientation="Vertical"  Background="{DynamicResource BackgroundBrush}">
+                        <TextBlock Text="{Binding Title, ElementName=root}" TextAlignment="Center" Padding="2" FontSize="{StaticResource FontSizeAboveAverage}" Margin="0" VerticalAlignment="Top" HorizontalAlignment="Stretch"
                                            Foreground="{DynamicResource ControlForegroundBrush}" Background="{Binding Color, ElementName=root}" />
                         <ContentControl>
                             <ContentPresenter Content="{TemplateBinding Content}"/>

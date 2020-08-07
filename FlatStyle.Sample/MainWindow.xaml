@@ -99,13 +99,30 @@
                 </StackPanel>
             </TabItem>
             <TabItem Header="Tiles and Layouts" >
-                <flatStyle:TilePanel Color="{DynamicResource SecondaryBrush}" Title="Super Tile" Width="100" Height="100">
-                    <StackPanel HorizontalAlignment="Center">
-                        <TextBlock Text="This"/>
-                        <TextBlock Text="is"/>
-                        <TextBlock Text="Spartaaa"/>
-                    </StackPanel>
-                </flatStyle:TilePanel>
+                <StackPanel>
+                    <flatStyle:TilePanel Color="{DynamicResource PrimaryBrush}" Margin="10" Title="Super Tile" >
+                        <StackPanel HorizontalAlignment="Center">
+                            <TextBlock Text="This"/>
+                            <TextBlock Text="is"/>
+                            <TextBlock Text="Spartaaa"/>
+                        </StackPanel>
+                    </flatStyle:TilePanel>
+                    <flatStyle:TilePanel Color="{DynamicResource SecondaryBrush}" Margin="10" Title="Super Tile" >
+                        <StackPanel HorizontalAlignment="Center">
+                            <TextBlock Text="This"/>
+                            <TextBlock Text="is"/>
+                            <TextBlock Text="not"/>
+                            <TextBlock Text="Spartaaa"/>
+                        </StackPanel>
+                    </flatStyle:TilePanel>
+                    <flatStyle:TilePanel Color="{DynamicResource ErrorBrush}" Margin="10" Title="Super Tile" >
+                        <StackPanel HorizontalAlignment="Center">
+                            <TextBlock Text="This"/>
+                            <TextBlock Text="is"/>
+                            <TextBlock Text="Spartaaa"/>
+                        </StackPanel>
+                    </flatStyle:TilePanel>
+                </StackPanel>
             </TabItem>
         </TabControl>
     </DockPanel>

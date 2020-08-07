@@ -76,6 +76,7 @@
                                           Margin="15,0,15,0"
                                           RecognizesAccessKey="True" />
                             <TextBlock Text="{Binding ElementName=ContentSite, Path=Content}"
+                                           Foreground="{DynamicResource ControlForegroundBrush}"
                                            x:Name="headerText"
                                            VerticalAlignment="Center"
                                            HorizontalAlignment="Center"
@@ -102,10 +103,7 @@
                             <Setter Property="Foreground" Value="{DynamicResource DisabledBrush}" />
                         </Trigger>
 
-                        <Trigger Property="IsEnabled" Value="True">
-                            <Setter Property="Foreground" TargetName="headerText" Value="{DynamicResource ControlForegroundBrush}"/>
-                        </Trigger>
-
+                       
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
             </Setter.Value>
