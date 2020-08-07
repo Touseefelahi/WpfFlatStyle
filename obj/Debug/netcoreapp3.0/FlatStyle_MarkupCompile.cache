@@ -4,17 +4,17 @@
 library
 C#
 .cs
-D:\VisualStudioProjects\Visual Studio 2019\Core3Apps\FlatStyle\obj\Debug\netcoreapp3.0\
+C:\Users\Touseef\Source\Repos\WpfFlatStyle\obj\Debug\netcoreapp3.0\
 FlatStyle
 none
 false
 TRACE;DEBUG;NETCOREAPP;NETCOREAPP3_0
 
-9716011124
+21-1243297896
 
-12091802044
-194-130394778
-Style\BaseStyle.xaml;Style\Button.xaml;Style\CheckBox.xaml;Style\Colors.xaml;Style\ComboBox.xaml;Style\Datagrid.xaml;Style\Fonts.xaml;Style\Scroll.xaml;Style\Text.xaml;
+26-1278895346
+1941516174326
+Controls\ColorPicker.xaml;Controls\ColorPickerControl.xaml;Controls\ThemeSelector.xaml;Layouts\TileStackPanel.xaml;Style\BaseStyle.xaml;Style\Button.xaml;Style\ButtonIconBased.xaml;Style\CheckBox.xaml;Style\Colors.xaml;Style\ComboBox.xaml;Style\Datagrid.xaml;Style\Fonts.xaml;Style\Icons.xaml;Style\IconsSolid.xaml;Style\ProgressBar.xaml;Style\Scroll.xaml;Style\Slider.xaml;Style\TabControl.xaml;Style\Text.xaml;Style\ToolTip.xaml;Style\WindowStyle.xaml;
 
 False
 

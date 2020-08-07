@@ -20,7 +20,7 @@
     <PackageTags>Wpf, Theme, Flat-Design</PackageTags>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <Version>1.6.2</Version>
-    <PackageIcon>Stira.png</PackageIcon>
+    <PackageIcon>StiraIcon.png</PackageIcon>
     <PackageIconUrl />
     <PackageReleaseNotes>Textbox Set Command is fixed and passes the current text as aurgument</PackageReleaseNotes>
   </PropertyGroup>
@@ -39,7 +39,7 @@
     <Compile Remove="FlatStyle.Sample\**" />
     <EmbeddedResource Remove="FlatStyle.Sample\**" />
     <None Remove="FlatStyle.Sample\**" />
-    <None Include="C:\Users\Touseef\Downloads\Stira.png">
+    <None Include="StiraIcon.png">
       <Pack>True</Pack>
       <PackagePath></PackagePath>
     </None>

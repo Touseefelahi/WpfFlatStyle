@@ -11,12 +11,18 @@
     <Compile Update="Controls\ThemeSelector.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Layouts\TileStackPanel.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Page Update="Controls\ColorPicker.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Controls\ColorPickerControl.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Layouts\TileStackPanel.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Style\ProgressBar.xaml">
