@@ -14,7 +14,12 @@ jobs:
     - name: Setup .NET Core
       uses: actions/setup-dotnet@v1
       with:
-        dotnet-version: 3.0.100, net4.5
+        dotnet-version: 3.0.100
+    - uses: actions/checkout@v2
+    - name: Setup .Net 4.5
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: net45
     - name: Create NuGet Package
       run: dotnet pack -c Release /p:Version=${{ github.event.release.tag_name }} /p:PackageReleaseNotes="See https://github.com/Touseefelahi/WpfFlatStyle/releases/tag/${{ github.event.release.tag_name }}"
       working-directory: ./      
