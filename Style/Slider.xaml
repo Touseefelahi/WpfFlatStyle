@@ -118,7 +118,7 @@
 
                         <TextBox BorderThickness="0" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,0,0,18"
                                  Foreground="{TemplateBinding Foreground}"
-                                 Text="{Binding Value, RelativeSource={RelativeSource AncestorType = {x:Type Slider}}, UpdateSourceTrigger=PropertyChanged}" />
+                                 Text="{Binding Value, StringFormat=N2, RelativeSource={RelativeSource AncestorType = {x:Type Slider}}, UpdateSourceTrigger=PropertyChanged}" />
 
                         <Track Name="PART_Track"
                                HorizontalAlignment="Stretch"
@@ -186,7 +186,7 @@
                         <TextBox x:Name="ValueText" Padding="0" Grid.RowSpan="2"  DockPanel.Dock="Right" BorderThickness="0" Margin="0,0,0,0"
                                  VerticalAlignment="Center" HorizontalAlignment="Stretch" TextAlignment="Center"
                                  Foreground="{TemplateBinding Foreground}"
-                                 Text="{Binding Value,
+                                 Text="{Binding Value, StringFormat=N2,
                                  RelativeSource ={RelativeSource AncestorType = {x:Type Slider}}, UpdateSourceTrigger=Explicit}">
                             <TextBox.InputBindings>
                                 <KeyBinding Key="Return" Command="{x:Static local:Command.UpdateNumericUpDownValue}">
