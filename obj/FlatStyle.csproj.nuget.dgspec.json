@@ -1,26 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "D:\\VisualStudioProjects\\Visual Studio 2019\\Core3Apps\\FlatStyle\\FlatStyle.csproj": {}
+    "C:\\Users\\Touseef\\Source\\Repos\\WpfFlatStyle\\FlatStyle.csproj": {}
   },
   "projects": {
-    "D:\\VisualStudioProjects\\Visual Studio 2019\\Core3Apps\\FlatStyle\\FlatStyle.csproj": {
-      "version": "1.0.0",
+    "C:\\Users\\Touseef\\Source\\Repos\\WpfFlatStyle\\FlatStyle.csproj": {
+      "version": "1.6.2",
       "restore": {
-        "projectUniqueName": "D:\\VisualStudioProjects\\Visual Studio 2019\\Core3Apps\\FlatStyle\\FlatStyle.csproj",
-        "projectName": "FlatStyle",
-        "projectPath": "D:\\VisualStudioProjects\\Visual Studio 2019\\Core3Apps\\FlatStyle\\FlatStyle.csproj",
-        "packagesPath": "C:\\Users\\touse\\.nuget\\packages\\",
-        "outputPath": "D:\\VisualStudioProjects\\Visual Studio 2019\\Core3Apps\\FlatStyle\\obj\\",
+        "projectUniqueName": "C:\\Users\\Touseef\\Source\\Repos\\WpfFlatStyle\\FlatStyle.csproj",
+        "projectName": "Stira.WpfFlatStyle",
+        "projectPath": "C:\\Users\\Touseef\\Source\\Repos\\WpfFlatStyle\\FlatStyle.csproj",
+        "packagesPath": "C:\\Users\\Touseef\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Touseef\\Source\\Repos\\WpfFlatStyle\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
+        "crossTargeting": true,
         "configFilePaths": [
-          "C:\\Users\\touse\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Touseef\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
+          "net45",
           "netcoreapp3.0"
         ],
         "sources": {
@@ -29,6 +28,9 @@
         },
         "frameworks": {
           "netcoreapp3.0": {
+            "projectReferences": {}
+          },
+          "net45": {
             "projectReferences": {}
           }
         },
@@ -40,6 +42,12 @@
       },
       "frameworks": {
         "netcoreapp3.0": {
+          "dependencies": {
+            "System.Windows.Interactivity.WPF": {
+              "target": "Package",
+              "version": "[2.0.20525, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -50,6 +58,20 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[3.0.1, 3.0.1]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[3.0.0, 3.0.0]"
+            },
+            {
+              "name": "Microsoft.WindowsDesktop.App.Ref",
+              "version": "[3.0.0, 3.0.0]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
@@ -58,7 +80,16 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.0.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.400\\RuntimeIdentifierGraph.json"
+        },
+        "net45": {
+          "dependencies": {
+            "System.Windows.Interactivity.WPF": {
+              "target": "Package",
+              "version": "[2.0.20525, )"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.400\\RuntimeIdentifierGraph.json"
         }
       }
     }

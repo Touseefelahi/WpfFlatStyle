@@ -57,3 +57,43 @@ D:\VisualStudioProjects\Visual Studio 2019\Core3Apps\FlatStyle\obj\Debug\netcore
 D:\VisualStudioProjects\Visual Studio 2019\Core3Apps\FlatStyle\obj\Debug\netcoreapp3.0\FlatStyle.AssemblyInfo.cs
 D:\VisualStudioProjects\Visual Studio 2019\Core3Apps\FlatStyle\obj\Debug\netcoreapp3.0\FlatStyle.dll
 D:\VisualStudioProjects\Visual Studio 2019\Core3Apps\FlatStyle\obj\Debug\netcoreapp3.0\FlatStyle.pdb
+C:\Users\Touseef\Source\Repos\WpfFlatStyle\obj\Debug\netcoreapp3.0\Controls\ColorPickerControl.baml
+C:\Users\Touseef\Source\Repos\WpfFlatStyle\obj\Debug\netcoreapp3.0\Style\BaseStyle.baml
+C:\Users\Touseef\Source\Repos\WpfFlatStyle\obj\Debug\netcoreapp3.0\Style\ButtonIconBased.baml
+C:\Users\Touseef\Source\Repos\WpfFlatStyle\obj\Debug\netcoreapp3.0\Style\Colors.baml
+C:\Users\Touseef\Source\Repos\WpfFlatStyle\obj\Debug\netcoreapp3.0\Style\ComboBox.baml
+C:\Users\Touseef\Source\Repos\WpfFlatStyle\obj\Debug\netcoreapp3.0\Style\Datagrid.baml
+C:\Users\Touseef\Source\Repos\WpfFlatStyle\obj\Debug\netcoreapp3.0\Style\Fonts.baml
+C:\Users\Touseef\Source\Repos\WpfFlatStyle\obj\Debug\netcoreapp3.0\Style\Icons.baml
+C:\Users\Touseef\Source\Repos\WpfFlatStyle\obj\Debug\netcoreapp3.0\Style\IconsSolid.baml
+C:\Users\Touseef\Source\Repos\WpfFlatStyle\obj\Debug\netcoreapp3.0\Style\ProgressBar.baml
+C:\Users\Touseef\Source\Repos\WpfFlatStyle\obj\Debug\netcoreapp3.0\Style\Scroll.baml
+C:\Users\Touseef\Source\Repos\WpfFlatStyle\obj\Debug\netcoreapp3.0\Style\TabControl.baml
+C:\Users\Touseef\Source\Repos\WpfFlatStyle\obj\Debug\netcoreapp3.0\Style\ToolTip.baml
+C:\Users\Touseef\Source\Repos\WpfFlatStyle\obj\Debug\netcoreapp3.0\Controls\ColorPicker.g.cs
+C:\Users\Touseef\Source\Repos\WpfFlatStyle\obj\Debug\netcoreapp3.0\Controls\ColorPickerControl.g.cs
+C:\Users\Touseef\Source\Repos\WpfFlatStyle\obj\Debug\netcoreapp3.0\Controls\ThemeSelector.g.cs
+C:\Users\Touseef\Source\Repos\WpfFlatStyle\obj\Debug\netcoreapp3.0\GeneratedInternalTypeHelper.g.cs
+C:\Users\Touseef\Source\Repos\WpfFlatStyle\obj\Debug\netcoreapp3.0\FlatStyle_MarkupCompile.cache
+C:\Users\Touseef\Source\Repos\WpfFlatStyle\obj\Debug\netcoreapp3.0\FlatStyle_MarkupCompile.lref
+D:\VisualStudioProjects\Visual Studio 2019\Nuget Packages\All Packages\netcoreapp3.0\ReadMe.md
+D:\VisualStudioProjects\Visual Studio 2019\Nuget Packages\All Packages\netcoreapp3.0\FlatStyle.deps.json
+D:\VisualStudioProjects\Visual Studio 2019\Nuget Packages\All Packages\netcoreapp3.0\FlatStyle.dll
+D:\VisualStudioProjects\Visual Studio 2019\Nuget Packages\All Packages\netcoreapp3.0\FlatStyle.pdb
+D:\VisualStudioProjects\Visual Studio 2019\Nuget Packages\All Packages\netcoreapp3.0\FlatStyle.xml
+C:\Users\Touseef\Source\Repos\WpfFlatStyle\obj\Debug\netcoreapp3.0\Layouts\TileStackPanel.baml
+C:\Users\Touseef\Source\Repos\WpfFlatStyle\obj\Debug\netcoreapp3.0\Layouts\TileStackPanel.g.cs
+C:\Users\Touseef\Source\Repos\WpfFlatStyle\obj\Debug\netcoreapp3.0\Controls\ColorPicker.baml
+C:\Users\Touseef\Source\Repos\WpfFlatStyle\obj\Debug\netcoreapp3.0\Controls\ThemeSelector.baml
+C:\Users\Touseef\Source\Repos\WpfFlatStyle\obj\Debug\netcoreapp3.0\Style\Button.baml
+C:\Users\Touseef\Source\Repos\WpfFlatStyle\obj\Debug\netcoreapp3.0\Style\CheckBox.baml
+C:\Users\Touseef\Source\Repos\WpfFlatStyle\obj\Debug\netcoreapp3.0\Style\Slider.baml
+C:\Users\Touseef\Source\Repos\WpfFlatStyle\obj\Debug\netcoreapp3.0\Style\Text.baml
+C:\Users\Touseef\Source\Repos\WpfFlatStyle\obj\Debug\netcoreapp3.0\Style\WindowStyle.baml
+C:\Users\Touseef\Source\Repos\WpfFlatStyle\obj\Debug\netcoreapp3.0\FlatStyle.g.resources
+C:\Users\Touseef\Source\Repos\WpfFlatStyle\obj\Debug\netcoreapp3.0\FlatStyle.AssemblyInfoInputs.cache
+C:\Users\Touseef\Source\Repos\WpfFlatStyle\obj\Debug\netcoreapp3.0\FlatStyle.AssemblyInfo.cs
+C:\Users\Touseef\Source\Repos\WpfFlatStyle\obj\Debug\netcoreapp3.0\FlatStyle.csproj.CoreCompileInputs.cache
+C:\Users\Touseef\Source\Repos\WpfFlatStyle\obj\Debug\netcoreapp3.0\FlatStyle.dll
+C:\Users\Touseef\Source\Repos\WpfFlatStyle\obj\Debug\netcoreapp3.0\FlatStyle.pdb
+C:\Users\Touseef\Source\Repos\WpfFlatStyle\obj\Debug\netcoreapp3.0\FlatStyle.csprojAssemblyReference.cache

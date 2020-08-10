@@ -53,6 +53,7 @@
         <Setter Property="FontWeight" Value="Bold" />
         <Setter Property="Foreground" Value="{DynamicResource ControlForegroundBrush}" />
         <Setter Property="Background" Value="{DynamicResource PrimaryBrush}" />
+        <Setter Property="TextBlock.Foreground" Value="{DynamicResource ForegroundMainBrush}" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type TabItem}">
@@ -75,7 +76,8 @@
                                           Margin="15,0,15,0"
                                           RecognizesAccessKey="True" />
                             <TextBlock Text="{Binding ElementName=ContentSite, Path=Content}"
-                                           Foreground="{TemplateBinding Foreground}"
+                                           Foreground="{DynamicResource ControlForegroundBrush}"
+                                           x:Name="headerText"
                                            VerticalAlignment="Center"
                                            HorizontalAlignment="Center"
                                            TextAlignment="Center" />
@@ -100,6 +102,8 @@
                         <Trigger Property="IsEnabled" Value="False">
                             <Setter Property="Foreground" Value="{DynamicResource DisabledBrush}" />
                         </Trigger>
+
+                       
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
             </Setter.Value>

@@ -95,10 +95,35 @@
                     <TextBox Style="{StaticResource FieldBoxGetSetVertical}" flatStyle:FieldName.Value="Email vertical" Text="{Binding Email}"
                              flatStyle:GetCommand.Value="{Binding GetCommand}" flatStyle:GetText.Value="Get Control" IsReadOnly="True"
                              flatStyle:SetCommand.Value="{Binding SetCommand}" />
-                    <TextBox Style="{StaticResource mm}" flatStyle:Placeholder.Value="This is placeholder" />
+
                 </StackPanel>
             </TabItem>
-            <TabItem Header="Tab 2" />
+            <TabItem Header="Tiles and Layouts" >
+                <StackPanel>
+                    <flatStyle:TilePanel Color="{DynamicResource PrimaryBrush}" Margin="10" Title="Super Tile" >
+                        <StackPanel HorizontalAlignment="Center">
+                            <TextBlock Text="This"/>
+                            <TextBlock Text="is"/>
+                            <TextBlock Text="Spartaaa"/>
+                        </StackPanel>
+                    </flatStyle:TilePanel>
+                    <flatStyle:TilePanel Color="{DynamicResource SecondaryBrush}" Margin="10" Title="Super Tile" >
+                        <StackPanel HorizontalAlignment="Center">
+                            <TextBlock Text="This"/>
+                            <TextBlock Text="is"/>
+                            <TextBlock Text="not"/>
+                            <TextBlock Text="Spartaaa"/>
+                        </StackPanel>
+                    </flatStyle:TilePanel>
+                    <flatStyle:TilePanel Color="{DynamicResource ErrorBrush}" Margin="10" Title="Super Tile" >
+                        <StackPanel HorizontalAlignment="Center">
+                            <TextBlock Text="This"/>
+                            <TextBlock Text="is"/>
+                            <TextBlock Text="Spartaaa"/>
+                        </StackPanel>
+                    </flatStyle:TilePanel>
+                </StackPanel>
+            </TabItem>
         </TabControl>
     </DockPanel>
 </Window>
