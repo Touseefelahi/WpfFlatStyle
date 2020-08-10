@@ -1,0 +1,20 @@
+﻿FlatStyle
+1.6.2.0
+
+library
+C#
+.cs
+D:\VisualStudioProjects\Visual Studio 2019\Nuget Packages\FlatStyle\obj\Debug\net45\
+FlatStyle
+none
+false
+TRACE;DEBUG;NETFRAMEWORK;NET45
+
+21-1243297896
+
+28-250899358
+19-1315729206
+Controls\ColorPicker.xaml;Controls\ColorPickerControl.xaml;Controls\ThemeSelector.xaml;Layouts\TileStackPanel.xaml;Style\BaseStyle.xaml;Style\Button.xaml;Style\ButtonIconBased.xaml;Style\CheckBox.xaml;Style\Colors.xaml;Style\ComboBox.xaml;Style\Datagrid.xaml;Style\Fonts.xaml;Style\Icons.xaml;Style\IconsSolid.xaml;Style\ProgressBar.xaml;Style\Scroll.xaml;Style\Slider.xaml;Style\TabControl.xaml;Style\Text.xaml;Style\ToolTip.xaml;Style\WindowStyle.xaml;
+
+False
+
