@@ -46,7 +46,7 @@ namespace FlatStyle
             ThemeSetter(parameter)
             );
 
-        private static Window windowContact;
+        private static Window windowTheme;
 
         private static void Return(object sender)
         {
@@ -79,16 +79,16 @@ namespace FlatStyle
 
         private static void ThemeSetter(object parameter)
         {
-            if (windowContact != null)
+            if (windowTheme != null)
             {
-                if (!windowContact.IsLoaded)
+                if (!windowTheme.IsLoaded)
                 {
                     ShowThemeWindow();
                 }
                 else
                 {
-                    windowContact.Topmost = true;
-                    windowContact.Topmost = false;
+                    windowTheme.Topmost = true;
+                    windowTheme.Topmost = false;
                 }
             }
             else
@@ -105,14 +105,14 @@ namespace FlatStyle
 
         private static void ShowThemeWindow()
         {
-            windowContact = new Window
+            windowTheme = new Window
             {
                 Content = new ThemeSelector(),
                 Width = 250,
                 Height = 200,
                 ResizeMode = ResizeMode.NoResize,
             };
-            windowContact.Show();
+            windowTheme.Show();
         }
 
         private static void MaximizeWindow(object sender)
@@ -122,6 +122,7 @@ namespace FlatStyle
             {
                 case WindowState.Normal:
                     window.WindowState = WindowState.Maximized;
+                    window.WindowStyle = WindowStyle.None;
                     break;
 
                 case WindowState.Maximized:
