@@ -1,22 +1,27 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Touseef\\Source\\Repos\\WpfFlatStyle\\FlatStyle.csproj": {}
+    "D:\\VisualStudioProjects\\Visual Studio 2019\\Nuget Packages\\FlatStyle\\FlatStyle.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Touseef\\Source\\Repos\\WpfFlatStyle\\FlatStyle.csproj": {
+    "D:\\VisualStudioProjects\\Visual Studio 2019\\Nuget Packages\\FlatStyle\\FlatStyle.csproj": {
       "version": "1.6.2",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Touseef\\Source\\Repos\\WpfFlatStyle\\FlatStyle.csproj",
+        "projectUniqueName": "D:\\VisualStudioProjects\\Visual Studio 2019\\Nuget Packages\\FlatStyle\\FlatStyle.csproj",
         "projectName": "Stira.WpfFlatStyle",
-        "projectPath": "C:\\Users\\Touseef\\Source\\Repos\\WpfFlatStyle\\FlatStyle.csproj",
+        "projectPath": "D:\\VisualStudioProjects\\Visual Studio 2019\\Nuget Packages\\FlatStyle\\FlatStyle.csproj",
         "packagesPath": "C:\\Users\\Touseef\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Touseef\\Source\\Repos\\WpfFlatStyle\\obj\\",
+        "outputPath": "D:\\VisualStudioProjects\\Visual Studio 2019\\Nuget Packages\\FlatStyle\\obj\\",
         "projectStyle": "PackageReference",
         "crossTargeting": true,
+        "fallbackFolders": [
+          "C:\\Microsoft\\Xamarin\\NuGet\\",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
         "configFilePaths": [
           "C:\\Users\\Touseef\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net45",
@@ -24,6 +29,7 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "D:\\VisualStudioProjects\\Visual Studio 2019\\Nuget Packages\\All Packages": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {

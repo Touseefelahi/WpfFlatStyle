@@ -404,40 +404,42 @@
             NH = Normal Hidden | IH = Inverted Hidden
             </summary>
         </member>
-        <member name="T:FlatStyle.Converters.TextboxContentToStringConverter">
+        <member name="T:FlatStyle.TilePanel">
             <summary>
-            Converts bool to Visibility parameters: | NC = normal collapsed | IC = Inverted Collapsed |
-            NH = Normal Hidden | IH = Inverted Hidden
+            Interaction logic for TileStackPanel.xaml
+            </summary>
+            <summary>
+            TilePanel
             </summary>
         </member>
-        <member name="T:XamlGeneratedNamespace.GeneratedInternalTypeHelper">
+        <member name="P:FlatStyle.TilePanel.Title">
             <summary>
-            GeneratedInternalTypeHelper
+            This will be title of tile
             </summary>
         </member>
-        <member name="M:XamlGeneratedNamespace.GeneratedInternalTypeHelper.CreateInstance(System.Type,System.Globalization.CultureInfo)">
+        <member name="P:FlatStyle.TilePanel.Color">
             <summary>
-            CreateInstance
+            Title Color
             </summary>
         </member>
-        <member name="M:XamlGeneratedNamespace.GeneratedInternalTypeHelper.GetPropertyValue(System.Reflection.PropertyInfo,System.Object,System.Globalization.CultureInfo)">
+        <member name="F:FlatStyle.TilePanel.ColorProperty">
             <summary>
-            GetPropertyValue
+            TItle color property
             </summary>
         </member>
-        <member name="M:XamlGeneratedNamespace.GeneratedInternalTypeHelper.SetPropertyValue(System.Reflection.PropertyInfo,System.Object,System.Object,System.Globalization.CultureInfo)">
+        <member name="F:FlatStyle.TilePanel.TitleProperty">
             <summary>
-            SetPropertyValue
+            This will be the Title of tile
             </summary>
         </member>
-        <member name="M:XamlGeneratedNamespace.GeneratedInternalTypeHelper.CreateDelegate(System.Type,System.Object,System.String)">
+        <member name="M:FlatStyle.TilePanel.#ctor">
             <summary>
-            CreateDelegate
+            Tile stack panel is just a normal stack panel with shadow and Title
             </summary>
         </member>
-        <member name="M:XamlGeneratedNamespace.GeneratedInternalTypeHelper.AddEventHandler(System.Reflection.EventInfo,System.Object,System.Delegate)">
+        <member name="M:FlatStyle.TilePanel.InitializeComponent">
             <summary>
-            AddEventHandler
+            InitializeComponent
             </summary>
         </member>
     </members>
