@@ -10,34 +10,16 @@ namespace FlatStyle
     public partial class TilePanel : UserControl
     {
         /// <summary>
-        /// This will be title of tile
+        /// Tile Background Color property
         /// </summary>
-        public string Title
-        {
-            get { return (string)GetValue(TitleProperty); }
-            set { SetValue(TitleProperty, value); }
-        }
-
-
-
+        public static readonly DependencyProperty BackgroundColorProperty =
+            DependencyProperty.Register("BackgroundColor", typeof(Brush), typeof(TilePanel), new PropertyMetadata(new SolidColorBrush(FlatStyle.Style.GetColor(ColorFlat.BackgroundColor))));
 
         /// <summary>
-        /// Title Color
-        /// </summary>
-        public Brush Color
-        {
-            get { return (Brush)GetValue(ColorProperty); }
-            set { SetValue(ColorProperty, value); }
-        }
-
-        /// <summary>
-        /// TItle color property
+        /// Title color property
         /// </summary>
         public static readonly DependencyProperty ColorProperty =
-            DependencyProperty.Register("Color", typeof(Brush), typeof(TilePanel), new PropertyMetadata(new SolidColorBrush(FlatStyle.Style.GetColor(ColorFlat.PrimaryColor))));
-
-
-
+            DependencyProperty.Register("HeaderColor", typeof(Brush), typeof(TilePanel), new PropertyMetadata(new SolidColorBrush(FlatStyle.Style.GetColor(ColorFlat.PrimaryColor))));
 
         /// <summary>
         /// This will be the Title of tile
@@ -51,6 +33,33 @@ namespace FlatStyle
         public TilePanel()
         {
             InitializeComponent();
+        }
+
+        /// <summary>
+        /// This will be title of tile
+        /// </summary>
+        public string Title
+        {
+            get { return (string)GetValue(TitleProperty); }
+            set { SetValue(TitleProperty, value); }
+        }
+
+        /// <summary>
+        /// Tile Background Color
+        /// </summary>
+        public Brush BackgroundColor
+        {
+            get { return (Brush)GetValue(BackgroundColorProperty); }
+            set { SetValue(BackgroundColorProperty, value); }
+        }
+
+        /// <summary>
+        /// Title Header Color
+        /// </summary>
+        public Brush HeaderColor
+        {
+            get { return (Brush)GetValue(ColorProperty); }
+            set { SetValue(ColorProperty, value); }
         }
     }
 }

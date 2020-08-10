@@ -86,7 +86,7 @@
 
                                         <!-- Window Buttons -->
                                         <StackPanel Orientation="Horizontal" Grid.Column="2"  VerticalAlignment="Center" HorizontalAlignment="Right">
-                                            <Button Content="&#xf08d;" Margin="3" Width="22" ToolTip="Always on Top Toggle" Command="{x:Static local:Command.AlwaysOnTop}"
+                                            <Button Content="&#xf08d;" Margin="3" Width="20" ToolTip="Always on Top Toggle" Command="{x:Static local:Command.AlwaysOnTop}"
                                             CommandParameter="{Binding RelativeSource= {RelativeSource Mode=FindAncestor, AncestorType={x:Type Window}}}">
                                                 <ContentControl.Style>
                                                     <Style TargetType="{x:Type Button}" BasedOn="{StaticResource WindowIconButton}">
@@ -191,7 +191,7 @@
 
                                 <!-- Window Buttons -->
                                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Center">
-                                    <Button Content="&#xf08d;" Margin="3" Width="22" ToolTip="Always on Top Toggle" Command="{x:Static local:Command.AlwaysOnTop}"
+                                    <Button Content="&#xf08d;" Margin="3" Width="20" ToolTip="Always on Top Toggle" Command="{x:Static local:Command.AlwaysOnTop}"
                                             CommandParameter="{Binding RelativeSource= {RelativeSource Mode=FindAncestor, AncestorType={x:Type Window}}}">
                                         <ContentControl.Style>
                                             <Style TargetType="{x:Type Button}" BasedOn="{StaticResource WindowIconButton}">

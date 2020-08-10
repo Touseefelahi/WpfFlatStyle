@@ -404,6 +404,32 @@
             NH = Normal Hidden | IH = Inverted Hidden
             </summary>
         </member>
+        <member name="T:FlatStyle.TileSoftDown">
+            <summary>
+            Interaction logic for TileSoftDown.xaml
+            </summary>
+            <summary>
+            TileSoftDown
+            </summary>
+        </member>
+        <member name="M:FlatStyle.TileSoftDown.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:FlatStyle.TileSoftUp">
+            <summary>
+            Interaction logic for TileSoft.xaml
+            </summary>
+            <summary>
+            TileSoftUp
+            </summary>
+        </member>
+        <member name="M:FlatStyle.TileSoftUp.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
         <member name="T:FlatStyle.TilePanel">
             <summary>
             Interaction logic for TileStackPanel.xaml
@@ -412,19 +438,14 @@
             TilePanel
             </summary>
         </member>
-        <member name="P:FlatStyle.TilePanel.Title">
+        <member name="F:FlatStyle.TilePanel.BackgroundColorProperty">
             <summary>
-            This will be title of tile
-            </summary>
-        </member>
-        <member name="P:FlatStyle.TilePanel.Color">
-            <summary>
-            Title Color
+            Tile Background Color property
             </summary>
         </member>
         <member name="F:FlatStyle.TilePanel.ColorProperty">
             <summary>
-            TItle color property
+            Title color property
             </summary>
         </member>
         <member name="F:FlatStyle.TilePanel.TitleProperty">
@@ -437,39 +458,24 @@
             Tile stack panel is just a normal stack panel with shadow and Title
             </summary>
         </member>
+        <member name="P:FlatStyle.TilePanel.Title">
+            <summary>
+            This will be title of tile
+            </summary>
+        </member>
+        <member name="P:FlatStyle.TilePanel.BackgroundColor">
+            <summary>
+            Tile Background Color
+            </summary>
+        </member>
+        <member name="P:FlatStyle.TilePanel.HeaderColor">
+            <summary>
+            Title Header Color
+            </summary>
+        </member>
         <member name="M:FlatStyle.TilePanel.InitializeComponent">
             <summary>
             InitializeComponent
-            </summary>
-        </member>
-        <member name="T:XamlGeneratedNamespace.GeneratedInternalTypeHelper">
-            <summary>
-            GeneratedInternalTypeHelper
-            </summary>
-        </member>
-        <member name="M:XamlGeneratedNamespace.GeneratedInternalTypeHelper.CreateInstance(System.Type,System.Globalization.CultureInfo)">
-            <summary>
-            CreateInstance
-            </summary>
-        </member>
-        <member name="M:XamlGeneratedNamespace.GeneratedInternalTypeHelper.GetPropertyValue(System.Reflection.PropertyInfo,System.Object,System.Globalization.CultureInfo)">
-            <summary>
-            GetPropertyValue
-            </summary>
-        </member>
-        <member name="M:XamlGeneratedNamespace.GeneratedInternalTypeHelper.SetPropertyValue(System.Reflection.PropertyInfo,System.Object,System.Object,System.Globalization.CultureInfo)">
-            <summary>
-            SetPropertyValue
-            </summary>
-        </member>
-        <member name="M:XamlGeneratedNamespace.GeneratedInternalTypeHelper.CreateDelegate(System.Type,System.Object,System.String)">
-            <summary>
-            CreateDelegate
-            </summary>
-        </member>
-        <member name="M:XamlGeneratedNamespace.GeneratedInternalTypeHelper.AddEventHandler(System.Reflection.EventInfo,System.Object,System.Delegate)">
-            <summary>
-            AddEventHandler
             </summary>
         </member>
     </members>

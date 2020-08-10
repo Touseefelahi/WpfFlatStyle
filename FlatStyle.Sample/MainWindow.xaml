@@ -6,11 +6,16 @@
         mc:Ignorable="d"
         xmlns:flatStyle="clr-namespace:FlatStyle;assembly=FlatStyle"
         flatStyle:OnloadThemeUpdate.Value="True"
-        Style="{StaticResource FlatWindow}"
-        Title="Stira Flat Style" Height="600" Width="800">
+        Style="{StaticResource FlatWindowTransparent}"
+        Title="Stira Flat Style" Height="720" Width="1040">
 
-    <DockPanel>
-        <StackPanel HorizontalAlignment="Center">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="500" />
+            <ColumnDefinition Width="220" />
+            <ColumnDefinition Width="300" />
+        </Grid.ColumnDefinitions>
+        <StackPanel HorizontalAlignment="Center" Grid.Column="0">
             <ToggleButton x:Name="ai" Content="Switch Theme" ToolTip="Switch dark/day theme" Click="Button_Click" HorizontalAlignment="Center" />
 
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
@@ -74,7 +79,55 @@
             <ProgressBar IsEnabled="True"  IsIndeterminate="True" />
             <ProgressBar IsEnabled="True"  Value="60" />
         </StackPanel>
-        <TabControl  DockPanel.Dock="Right">
+        <StackPanel Grid.Column="1">
+            <flatStyle:TilePanel Width="200"  HeaderColor="{DynamicResource PrimaryBrush}" Margin="10" Title="Tile Panel">
+                <StackPanel HorizontalAlignment="Center">
+                    <TextBlock Text="This is" />
+                    <TextBlock Text="default" />
+                    <TextBlock Text="TilePanel" />
+                </StackPanel>
+            </flatStyle:TilePanel>
+            <flatStyle:TilePanel Width="200" HeaderColor="{DynamicResource SecondaryBrush}" Margin="10" Title="Tile Panel">
+                <StackPanel HorizontalAlignment="Center">
+                    <TextBlock Text="This is" HorizontalAlignment="Center" />
+                    <TextBlock Text="TilePanel" HorizontalAlignment="Center" />
+                    <TextBlock Text="With Secondary Color" HorizontalAlignment="Center" />
+                </StackPanel>
+            </flatStyle:TilePanel>
+            <flatStyle:TilePanel Width="200"  HeaderColor="{DynamicResource PrimaryBrush}" BackgroundColor="{DynamicResource PrimaryBrush}" Margin="10" Title="Super Tile">
+                <StackPanel HorizontalAlignment="Center" TextBlock.Foreground="{DynamicResource ControlForegroundBrush}">
+                    <TextBlock Text="This is" HorizontalAlignment="Center" />
+                    <TextBlock Text="TilePanel With" HorizontalAlignment="Center" />
+                    <TextBlock Text="Custom Background" HorizontalAlignment="Center" />
+                </StackPanel>
+            </flatStyle:TilePanel>
+            <flatStyle:TileSoftUp Width="200" Height="100" Margin="10">
+                <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <TextBlock Text="This" />
+                    <TextBlock Text="is" />
+                    <TextBlock Text="TileSoftUp" />
+                </StackPanel>
+            </flatStyle:TileSoftUp>
+
+            <flatStyle:TileSoftDown Width="200" Height="100" Margin="10">
+                <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <TextBlock Text="This" />
+                    <TextBlock Text="is" />
+                    <TextBlock Text="TileSoftDown" />
+                </StackPanel>
+            </flatStyle:TileSoftDown>
+            <flatStyle:TileSoftUp Width="100" Margin="10">
+                <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <TextBlock Text="Start" />
+                </StackPanel>
+            </flatStyle:TileSoftUp>
+            <flatStyle:TileSoftDown Width="105" Height="25" Margin="10">
+                <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <TextBlock Text="Stop" />
+                </StackPanel>
+            </flatStyle:TileSoftDown>
+        </StackPanel>
+        <TabControl  Grid.Column="2">
             <TabItem Header="Tab 1">
                 <StackPanel>
                     <TextBlock Text="This is Primary Text" />
@@ -95,35 +148,59 @@
                     <TextBox Style="{StaticResource FieldBoxGetSetVertical}" flatStyle:FieldName.Value="Email vertical" Text="{Binding Email}"
                              flatStyle:GetCommand.Value="{Binding GetCommand}" flatStyle:GetText.Value="Get Control" IsReadOnly="True"
                              flatStyle:SetCommand.Value="{Binding SetCommand}" />
-
                 </StackPanel>
             </TabItem>
-            <TabItem Header="Tiles and Layouts" >
+            <TabItem Header="Tiles and Layouts">
                 <StackPanel>
-                    <flatStyle:TilePanel Color="{DynamicResource PrimaryBrush}" Margin="10" Title="Super Tile" >
+                    <flatStyle:TilePanel Width="200"  HeaderColor="{DynamicResource PrimaryBrush}" Margin="10" Title="Tile Panel">
                         <StackPanel HorizontalAlignment="Center">
-                            <TextBlock Text="This"/>
-                            <TextBlock Text="is"/>
-                            <TextBlock Text="Spartaaa"/>
+                            <TextBlock Text="This" />
+                            <TextBlock Text="is" />
+                            <TextBlock Text="TilePanel" />
                         </StackPanel>
                     </flatStyle:TilePanel>
-                    <flatStyle:TilePanel Color="{DynamicResource SecondaryBrush}" Margin="10" Title="Super Tile" >
+                    <flatStyle:TilePanel Width="200" HeaderColor="{DynamicResource SecondaryBrush}" Margin="10" Title="Tile Panel">
                         <StackPanel HorizontalAlignment="Center">
-                            <TextBlock Text="This"/>
-                            <TextBlock Text="is"/>
-                            <TextBlock Text="not"/>
-                            <TextBlock Text="Spartaaa"/>
+                            <TextBlock Text="This" />
+                            <TextBlock Text="is" />
+                            <TextBlock Text="not" />
+                            <TextBlock Text="TilePanel" />
                         </StackPanel>
                     </flatStyle:TilePanel>
-                    <flatStyle:TilePanel Color="{DynamicResource ErrorBrush}" Margin="10" Title="Super Tile" >
-                        <StackPanel HorizontalAlignment="Center">
-                            <TextBlock Text="This"/>
-                            <TextBlock Text="is"/>
-                            <TextBlock Text="Spartaaa"/>
+                    <flatStyle:TilePanel Width="200"  HeaderColor="{DynamicResource PrimaryBrush}" BackgroundColor="{DynamicResource PrimaryBrush}" Margin="10" Title="Super Tile">
+                        <StackPanel HorizontalAlignment="Center" TextBlock.Foreground="{DynamicResource ControlForegroundBrush}">
+                            <TextBlock Text="This" />
+                            <TextBlock Text="is" />
+                            <TextBlock Text="TilePanel" />
                         </StackPanel>
                     </flatStyle:TilePanel>
+                    <flatStyle:TileSoftUp Width="200" Height="100" Margin="10">
+                        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+                            <TextBlock Text="This" />
+                            <TextBlock Text="is" />
+                            <TextBlock Text="TileSoftUp" />
+                        </StackPanel>
+                    </flatStyle:TileSoftUp>
+
+                    <flatStyle:TileSoftDown Width="200" Height="100" Margin="10">
+                        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+                            <TextBlock Text="This" />
+                            <TextBlock Text="is" />
+                            <TextBlock Text="TileSoftDown" />
+                        </StackPanel>
+                    </flatStyle:TileSoftDown>
+                    <flatStyle:TileSoftUp Width="100" Margin="10">
+                        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+                            <TextBlock Text="Start" />
+                        </StackPanel>
+                    </flatStyle:TileSoftUp>
+                    <flatStyle:TileSoftDown Width="105" Height="25" Margin="10">
+                        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+                            <TextBlock Text="Stop" />
+                        </StackPanel>
+                    </flatStyle:TileSoftDown>
                 </StackPanel>
             </TabItem>
         </TabControl>
-    </DockPanel>
+    </Grid>
 </Window>
