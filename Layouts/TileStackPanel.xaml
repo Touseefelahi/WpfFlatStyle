@@ -12,7 +12,7 @@
             <Grid>
                 <Border Background="{DynamicResource ForegroundMainBrush}">
                     <Border.Effect>
-                        <DropShadowEffect  Color="{DynamicResource ForegroundMainColor}" Direction="330" ShadowDepth="3" Opacity="0.3" />
+                        <DropShadowEffect  Color="{DynamicResource ForegroundMainColor}" Direction="330" ShadowDepth="5" BlurRadius="9" Opacity="0.3" />
                     </Border.Effect>
                 </Border>
                 <Border>
