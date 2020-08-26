@@ -45,6 +45,13 @@
         </ControlTemplate.Triggers>
     </ControlTemplate>
 
+    <ControlTemplate x:Key="ComboBoxTextBox"
+                 TargetType="{x:Type TextBox}">
+        <Border x:Name="PART_ContentHost"
+          Focusable="False"
+          Background="{TemplateBinding Background}" />
+    </ControlTemplate>
+
     <Style x:Key="{x:Type ComboBox}" TargetType="{x:Type ComboBox}">
         <Setter Property="SnapsToDevicePixels" Value="true" />
         <Setter Property="OverridesDefaultStyle" Value="true" />
@@ -71,13 +78,22 @@
                                           Content="{TemplateBinding SelectionBoxItem}"
                             ContentTemplate="{TemplateBinding SelectionBoxItemTemplate}"
                             ContentTemplateSelector="{TemplateBinding ItemTemplateSelector}"
-                            Margin="3,3,23,3"
+                            Margin="3,4,23,2"
                             VerticalAlignment="Center"
                             MinWidth="30"
                             TextBlock.Foreground="{TemplateBinding Foreground}"
                             HorizontalAlignment="Stretch">
                         </ContentPresenter>
-
+                        <TextBox x:Name="PART_EditableTextBox"
+                            Template="{StaticResource ComboBoxTextBox}"
+                            HorizontalAlignment="Left"
+                            VerticalAlignment="Bottom"
+                            Margin="3,4,23,2"
+                            Focusable="True"
+                            Foreground="{TemplateBinding Foreground}"
+                            Background="Transparent"
+                            Visibility="Hidden"
+                            IsReadOnly="{TemplateBinding IsReadOnly}" />
                         <Popup
                             Name="Popup"
                             Placement="Bottom"
@@ -119,7 +135,7 @@
                         </Trigger>
                         <Trigger Property="IsEditable"  Value="true">
                             <Setter Property="IsTabStop" Value="false" />
-                            <!--<Setter TargetName="PART_EditableTextBox" Property="Visibility" Value="Visible" />-->
+                            <Setter TargetName="PART_EditableTextBox" Property="Visibility" Value="Visible" />
                             <Setter TargetName="ContentSite" Property="Visibility" Value="Hidden" />
                         </Trigger>
                     </ControlTemplate.Triggers>

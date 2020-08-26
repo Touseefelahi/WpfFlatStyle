@@ -46,8 +46,8 @@
                 <ToggleButton Content="CautionToggle" Style="{StaticResource CautionToggleButton}" />
             </StackPanel>
 
-            <ComboBox>
-                <ComboBoxItem IsSelected="True" Content="Item 1" />
+            <ComboBox Text="Items" IsReadOnly="True" IsEditable="True">
+                <ComboBoxItem Content="Item 1" />
                 <ComboBoxItem Content="Item 2" />
                 <ComboBoxItem Content="Item 3" />
             </ComboBox>
