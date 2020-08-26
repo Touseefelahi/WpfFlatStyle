@@ -10,13 +10,13 @@
             <Grid>
                 <Border x:Name="topShadow" CornerRadius="5" BorderBrush="{DynamicResource BackgroundBrush}" BorderThickness="1">
                     <Border.Effect>
-                        <DropShadowEffect  Color="White" Direction="160" ShadowDepth="1" Opacity="1"  BlurRadius="5" />
+                        <DropShadowEffect  Color="White" Direction="160" ShadowDepth="3" Opacity="1"  BlurRadius="9" />
                     </Border.Effect>
                 </Border>
 
                 <Border x:Name="bottomShadow" CornerRadius="5"  BorderBrush="{DynamicResource BackgroundBrush}"  BorderThickness="1">
                     <Border.Effect>
-                        <DropShadowEffect  Color="Black" Direction="330" ShadowDepth="1" Opacity="1"  BlurRadius="5" />
+                        <DropShadowEffect  Color="Black" Direction="330" ShadowDepth="3" Opacity="1"  BlurRadius="9" />
                     </Border.Effect>
                 </Border>
                 <Border  Background="{DynamicResource BackgroundBrush}" CornerRadius="5" BorderBrush="{DynamicResource BackgroundBrush}" BorderThickness="1" />

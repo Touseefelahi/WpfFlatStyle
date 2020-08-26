@@ -121,11 +121,8 @@
                     <TextBlock Text="Start" />
                 </StackPanel>
             </flatStyle:TileSoftUp>
-            <flatStyle:TileSoftDown Width="105" Height="25" Margin="10">
-                <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
-                    <TextBlock Text="Stop" />
-                </StackPanel>
-            </flatStyle:TileSoftDown>
+            <Button Content="Start" Style="{StaticResource SoftButton}"/>
+            <TextBox Text="Soft text box" Style="{StaticResource TextBoxSoft}"/>
         </StackPanel>
         <TabControl  Grid.Column="2">
             <TabItem Header="Tab 1">
