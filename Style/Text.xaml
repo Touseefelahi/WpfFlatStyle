@@ -39,7 +39,7 @@
         <Setter Property="FontWeight" Value="Bold" />
     </Style>
 
-    <Style TargetType="{x:Type TextBox}" BasedOn="{StaticResource BaseStyle}">
+    <Style TargetType="{x:Type TextBox}" x:Key="BottomLine" BasedOn="{StaticResource BaseStyle}">
         <Setter Property="Foreground" Value="{DynamicResource ForegroundMainBrush}" />
         <Setter Property="CaretBrush" Value="{DynamicResource ForegroundMainBrush}" />
         <Setter Property="BorderBrush" Value="{DynamicResource PrimaryBrush}" />
@@ -55,8 +55,8 @@
                                 BorderThickness="{TemplateBinding BorderThickness}"
                                 SnapsToDevicePixels="True">
                             <ScrollViewer x:Name="PART_ContentHost"
-                                          Focusable="False"
                                           VerticalAlignment="Bottom"
+                                          Focusable="False"
                                           HorizontalScrollBarVisibility="Hidden"
                                           VerticalScrollBarVisibility="Hidden"
                                           Foreground="{TemplateBinding Foreground}">
@@ -506,43 +506,61 @@
         </Setter>
     </Style>
 
-    <Style TargetType="TextBox" x:Key="FieldBox2">
-        <Setter Property="Height" Value="25" />
-        <Setter Property="Width" Value="130" />
-        <Setter Property="Padding" Value="5 5 " />
-        <Setter Property="Cursor" Value="IBeam" />
-        <Setter Property="FontSize" Value="14" />
+    <Style TargetType="{x:Type TextBox}" BasedOn="{StaticResource BaseStyle}">
+        <Setter Property="Foreground" Value="{DynamicResource ForegroundMainBrush}" />
+        <Setter Property="CaretBrush" Value="{DynamicResource ForegroundMainBrush}" />
+        <Setter Property="BorderBrush" Value="{DynamicResource PrimaryBrush}" />
+        <Setter Property="Background" Value="{DynamicResource BackgroundBrush}" />
         <Setter Property="BorderThickness" Value="1" />
-        <Setter Property="BorderBrush" Value="#ccc" />
+        <Setter Property="MinHeight" Value="28" />
+        <Setter Property="MinWidth" Value="20" />
+        <Setter Property="HorizontalAlignment" Value="Stretch" />
+        <Setter Property="Padding" Value="2" />
+        <Setter Property="Margin" Value="5,2,5,5" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="TextBox">
-                    <Grid>
-                        <Canvas>
-                            <TextBlock x:Name="textBlock" Text="{TemplateBinding local:Placeholder.Value}" Width="auto"  FontSize="11" FontWeight="Medium" Foreground="#777"
-                                       Canvas.Top="-10" Canvas.Left="3" Background="{TemplateBinding Background}" Padding="2 0 "
-                                       Panel.ZIndex="1" Margin="1" Visibility="Visible" />
-                            <Border x:Name="border"  BorderBrush="{TemplateBinding BorderBrush}" Width="{TemplateBinding Width}" CornerRadius="3" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}">
-                                <Grid>
-                                    <ScrollViewer x:Name="PART_ContentHost" VerticalAlignment="Center" />
-                                    <TextBlock  x:Name="PlaceholderLabel" Padding="{TemplateBinding Padding}"
-                                                Text="{TemplateBinding local:Placeholder.Value}"
-                                                VerticalAlignment="Center" Visibility="Collapsed" Foreground="Gray" FontFamily="Arial" />
+                    <Grid MinHeight="{TemplateBinding Height}" HorizontalAlignment="Stretch">
+                        <TextBlock x:Name="topText"
+                                       Text="{TemplateBinding local:Placeholder.Value}" HorizontalAlignment="Center" VerticalAlignment="Top"
+                                       Margin="0,-6,0,0" Padding="3,0" Background="{TemplateBinding Background}"
+                                       Panel.ZIndex="1"  Visibility="Visible" />
+                        <Border x:Name="border"  BorderBrush="{TemplateBinding BorderBrush}"
+                                    Width="{TemplateBinding Width}" CornerRadius="3" BorderThickness="{TemplateBinding BorderThickness}"
+                                    Background="{TemplateBinding Background}">
+                            <Canvas HorizontalAlignment="Stretch">
+                                <Grid MinHeight="{TemplateBinding MinHeight}" MinWidth="{TemplateBinding Width}">
+                                    <ScrollViewer x:Name="PART_ContentHost"
+                                                  Focusable="False"
+                                                  HorizontalScrollBarVisibility="Hidden"
+                                                  VerticalScrollBarVisibility="Hidden"
+                                                  Margin="2" VerticalAlignment="Center">
+                                        <ScrollViewer.InputBindings>
+                                            <KeyBinding Key="Return" Command="{x:Static local:Command.ReturnCommand}"
+                                                CommandParameter="{Binding RelativeSource= {RelativeSource Mode=FindAncestor, AncestorType={x:Type TextBox}}}" />
+                                            <KeyBinding Key="Return"
+                                                Command="{Binding Path=(local:SetCommand.Value), RelativeSource={RelativeSource TemplatedParent}}"
+                                                CommandParameter="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type TextBox}}, Path=Text}" />
+                                        </ScrollViewer.InputBindings>
+                                    </ScrollViewer>
+                                    <TextBlock  x:Name="PlaceholderLabel" Opacity="0.8"
+                                                Text="{TemplateBinding local:Placeholder.Value}" Margin="0"  FontStyle="Italic"
+                                                VerticalAlignment="Center" Visibility="Hidden" />
                                 </Grid>
-                            </Border>
-                        </Canvas>
+                            </Canvas>
+                        </Border>
                     </Grid>
                     <ControlTemplate.Triggers>
                         <Trigger Property="Text" Value="">
-                            <Setter TargetName="textBlock" Property="Visibility" Value="Hidden" />
+                            <Setter TargetName="topText" Property="Visibility" Value="Hidden" />
                             <Setter Property="Visibility" TargetName="PlaceholderLabel" Value="Visible" />
                         </Trigger>
                         <Trigger Property="IsKeyboardFocused" Value="true">
-                            <Setter TargetName="textBlock" Property="Visibility" Value="Visible" />
+                            <Setter TargetName="topText" Property="Visibility" Value="Visible" />
                             <Setter Property="Visibility" TargetName="PlaceholderLabel" Value="Hidden" />
                         </Trigger>
                         <Trigger Property="IsEnabled" Value="False">
-                            <Setter Property="Foreground" Value="DimGray" />
+                            <Setter Property="Foreground" Value="{DynamicResource DisabledBrush}" />
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
