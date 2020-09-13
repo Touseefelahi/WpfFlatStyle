@@ -19,10 +19,10 @@
     <RepositoryType>Git</RepositoryType>
     <PackageTags>Wpf, Theme, Flat-Design</PackageTags>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <Version>1.8.3</Version>
+    <Version>1.8.4</Version>
     <PackageIcon>StiraIcon.png</PackageIcon>
     <PackageIconUrl />
-    <PackageReleaseNotes>Textbox default style updated</PackageReleaseNotes>
+    <PackageReleaseNotes>Slider text background fixed</PackageReleaseNotes>
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
   </PropertyGroup>
