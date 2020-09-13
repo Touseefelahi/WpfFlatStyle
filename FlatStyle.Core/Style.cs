@@ -6,7 +6,7 @@ using System.Windows.Media;
 
 namespace FlatStyle
 {
-    public static class Style
+    public static class FlatStyle
     {
         public static EventHandler<bool> ThemeSwitched;
         private static string lightThemeIdentifier = "IsLightTheme";

@@ -9,7 +9,7 @@ namespace FlatStyle
             if (value is bool isLoadRequired)
             {
                 if (isLoadRequired)
-                    Style.LoadTheme();
+                    FlatStyle.LoadTheme();
             }
         }
     }

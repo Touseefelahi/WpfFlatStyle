@@ -2,7 +2,7 @@
 using System.Globalization;
 using System.Windows;
 
-namespace FlatStyle.Converters
+namespace FlatStyle
 {
     /// <summary>
     /// Converts bool to Visibility parameters: | NC = normal collapsed | IC = Inverted Collapsed |

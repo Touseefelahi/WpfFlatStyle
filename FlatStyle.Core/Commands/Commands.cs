@@ -107,7 +107,7 @@ namespace FlatStyle
         {
             windowTheme = new Window
             {
-                Content = new ThemeSelector(),
+                // Content = new ThemeSelector(),
                 Width = 250,
                 Height = 200,
                 ResizeMode = ResizeMode.NoResize,

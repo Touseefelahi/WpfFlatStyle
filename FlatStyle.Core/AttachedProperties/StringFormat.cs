@@ -1,6 +1,4 @@
-﻿using System.Windows;
-
-namespace FlatStyle
+﻿namespace FlatStyle
 {
     public class StringFormat : BaseAttachedProperty<StringFormat, string>
     {

@@ -13,6 +13,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Style", "Style", "{B2B3435D
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Sample", "Sample", "{C93EFB12-146D-4163-AB07-04B4B0666903}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FlatStyle.Core", "FlatStyle.Core\FlatStyle.Core.csproj", "{5F110D24-BA86-44DB-AB9B-1DAC418E09E2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{490B6800-FDF2-46F7-862C-BFDC18BAB039}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{490B6800-FDF2-46F7-862C-BFDC18BAB039}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{490B6800-FDF2-46F7-862C-BFDC18BAB039}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5F110D24-BA86-44DB-AB9B-1DAC418E09E2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5F110D24-BA86-44DB-AB9B-1DAC418E09E2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5F110D24-BA86-44DB-AB9B-1DAC418E09E2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5F110D24-BA86-44DB-AB9B-1DAC418E09E2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -34,6 +40,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{9F09F1A8-5DB0-4CF0-A369-A542724E75BE} = {B2B3435D-8785-4BEA-A3F3-50DFB4E0CACA}
 		{490B6800-FDF2-46F7-862C-BFDC18BAB039} = {C93EFB12-146D-4163-AB07-04B4B0666903}
+		{5F110D24-BA86-44DB-AB9B-1DAC418E09E2} = {9D7E8536-1E1B-453D-8314-23311B043FF2}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {4477320F-F1A6-429F-9CFB-CFBAC1F8C9B3}

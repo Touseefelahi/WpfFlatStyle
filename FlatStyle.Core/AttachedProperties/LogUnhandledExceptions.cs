@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Diagnostics;
 using System.Globalization;
-using System.IO;
 using System.Reflection;
 using System.Text;
 using System.Windows;
@@ -22,7 +21,7 @@ namespace FlatStyle
         /// <param name="message">Message to log</param>
         public static void Log(string message)
         {
-            Trace.TraceError($"{DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss")}\t{message}");
+            Trace.TraceError($"{DateTime.Now:dd/MM/yyyy HH:mm:ss}\t{message}");
         }
 
         /// <summary>

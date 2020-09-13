@@ -1,17 +1,8 @@
 ﻿using FlatStyle.Controls;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Text;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace FlatStyle
 {
@@ -26,30 +17,30 @@ namespace FlatStyle
             DataContext = this;
         }
 
-        public bool IsLightTheme { get => FlatStyle.Style.IsLightTheme; set => FlatStyle.Style.SwitchTheme(!FlatStyle.Style.IsLightTheme); }
+        public bool IsLightTheme { get => FlatStyle.IsLightTheme; set => FlatStyle.SwitchTheme(!FlatStyle.IsLightTheme); }
 
         public string PrimaryColor
         {
-            get => FlatStyle.Style.GetColor(ColorFlat.PrimaryColor).ToString();
-            set => FlatStyle.Style.SetPrimaryColor(value);
+            get => FlatStyle.GetColor(ColorFlat.PrimaryColor).ToString();
+            set => FlatStyle.SetPrimaryColor(value);
         }
 
         public ColorFlat SelectedColorName { get; set; }
 
         public string SecondaryColor
         {
-            get => FlatStyle.Style.GetColor(ColorFlat.SecondaryColor).ToString();
-            set => FlatStyle.Style.SetSecondaryColor(value);
+            get => FlatStyle.GetColor(ColorFlat.SecondaryColor).ToString();
+            set => FlatStyle.SetSecondaryColor(value);
         }
 
         private void SaveTheme(object sender, RoutedEventArgs e)
         {
-            FlatStyle.Style.SaveTheme();
+            FlatStyle.SaveTheme();
         }
 
         private void TextBox_PreviewMouseDoubleClickPrimary(object sender, MouseButtonEventArgs e)
         {
-            ColorPicker colorPicker = new ColorPicker(FlatStyle.Style.GetColor(ColorFlat.PrimaryColor));
+            ColorPicker colorPicker = new ColorPicker(FlatStyle.GetColor(ColorFlat.PrimaryColor));
             if (colorPicker.ShowDialog().Value)
             {
                 PrimaryColor = colorPicker.SelectedColor.ToString();
@@ -58,7 +49,7 @@ namespace FlatStyle
 
         private void TextBox_PreviewMouseDoubleClickSecondary(object sender, MouseButtonEventArgs e)
         {
-            ColorPicker colorPicker = new ColorPicker(FlatStyle.Style.GetColor(ColorFlat.SecondaryColor));
+            ColorPicker colorPicker = new ColorPicker(FlatStyle.GetColor(ColorFlat.SecondaryColor));
             if (colorPicker.ShowDialog().Value)
             {
                 SecondaryColor = colorPicker.SelectedColor.ToString();
@@ -67,24 +58,24 @@ namespace FlatStyle
 
         private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            selectedColorText.Text = FlatStyle.Style.GetColor(SelectedColorName).ToString();
-            SelectedColorDisplay.Background = new SolidColorBrush(FlatStyle.Style.GetColor(SelectedColorName));
+            selectedColorText.Text = FlatStyle.GetColor(SelectedColorName).ToString();
+            SelectedColorDisplay.Background = new SolidColorBrush(FlatStyle.GetColor(SelectedColorName));
         }
 
         private void TextBox_PreviewMouseDoubleClickCustom(object sender, MouseButtonEventArgs e)
         {
-            ColorPicker colorPicker = new ColorPicker(FlatStyle.Style.GetColor(SelectedColorName));
+            ColorPicker colorPicker = new ColorPicker(FlatStyle.GetColor(SelectedColorName));
             if (colorPicker.ShowDialog().Value)
             {
                 selectedColorText.Text = colorPicker.SelectedColor.ToString();
-                FlatStyle.Style.SetColor(SelectedColorName, selectedColorText.Text);
-                SelectedColorDisplay.Background = new SolidColorBrush(FlatStyle.Style.GetColor(SelectedColorName));
+                FlatStyle.SetColor(SelectedColorName, selectedColorText.Text);
+                SelectedColorDisplay.Background = new SolidColorBrush(FlatStyle.GetColor(SelectedColorName));
             }
         }
 
         private void LoadDefaultOnRestart(object sender, RoutedEventArgs e)
         {
-            FlatStyle.Style.LoadDefaultOnRestart();
+            FlatStyle.LoadDefaultOnRestart();
             MessageBox.Show("Will be effective on restart");
         }
     }

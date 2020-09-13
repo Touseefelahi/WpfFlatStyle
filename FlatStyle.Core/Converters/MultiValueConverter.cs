@@ -3,7 +3,7 @@ using System.Globalization;
 using System.Windows.Data;
 using System.Windows.Markup;
 
-namespace FlatStyle.Converters
+namespace FlatStyle
 {
     public class MultiValueConverter : MarkupExtension, IMultiValueConverter
     {

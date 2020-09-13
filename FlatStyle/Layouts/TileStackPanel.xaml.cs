@@ -13,13 +13,13 @@ namespace FlatStyle
         /// Tile Background Color property
         /// </summary>
         public static readonly DependencyProperty BackgroundColorProperty =
-            DependencyProperty.Register("BackgroundColor", typeof(Brush), typeof(TilePanel), new PropertyMetadata(new SolidColorBrush(FlatStyle.Style.GetColor(ColorFlat.BackgroundColor))));
+            DependencyProperty.Register("BackgroundColor", typeof(Brush), typeof(TilePanel), new PropertyMetadata(new SolidColorBrush(FlatStyle.GetColor(ColorFlat.BackgroundColor))));
 
         /// <summary>
         /// Title color property
         /// </summary>
         public static readonly DependencyProperty ColorProperty =
-            DependencyProperty.Register("HeaderColor", typeof(Brush), typeof(TilePanel), new PropertyMetadata(new SolidColorBrush(FlatStyle.Style.GetColor(ColorFlat.PrimaryColor))));
+            DependencyProperty.Register("HeaderColor", typeof(Brush), typeof(TilePanel), new PropertyMetadata(new SolidColorBrush(FlatStyle.GetColor(ColorFlat.PrimaryColor))));
 
         /// <summary>
         /// This will be the Title of tile

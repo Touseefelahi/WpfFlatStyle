@@ -1,13 +1,13 @@
 ﻿using System;
 using System.Globalization;
 
-namespace FlatStyle.Converters
+namespace FlatStyle
 {
-    public class GridLengthToDouble : BaseValueConverter<GridLengthToDouble>
+    public class ToString : BaseValueConverter<ToString>
     {
         public override object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            return null;
+            return value.ToString();
         }
 
         public override object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
