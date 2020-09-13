@@ -9,5 +9,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\FlatStyle.csproj" />
+    <ProjectReference Include="..\FlatStyle\FlatStyle.csproj" />
   </ItemGroup>
 </Project>

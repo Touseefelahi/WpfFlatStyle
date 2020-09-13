@@ -3,3 +3,6 @@
 ################################################################################
 
 /.vs/FlatStyle
+/FlatStyle.Sample/bin
+/FlatStyle.Sample/obj
+/obj

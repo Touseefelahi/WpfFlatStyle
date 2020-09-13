@@ -3,9 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29519.181
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FlatStyle", "FlatStyle.csproj", "{9F09F1A8-5DB0-4CF0-A369-A542724E75BE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FlatStyle", "FlatStyle\FlatStyle.csproj", "{9F09F1A8-5DB0-4CF0-A369-A542724E75BE}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FlatStyle.Sample", "FlatStyle.Sample\FlatStyle.Sample.csproj", "{490B6800-FDF2-46F7-862C-BFDC18BAB039}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{9D7E8536-1E1B-453D-8314-23311B043FF2}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Style", "Style", "{B2B3435D-8785-4BEA-A3F3-50DFB4E0CACA}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Sample", "Sample", "{C93EFB12-146D-4163-AB07-04B4B0666903}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -24,6 +30,10 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{9F09F1A8-5DB0-4CF0-A369-A542724E75BE} = {B2B3435D-8785-4BEA-A3F3-50DFB4E0CACA}
+		{490B6800-FDF2-46F7-862C-BFDC18BAB039} = {C93EFB12-146D-4163-AB07-04B4B0666903}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {4477320F-F1A6-429F-9CFB-CFBAC1F8C9B3}
