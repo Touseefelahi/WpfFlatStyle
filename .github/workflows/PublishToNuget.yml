@@ -10,28 +10,16 @@ jobs:
     runs-on: windows-latest
 
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v1
     - name: Setup .NET Core
-      uses: actions/setup-dotnet@v1
+      uses: actions/setup-dotnet@master
       with:
-        dotnet-version: 3.0.100
-    - uses: actions/checkout@v2
-    - name: Setup .Net 4.5
-      uses: actions/setup-dotnet@v1
-      with:
-        dotnet-version: net45
-    - name: Create NuGet Package
-      run: dotnet pack -c Release /p:Version=${{ github.event.release.tag_name }} /p:PackageReleaseNotes="See https://github.com/Touseefelahi/WpfFlatStyle/releases/tag/${{ github.event.release.tag_name }}"
-      working-directory: ./      
-    - name: Archive NuGet Package
-      uses: actions/upload-artifact@v1
-      with:
-        name: Wpf Flat Style Nuget Build
-        path: ./bin/Release/netCoreApp3.0/FlatStyle.${{ github.event.release.tag_name }}.nupkg
-    - name: Archive NuGet Package
-      uses: actions/upload-artifact@v1
-      with:
-        name: WpfFlatStyle
-        path: ./bin/Release/netCoreApp3.0/FlatStyle.${{ github.event.release.tag_name }}.nupkg
-    - name: Publish Nuget Package
-      run: dotnet nuget push **/*.nupkg --api-key ${{ secrets.NUGET_KEY }} --source https://api.nuget.org/v3/index.json --no-symbols true
+        dotnet-version: 3.1.100
+    - name: Build
+      run: dotnet build --configuration Release
+    - name: Pack
+      run: dotnet pack --configuration Release --version-suffix action-testing -o "./packages"
+    - name: Publish
+      env:
+        NUGET_AUTH_TOKEN: ${{secrets.NUGET_KEY}}
+      run: dotnet nuget push -s https://www.nuget.org/api/v2/package -k $NUGET_AUTH_TOKEN ./packages/*.nupkg
