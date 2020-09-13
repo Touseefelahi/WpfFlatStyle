@@ -78,7 +78,7 @@
             <TextBox  flatStyle:Placeholder.Value="This is placeholder" />
             <StackPanel Orientation="Horizontal">
                 <ToggleButton Content="Switch Theme" ToolTip="Switch dark/day theme" Click="Button_Click" HorizontalAlignment="Center" />
-                <TextBox  flatStyle:Placeholder.Value="Width af asf" Width="50" Text="24" />
+                <TextBox  flatStyle:Placeholder.Value="Width af asf"  Text="24" />
                 <TextBox  flatStyle:Placeholder.Value="This is placeholder" />
             </StackPanel>
             <ProgressBar IsEnabled="True"  IsIndeterminate="True" />
