@@ -1,37 +1,51 @@
-name: Release to Nuget
-
+name: publish to nuget
 on:
   release:
-    types: [published]
-
+    branches:
+      - master # Default release branch
 jobs:
-  build:
-
+  publish:
+    name: build, pack & publish
     runs-on: windows-latest
-
     steps:
-    - uses: actions/checkout@v2
-    - name: Setup .NET Core
-      uses: actions/setup-dotnet@v1
-      with:
-        dotnet-version: 3.0.100
-    - uses: actions/checkout@v2
-    - name: Setup .Net 4.5
-      uses: actions/setup-dotnet@v1
-      with:
-        dotnet-version: net45
-    - name: Create NuGet Package
-      run: dotnet pack -c Release /p:Version=${{ github.event.release.tag_name }} /p:PackageReleaseNotes="See https://github.com/Touseefelahi/WpfFlatStyle/releases/tag/${{ github.event.release.tag_name }}"
-      working-directory: ./      
-    - name: Archive NuGet Package
-      uses: actions/upload-artifact@v1
-      with:
-        name: Wpf Flat Style Nuget Build
-        path: ./bin/Release/netCoreApp3.0/FlatStyle.${{ github.event.release.tag_name }}.nupkg
-    - name: Archive NuGet Package
-      uses: actions/upload-artifact@v1
-      with:
-        name: WpfFlatStyle
-        path: ./bin/Release/netCoreApp3.0/FlatStyle.${{ github.event.release.tag_name }}.nupkg
-    - name: Publish Nuget Package
-      run: dotnet nuget push **/*.nupkg --api-key ${{ secrets.NUGET_KEY }} --source https://api.nuget.org/v3/index.json --no-symbols true
+      - uses: actions/checkout@v2
+
+      # - name: Setup dotnet
+      #   uses: actions/setup-dotnet@v1
+      #   with:
+      #     dotnet-version: 3.1.200
+
+      # Publish
+      - name: publish on version change
+        id: publish_nuget
+        uses: rohith/publish-nuget@v2
+        with:
+          # Filepath of the project to be packaged, relative to root of repository
+          PROJECT_FILE_PATH: FlatStyle.csproj
+          
+          # NuGet package id, used for version detection & defaults to project name
+          PACKAGE_NAME: Stira.WpfFlatStyle
+          
+          # Filepath with version info, relative to root of repository & defaults to PROJECT_FILE_PATH
+          VERSION_FILE_PATH: Directory.Build.props
+
+          # Regex pattern to extract version info in a capturing group
+          # VERSION_REGEX: ^\s*<Version>(.*)<\/Version>\s*$
+          
+          # Useful with external providers like Nerdbank.GitVersioning, ignores VERSION_FILE_PATH & VERSION_REGEX
+          VERSION_STATIC: 1.6.2
+
+          # Flag to toggle git tagging, enabled by default
+          # TAG_COMMIT: true
+
+          # Format of the git tag, [*] gets replaced with actual version
+          # TAG_FORMAT: v*
+
+          # API key to authenticate with NuGet server
+          NUGET_KEY: ${{secrets.NUGET_KEY}}
+
+          # NuGet server uri hosting the packages, defaults to https://api.nuget.org
+          NUGET_SOURCE: https://api.nuget.org
+
+          # Flag to toggle pushing symbols along with nuget package to the server, disabled by default
+          INCLUDE_SYMBOLS: false
