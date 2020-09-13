@@ -45,6 +45,13 @@
         </ControlTemplate.Triggers>
     </ControlTemplate>
 
+    <ControlTemplate x:Key="ComboBoxTextBox"
+                 TargetType="{x:Type TextBox}">
+        <Border x:Name="PART_ContentHost"
+          Focusable="False"
+          Background="{TemplateBinding Background}" />
+    </ControlTemplate>
+
     <Style x:Key="{x:Type ComboBox}" TargetType="{x:Type ComboBox}">
         <Setter Property="SnapsToDevicePixels" Value="true" />
         <Setter Property="OverridesDefaultStyle" Value="true" />
@@ -52,7 +59,7 @@
         <Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="Auto" />
         <Setter Property="ScrollViewer.CanContentScroll" Value="true" />
         <Setter Property="MinWidth" Value="40" />
-        <Setter Property="MinHeight" Value="18" />
+        <Setter Property="MinHeight" Value="30" />
         <Setter Property="Foreground" Value="{DynamicResource ControlForegroundBrush}" />
         <Setter Property="Template">
             <Setter.Value>
@@ -71,13 +78,22 @@
                                           Content="{TemplateBinding SelectionBoxItem}"
                             ContentTemplate="{TemplateBinding SelectionBoxItemTemplate}"
                             ContentTemplateSelector="{TemplateBinding ItemTemplateSelector}"
-                            Margin="3,3,23,3"
+                            Margin="3,4,23,2"
                             VerticalAlignment="Center"
                             MinWidth="30"
                             TextBlock.Foreground="{TemplateBinding Foreground}"
                             HorizontalAlignment="Stretch">
                         </ContentPresenter>
-
+                        <TextBox x:Name="PART_EditableTextBox"
+                            Template="{StaticResource ComboBoxTextBox}"
+                            HorizontalAlignment="Left"
+                            VerticalAlignment="Center"
+                            Margin="10,12,23,0"
+                            Focusable="True"
+                            Foreground="{TemplateBinding Foreground}"
+                            Background="Transparent"
+                            Visibility="Hidden"
+                            IsReadOnly="{TemplateBinding IsReadOnly}" />
                         <Popup
                             Name="Popup"
                             Placement="Bottom"
@@ -119,7 +135,7 @@
                         </Trigger>
                         <Trigger Property="IsEditable"  Value="true">
                             <Setter Property="IsTabStop" Value="false" />
-                            <!--<Setter TargetName="PART_EditableTextBox" Property="Visibility" Value="Visible" />-->
+                            <Setter TargetName="PART_EditableTextBox" Property="Visibility" Value="Visible" />
                             <Setter TargetName="ContentSite" Property="Visibility" Value="Hidden" />
                         </Trigger>
                     </ControlTemplate.Triggers>
@@ -138,15 +154,13 @@
                 <ControlTemplate TargetType="{x:Type ComboBoxItem}">
                     <Grid>
                         <Border Name="Border"
-                              Padding="2"
-                              SnapsToDevicePixels="true">
-                            <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                                Padding="2"
+                                SnapsToDevicePixels="true">
+                            <Grid HorizontalAlignment="Stretch">
                                 <ContentPresenter  VerticalAlignment="Center" x:Name="Presenter">
                                     <ContentPresenter.ContentTemplate>
                                         <DataTemplate>
                                             <Grid HorizontalAlignment="Stretch">
-                                                <!--<ContentPresenter HorizontalAlignment="Center"  VerticalAlignment="Center" Content="{Binding}">
-                                                </ContentPresenter>-->
                                                 <TextBlock HorizontalAlignment="Stretch"
                                                            TextAlignment="Center"
                                                            Text="{Binding ElementName=Presenter, Path=Content}">

@@ -1,0 +1,85 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:local="clr-namespace:FlatStyle"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <Style x:Key="ButtonBase" TargetType="{x:Type Button}" BasedOn="{StaticResource BaseStyle}">
+        <Setter Property="Background" Value="{DynamicResource BackgroundBrush}" />
+        <Setter Property="Foreground" Value="{DynamicResource ForegroundMainBrush}" />
+        <Setter Property="Padding" Value="8"/>
+        <Setter Property="FontSize" Value="{StaticResource FontSizeAboveAverage}"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Grid>
+                        <local:TileSoftUp x:Name="normalState" Margin="2.5">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" Margin="{TemplateBinding Padding}" />
+                        </local:TileSoftUp>
+
+                        <local:TileSoftDown x:Name="pressedState" Visibility="Collapsed" Opacity="0.7">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" Margin="{TemplateBinding Padding}"/>
+                        </local:TileSoftDown>
+                    </Grid>
+
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Foreground" Value="{DynamicResource PrimaryBrush}"/>
+                            <Setter Property="Cursor" Value="Hand" />
+                        </Trigger>
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter Property="Visibility" TargetName="pressedState" Value="Visible"/>
+                            <Setter Property="Visibility" TargetName="normalState" Value="Collapsed"/>
+                        </Trigger>
+                        <Trigger Property="IsPressed" Value="False">
+
+                            <Setter Property="Visibility" TargetName="pressedState" Value="Collapsed"/>
+                            <Setter Property="Visibility" TargetName="normalState" Value="Visible"/>
+                        </Trigger>
+                        <Trigger Property="IsEnabled" Value="False">
+                            <Setter Property="Foreground" Value="{DynamicResource DisabledBrush}" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+
+    <Style TargetType="{x:Type Button}" BasedOn="{StaticResource ButtonBase}" x:Key="SoftButton"/>
+
+    <Style x:Key="TextBoxSoft" TargetType="{x:Type TextBox}" >
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="Padding" Value="8"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type TextBoxBase}">
+                    <Grid>
+                        <local:TileSoftDown >
+
+                        </local:TileSoftDown>
+                        <ScrollViewer x:Name="PART_ContentHost"
+                                          Focusable="False"
+                                          VerticalAlignment="Bottom"
+                                          HorizontalScrollBarVisibility="Hidden"
+                                          VerticalScrollBarVisibility="Hidden"
+                                          Foreground="{TemplateBinding Foreground}">
+                            <ScrollViewer.InputBindings>
+                                <KeyBinding Key="Return" Command="{x:Static local:Command.ReturnCommand}"
+                                                CommandParameter="{Binding RelativeSource= {RelativeSource Mode=FindAncestor, AncestorType={x:Type TextBox}}}" />
+                                <KeyBinding Key="Return"
+                                                Command="{Binding Path=(local:SetCommand.Value), RelativeSource={RelativeSource TemplatedParent}}"
+                                                CommandParameter="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type TextBox}}, Path=Text}" />
+                            </ScrollViewer.InputBindings>
+                        </ScrollViewer>
+                    </Grid>
+
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Cursor" Value="IBeam" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+</ResourceDictionary>

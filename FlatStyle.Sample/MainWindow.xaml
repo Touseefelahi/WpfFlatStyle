@@ -46,8 +46,8 @@
                 <ToggleButton Content="CautionToggle" Style="{StaticResource CautionToggleButton}" />
             </StackPanel>
 
-            <ComboBox>
-                <ComboBoxItem IsSelected="True" Content="Item 1" />
+            <ComboBox Text="Items" IsReadOnly="True" IsEditable="True">
+                <ComboBoxItem Content="Item 1" />
                 <ComboBoxItem Content="Item 2" />
                 <ComboBoxItem Content="Item 3" />
             </ComboBox>
@@ -76,6 +76,11 @@
 
             <TextBox Text="This is textbox text" flatStyle:Placeholder.Value="This is placeholder" />
             <TextBox  flatStyle:Placeholder.Value="This is placeholder" />
+            <StackPanel Orientation="Horizontal">
+                <ToggleButton Content="Switch Theme" ToolTip="Switch dark/day theme" Click="Button_Click" HorizontalAlignment="Center" />
+                <TextBox  flatStyle:Placeholder.Value="Width af asf"  Text="24" />
+                <TextBox  flatStyle:Placeholder.Value="This is placeholder" />
+            </StackPanel>
             <ProgressBar IsEnabled="True"  IsIndeterminate="True" />
             <ProgressBar IsEnabled="True"  Value="60" />
         </StackPanel>
@@ -121,11 +126,8 @@
                     <TextBlock Text="Start" />
                 </StackPanel>
             </flatStyle:TileSoftUp>
-            <flatStyle:TileSoftDown Width="105" Height="25" Margin="10">
-                <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
-                    <TextBlock Text="Stop" />
-                </StackPanel>
-            </flatStyle:TileSoftDown>
+            <Button Content="Start" Style="{StaticResource SoftButton}" />
+            <TextBox Text="Soft text box" Style="{StaticResource TextBoxSoft}" />
         </StackPanel>
         <TabControl  Grid.Column="2">
             <TabItem Header="Tab 1">

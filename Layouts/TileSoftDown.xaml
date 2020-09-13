@@ -10,21 +10,15 @@
             <Grid>
                 <Border ClipToBounds="True" CornerRadius="5" BorderBrush="{DynamicResource BackgroundBrush}" BorderThickness="1">
                     <Border.Effect>
-                        <DropShadowEffect  Color="White" Direction="150" ShadowDepth="1" Opacity="1"  BlurRadius="5" />
+                        <DropShadowEffect  Color="White" Direction="150" ShadowDepth="3" Opacity="1"  BlurRadius="9" />
                     </Border.Effect>
-                    <Border.OpacityMask>
-                        <VisualBrush Visual="{Binding ElementName=Boundary}" />
-                    </Border.OpacityMask>
                 </Border>
                 <Border ClipToBounds="True"  CornerRadius="5" BorderBrush="{DynamicResource BackgroundBrush}"  BorderThickness="1">
                     <Border.Effect>
-                        <DropShadowEffect  Color="Black" Direction="330" ShadowDepth="1" Opacity="1"  BlurRadius="5" />
+                        <DropShadowEffect  Color="Black" Direction="330" ShadowDepth="3" Opacity="1"  BlurRadius="9" />
                     </Border.Effect>
-                    <Border.OpacityMask>
-                        <VisualBrush Visual="{Binding ElementName=Boundary}" />
-                    </Border.OpacityMask>
                 </Border>
-                <Border x:Name="Boundary" CornerRadius="5" ClipToBounds="True" BorderBrush="{DynamicResource BackgroundBrush}"
+                <Border CornerRadius="5" ClipToBounds="True" BorderBrush="{DynamicResource BackgroundBrush}"
                     BorderThickness="1" />
                 <Border ClipToBounds="True" BorderBrush="{DynamicResource BackgroundBrush}" BorderThickness="1" />
                 <Polygon Points="0,0 0,5, 5,0" HorizontalAlignment="Left" VerticalAlignment="Top" Fill="{DynamicResource BackgroundBrush}" />
