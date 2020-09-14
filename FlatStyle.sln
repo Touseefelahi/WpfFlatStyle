@@ -7,6 +7,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FlatStyle", "FlatStyle.Styl
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FlatStyle.Sample", "FlatStyle.Sample\FlatStyle.Sample.csproj", "{490B6800-FDF2-46F7-862C-BFDC18BAB039}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Stira.Converters.Wpf", "Stira.Converters.Wpf\Stira.Converters.Wpf.csproj", "{15884877-E1F8-4113-AFE5-89A402EB78F9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{490B6800-FDF2-46F7-862C-BFDC18BAB039}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{490B6800-FDF2-46F7-862C-BFDC18BAB039}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{490B6800-FDF2-46F7-862C-BFDC18BAB039}.Release|Any CPU.Build.0 = Release|Any CPU
+		{15884877-E1F8-4113-AFE5-89A402EB78F9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{15884877-E1F8-4113-AFE5-89A402EB78F9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{15884877-E1F8-4113-AFE5-89A402EB78F9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{15884877-E1F8-4113-AFE5-89A402EB78F9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

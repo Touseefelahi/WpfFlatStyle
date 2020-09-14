@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Globalization;
 
-namespace FlatStyle.Converters
+namespace Stira.Converters.Wpf
 {
     public class GridLengthToDouble : BaseValueConverter<GridLengthToDouble>
     {

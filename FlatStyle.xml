@@ -366,44 +366,6 @@
             InitializeComponent
             </summary>
         </member>
-        <member name="F:FlatStyle.Converters.BaseValueConverter`1.Converter">
-            <summary>
-            A single static instance of this value converter
-            </summary>
-        </member>
-        <member name="M:FlatStyle.Converters.BaseValueConverter`1.ProvideValue(System.IServiceProvider)">
-            <summary>
-            Provides a static instance of the value converter
-            </summary>
-            <param name="serviceProvider">The service provider</param>
-            <returns></returns>
-        </member>
-        <member name="M:FlatStyle.Converters.BaseValueConverter`1.Convert(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
-            <summary>
-            The method to convert one type to another
-            </summary>
-            <param name="value"></param>
-            <param name="targetType"></param>
-            <param name="parameter"></param>
-            <param name="culture"></param>
-            <returns></returns>
-        </member>
-        <member name="M:FlatStyle.Converters.BaseValueConverter`1.ConvertBack(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
-            <summary>
-            The method to convert a value back to it's source type
-            </summary>
-            <param name="value"></param>
-            <param name="targetType"></param>
-            <param name="parameter"></param>
-            <param name="culture"></param>
-            <returns></returns>
-        </member>
-        <member name="T:FlatStyle.Converters.BooleanToVisiblityConverter">
-            <summary>
-            Converts bool to Visibility parameters: | NC = normal collapsed | IC = Inverted Collapsed |
-            NH = Normal Hidden | IH = Inverted Hidden
-            </summary>
-        </member>
         <member name="T:FlatStyle.TileSoftDown">
             <summary>
             Interaction logic for TileSoftDown.xaml

@@ -3,7 +3,7 @@ using System.Globalization;
 using System.Windows.Data;
 using System.Windows.Markup;
 
-namespace FlatStyle.Converters
+namespace Stira.Converters.Wpf
 {
     public class MultiValueConverter : MarkupExtension, IMultiValueConverter
     {
