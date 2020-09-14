@@ -61,15 +61,15 @@ Add This In your App.xaml file
 # Sample
  
  Light Theme: 
-![alt text](https://github.com/Touseefelahi/WpfFlatStyle/blob/master/BlueLightTheme.png " Light Theme")
+![alt text](https://github.com/Touseefelahi/WpfFlatStyle/blob/master/Flatstyle.Style/BlueLightTheme.png " Light Theme")
  
 Dark Theme: 
-![alt text](https://github.com/Touseefelahi/WpfFlatStyle/blob/master/BlueDarkTheme.png " Dark Theme")
+![alt text](https://github.com/Touseefelahi/WpfFlatStyle/blob/master/Flatstyle.Style/BlueDarkTheme.png " Dark Theme")
 
 # Button
-[Button Style Sheet](https://github.com/Touseefelahi/WpfFlatStyle/blob/master/Style/Button.xaml#StyleSheet)
+[Button Style Sheet](https://github.com/Touseefelahi/WpfFlatStyle/blob/master/Flatstyle.Style/Style/Button.xaml#StyleSheet)
 
-[Icon Button Style Sheet](https://github.com/Touseefelahi/WpfFlatStyle/blob/master/Style/ButtonIconBased.xaml#StyleSheet)   
+[Icon Button Style Sheet](https://github.com/Touseefelahi/WpfFlatStyle/blob/master/Flatstyle.Style/Style/ButtonIconBased.xaml#StyleSheet)   
         
     <Button Content="Normal Button" />
     <Button Content="SecondaryButton" Style="{StaticResource SecondaryButton}" />
@@ -79,7 +79,7 @@ Dark Theme:
     <Button Style="{StaticResource IconButton}"  Content="{StaticResource Fa-address-card}" />  
    
 # Toggle Button
-[Button Style Sheet](https://github.com/Touseefelahi/WpfFlatStyle/blob/master/Style/Button.xaml#StyleSheet)
+[Button Style Sheet](https://github.com/Touseefelahi/WpfFlatStyle/blob/master/Flatstyle.Style/Style/Button.xaml#StyleSheet)
 
 
     <ToggleButton flatStyle:IsCheckedText.Value="This Text Will Appear when its is checked"  flatStyle:IsUnCheckedText.Value="This Text Will Appear when its is unChecked"  />
@@ -89,7 +89,7 @@ Dark Theme:
  
 
 # CheckBox
-[Checkbox Style Sheet](https://github.com/Touseefelahi/WpfFlatStyle/blob/master/Style/CheckBox.xaml#StyleSheet)
+[Checkbox Style Sheet](https://github.com/Touseefelahi/WpfFlatStyle/blob/master/Flatstyle.Style/Style/CheckBox.xaml#StyleSheet)
 
      <CheckBox  Content="this g check" HorizontalAlignment="Left" />
      <CheckBox IsChecked="True"  Style="{StaticResource StatusLed}" />
@@ -99,7 +99,7 @@ Dark Theme:
      <CheckBox IsChecked="True"  Style="{StaticResource TickStatus}" />
 
 # Text
-[Text Style Sheet](https://github.com/Touseefelahi/WpfFlatStyle/blob/master/Style/Text.xaml#StyleSheet)
+[Text Style Sheet](https://github.com/Touseefelahi/WpfFlatStyle/blob/master/Flatstyle.Style/Style/Text.xaml#StyleSheet)
 
      <TextBlock Style="{StaticResource PrimaryText}" Text="This is Primary Text" />
      <TextBlock Style="{StaticResource PrimaryBackgroundText}" Text="This is PrimaryBackground Text" />
