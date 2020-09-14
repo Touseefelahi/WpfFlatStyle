@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29519.181
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FlatStyle", "FlatStyle.csproj", "{9F09F1A8-5DB0-4CF0-A369-A542724E75BE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FlatStyle", "FlatStyle.Style\FlatStyle.csproj", "{9F09F1A8-5DB0-4CF0-A369-A542724E75BE}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FlatStyle.Sample", "FlatStyle.Sample\FlatStyle.Sample.csproj", "{490B6800-FDF2-46F7-862C-BFDC18BAB039}"
 EndProject
