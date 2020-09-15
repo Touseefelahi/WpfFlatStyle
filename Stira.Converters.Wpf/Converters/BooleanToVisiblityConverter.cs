@@ -8,7 +8,7 @@ namespace Stira.Converters.Wpf
     /// Converts bool to Visibility parameters: | NC = normal collapsed | IC = Inverted Collapsed |
     /// NH = Normal Hidden | IH = Inverted Hidden
     /// </summary>
-    public class BooleanToVisiblityConverter : BaseValueConverter<BooleanToVisiblityConverter>
+    public class BooleanToVisiblity : BaseValueConverter<BooleanToVisiblity>
     {
         #region Public Methods
 
