@@ -10,7 +10,7 @@ namespace FlatStyle
     {
         public static EventHandler<bool> ThemeSwitched;
         private static string lightThemeIdentifier = "IsLightTheme";
-        public static bool IsLightTheme { get; private set; }
+        public static bool IsLightTheme { get; private set; } = true;
 
         public static void LoadDefaultOnRestart()
         {
