@@ -35,6 +35,9 @@ namespace FlatStyle
         /// </summary>
         public static ParameterizedDelegateCommand Minimize = new ParameterizedDelegateCommand((parameter) => MinimizeWindow(parameter));
 
+        /// <summary>
+        /// This is for Textbox. Triggers the update source event on return key
+        /// </summary>
         public static ParameterizedDelegateCommand ReturnCommand = new ParameterizedDelegateCommand((parameter) => Return(parameter));
 
         /// <summary>
@@ -108,8 +111,8 @@ namespace FlatStyle
             windowTheme = new Window
             {
                 Content = new ThemeSelector(),
-                Width = 250,
-                Height = 200,
+                Width = 300,
+                Height = 260,
                 ResizeMode = ResizeMode.NoResize,
             };
             windowTheme.Show();
@@ -121,8 +124,11 @@ namespace FlatStyle
             switch (window.WindowState)
             {
                 case WindowState.Normal:
-                    window.WindowState = WindowState.Maximized;
-                    window.WindowStyle = WindowStyle.None;
+                    if (window.ResizeMode != ResizeMode.NoResize)
+                    {
+                        window.WindowState = WindowState.Maximized;
+                        window.WindowStyle = WindowStyle.None;
+                    }
                     break;
 
                 case WindowState.Maximized:
