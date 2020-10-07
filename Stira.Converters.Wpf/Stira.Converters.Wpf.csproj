@@ -22,7 +22,9 @@
       MultiValueConverter
       ToString converter
       AirthmeticOperator
+      LogicalOperator
     </PackageReleaseNotes>
-    <Version>1.0.2</Version>
+    <Version>1.0.3</Version>
+    <Configurations>Debug;Release;PublishOnLocal</Configurations>
   </PropertyGroup>
 </Project>

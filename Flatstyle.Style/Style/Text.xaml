@@ -372,7 +372,7 @@
                                     CommandParameter="{Binding Name, RelativeSource= {RelativeSource Mode=FindAncestor, AncestorType={x:Type TextBox}}}" />
 
                             <Button Content="{Binding Path=(local:SetText.Value),RelativeSource={RelativeSource TemplatedParent}}"
-                                    Visibility="{TemplateBinding IsReadOnly, Converter={converter:BooleanToVisiblityConverter}, ConverterParameter=IC}"
+                                    Visibility="{TemplateBinding IsReadOnly, Converter={converter:BooleanToVisiblity}, ConverterParameter=IC}"
                                     Command="{Binding Path=(local:SetCommand.Value),RelativeSource={RelativeSource TemplatedParent}}"
                                     CommandParameter="{Binding Text, RelativeSource= {RelativeSource Mode=FindAncestor, AncestorType={x:Type TextBox}}}" />
                         </StackPanel>
@@ -474,7 +474,7 @@
                                     CommandParameter="{Binding Name, RelativeSource= {RelativeSource Mode=FindAncestor, AncestorType={x:Type TextBox}}}" />
 
                             <Button Content="{Binding Path=(local:SetText.Value),RelativeSource={RelativeSource TemplatedParent}}"
-                                    Visibility="{TemplateBinding IsReadOnly, Converter={converter:BooleanToVisiblityConverter}, ConverterParameter=IC}"
+                                    Visibility="{TemplateBinding IsReadOnly, Converter={converter:BooleanToVisiblity}, ConverterParameter=IC}"
                                     Command="{Binding Path=(local:SetCommand.Value),RelativeSource={RelativeSource TemplatedParent}}"
                                     CommandParameter="{Binding Text, RelativeSource= {RelativeSource Mode=FindAncestor, AncestorType={x:Type TextBox}}}" />
                         </StackPanel>

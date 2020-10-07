@@ -19,17 +19,24 @@
     <RepositoryType>Git</RepositoryType>
     <PackageTags>Wpf, Theme, Flat-Design</PackageTags>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <Version>1.8.5</Version>
+    <Version>1.8.6.1</Version>
     <PackageIcon>StiraIcon.png</PackageIcon>
     <PackageIconUrl />
     <PackageReleaseNotes>Converter project moved</PackageReleaseNotes>
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <Configurations>Debug;Release;PublishOnLocal</Configurations>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|netcoreapp3.0|AnyCPU'">
     <OutputPath>D:\VisualStudioProjects\Visual Studio 2019\Nuget Packages\All Packages\</OutputPath>
     <DocumentationFile>D:\VisualStudioProjects\Visual Studio 2019\Nuget Packages\FlatStyle\FlatStyle.xml</DocumentationFile>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='PublishOnLocal|netcoreapp3.0|AnyCPU'">
+    <OutputPath>D:\VisualStudioProjects\Visual Studio 2019\Nuget Packages\All Packages\</OutputPath>
+    <DocumentationFile>D:\VisualStudioProjects\Visual Studio 2019\Nuget Packages\FlatStyle\FlatStyle.xml</DocumentationFile>
+    <Optimize>true</Optimize>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|netcoreapp3.0|AnyCPU'">
@@ -80,15 +87,6 @@
     <None Include="build\Stira.WpfFlatStyle.targets">
       <PackagePath>build/</PackagePath>
       <Pack>true</Pack>
-    </None>
-  </ItemGroup>
-
-  <ItemGroup>
-    <None Include="$(MSBuildThisFileDirectory)..\ReadMe.md">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      <Link>ReadMe.md</Link>
-      <Pack>True</Pack>
-      <Visible>True</Visible>
     </None>
   </ItemGroup>
 
@@ -157,7 +155,22 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Stira.Converters.Wpf" Version="1.0.0" />
+    <PackageReference Include="Stira.Converters.Wpf" Version="1.0.2" />
     <PackageReference Include="System.Windows.Interactivity.WPF" Version="2.0.20525" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="ReadMe.md">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="$(MSBuildThisFileDirectory)\ReadMe.md">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Link>ReadMe.md</Link>
+      <Pack>True</Pack>
+      <Visible>True</Visible>
+    </None>
   </ItemGroup>
 </Project>

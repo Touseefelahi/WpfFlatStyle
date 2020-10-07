@@ -9,3 +9,6 @@
 /obj
 /Stira.Converters.Wpf/bin/Debug
 /Stira.Converters.Wpf/obj
+/Stira.Converters.Wpf/bin/Release/net45
+/Stira.Converters.Wpf/bin/Release/netcoreapp3.0
+/Stira.Converters.Wpf/bin/Release

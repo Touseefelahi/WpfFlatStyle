@@ -24,7 +24,10 @@ namespace FlatStyle
         {
             InitializeComponent();
             DataContext = this;
+            ColorUpdateCommand = new DelegateCommand(ColorUpdated);
         }
+
+        public ICommand ColorUpdateCommand { get; set; }
 
         public bool IsLightTheme { get => FlatStyle.Style.IsLightTheme; set => FlatStyle.Style.SwitchTheme(!FlatStyle.Style.IsLightTheme); }
 
@@ -40,6 +43,17 @@ namespace FlatStyle
         {
             get => FlatStyle.Style.GetColor(ColorFlat.SecondaryColor).ToString();
             set => FlatStyle.Style.SetSecondaryColor(value);
+        }
+
+        private void ColorUpdated()
+        {
+            try
+            {
+                FlatStyle.Style.SetColor(SelectedColorName, selectedColorText.Text);
+            }
+            catch (Exception ex)
+            {
+            }
         }
 
         private void SaveTheme(object sender, RoutedEventArgs e)

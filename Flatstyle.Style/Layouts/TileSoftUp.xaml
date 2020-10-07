@@ -7,7 +7,7 @@
              d:DesignHeight="450" d:DesignWidth="800">
     <UserControl.ContentTemplate>
         <DataTemplate>
-            <Grid>
+            <Grid Margin="5">
                 <Border x:Name="topShadow" CornerRadius="5" BorderBrush="{DynamicResource BackgroundBrush}" BorderThickness="1">
                     <Border.Effect>
                         <DropShadowEffect  Color="White" Direction="160" ShadowDepth="3" Opacity="1"  BlurRadius="9" />

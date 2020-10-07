@@ -7,7 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FlatStyle", "FlatStyle.Styl
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FlatStyle.Sample", "FlatStyle.Sample\FlatStyle.Sample.csproj", "{490B6800-FDF2-46F7-862C-BFDC18BAB039}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Stira.Converters.Wpf", "Stira.Converters.Wpf\Stira.Converters.Wpf.csproj", "{15884877-E1F8-4113-AFE5-89A402EB78F9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Stira.Converters.Wpf", "Stira.Converters.Wpf\Stira.Converters.Wpf.csproj", "{15884877-E1F8-4113-AFE5-89A402EB78F9}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Docs", "Docs", "{AF596A3A-1953-4FA8-BD40-3F7B33A233CE}"
 	ProjectSection(SolutionItems) = preProject
@@ -23,19 +23,26 @@ EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
+		PublishOnLocal|Any CPU = PublishOnLocal|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{9F09F1A8-5DB0-4CF0-A369-A542724E75BE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{9F09F1A8-5DB0-4CF0-A369-A542724E75BE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9F09F1A8-5DB0-4CF0-A369-A542724E75BE}.PublishOnLocal|Any CPU.ActiveCfg = PublishOnLocal|Any CPU
+		{9F09F1A8-5DB0-4CF0-A369-A542724E75BE}.PublishOnLocal|Any CPU.Build.0 = PublishOnLocal|Any CPU
 		{9F09F1A8-5DB0-4CF0-A369-A542724E75BE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9F09F1A8-5DB0-4CF0-A369-A542724E75BE}.Release|Any CPU.Build.0 = Release|Any CPU
 		{490B6800-FDF2-46F7-862C-BFDC18BAB039}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{490B6800-FDF2-46F7-862C-BFDC18BAB039}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{490B6800-FDF2-46F7-862C-BFDC18BAB039}.PublishOnLocal|Any CPU.ActiveCfg = PublishOnLocal|Any CPU
+		{490B6800-FDF2-46F7-862C-BFDC18BAB039}.PublishOnLocal|Any CPU.Build.0 = PublishOnLocal|Any CPU
 		{490B6800-FDF2-46F7-862C-BFDC18BAB039}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{490B6800-FDF2-46F7-862C-BFDC18BAB039}.Release|Any CPU.Build.0 = Release|Any CPU
 		{15884877-E1F8-4113-AFE5-89A402EB78F9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{15884877-E1F8-4113-AFE5-89A402EB78F9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{15884877-E1F8-4113-AFE5-89A402EB78F9}.PublishOnLocal|Any CPU.ActiveCfg = PublishOnLocal|Any CPU
+		{15884877-E1F8-4113-AFE5-89A402EB78F9}.PublishOnLocal|Any CPU.Build.0 = PublishOnLocal|Any CPU
 		{15884877-E1F8-4113-AFE5-89A402EB78F9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{15884877-E1F8-4113-AFE5-89A402EB78F9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection

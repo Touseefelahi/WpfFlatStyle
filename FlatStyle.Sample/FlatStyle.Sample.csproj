@@ -5,6 +5,7 @@
     <TargetFramework>net472</TargetFramework>
     <UseWPF>true</UseWPF>
     <ApplicationIcon>stira.ico</ApplicationIcon>
+    <Configurations>Debug;Release;PublishOnLocal</Configurations>
   </PropertyGroup>
 
   <ItemGroup>
