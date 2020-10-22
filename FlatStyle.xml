@@ -90,6 +90,11 @@
             Logs unhandled exceptions if true in <see cref="F:FlatStyle.LogUnhandledExceptions.fileName"/>
             </summary>
         </member>
+        <member name="F:FlatStyle.LogUnhandledExceptions.dockPosition">
+            <summary>
+            The last known dock position
+            </summary>
+        </member>
         <member name="M:FlatStyle.LogUnhandledExceptions.Log(System.String)">
             <summary>
             Logs message in <see cref="F:FlatStyle.LogUnhandledExceptions.fileName"/> file
@@ -104,7 +109,7 @@
         </member>
         <member name="M:FlatStyle.LogUnhandledExceptions.OnValueUpdated(System.Windows.DependencyObject,System.Object)">
             <summary>
-            Hook all unhandled exceptions to the log method
+            Hook all unhandled exceptions to the log method and Sets the Resizer
             </summary>
             <param name="sender">Sender</param>
             <param name="value">bool</param>
@@ -443,6 +448,133 @@
         <member name="M:FlatStyle.TilePanel.InitializeComponent">
             <summary>
             InitializeComponent
+            </summary>
+        </member>
+        <member name="T:FlatStyle.Resizer.WindowDockPosition">
+            <summary>
+            The dock position of the window
+            </summary>
+        </member>
+        <member name="F:FlatStyle.Resizer.WindowDockPosition.Undocked">
+            <summary>
+            Not docked
+            </summary>
+        </member>
+        <member name="F:FlatStyle.Resizer.WindowDockPosition.Left">
+            <summary>
+            Docked to the left of the screen
+            </summary>
+        </member>
+        <member name="F:FlatStyle.Resizer.WindowDockPosition.Right">
+            <summary>
+            Docked to the right of the screen
+            </summary>
+        </member>
+        <member name="T:FlatStyle.Resizer.WindowResizer">
+            <summary>
+            Fixes the issue with Windows of Style <see cref="F:System.Windows.WindowStyle.None"/> covering the taskbar
+            </summary>
+        </member>
+        <member name="F:FlatStyle.Resizer.WindowResizer.mEdgeTolerance">
+            <summary>
+            How close to the edge the window has to be to be detected as at the edge of the screen
+            </summary>
+        </member>
+        <member name="F:FlatStyle.Resizer.WindowResizer.mWindow">
+            <summary>
+            The window to handle the resizing for
+            </summary>
+        </member>
+        <member name="F:FlatStyle.Resizer.WindowResizer.mScreenSize">
+            <summary>
+            The last calculated available screen size
+            </summary>
+        </member>
+        <member name="F:FlatStyle.Resizer.WindowResizer.mTransformToDevice">
+            <summary>
+            The transform matrix used to convert WPF sizes to screen pixels
+            </summary>
+        </member>
+        <member name="F:FlatStyle.Resizer.WindowResizer.mLastScreen">
+            <summary>
+            The last screen the window was on
+            </summary>
+        </member>
+        <member name="F:FlatStyle.Resizer.WindowResizer.mLastDock">
+            <summary>
+            The last known dock position
+            </summary>
+        </member>
+        <member name="E:FlatStyle.Resizer.WindowResizer.WindowDockChanged">
+            <summary>
+            Called when the window dock position changes
+            </summary>
+        </member>
+        <member name="P:FlatStyle.Resizer.WindowResizer.CurrentMonitorSize">
+            <summary>
+            The size and position of the current monitor the window is on
+            </summary>
+        </member>
+        <member name="M:FlatStyle.Resizer.WindowResizer.#ctor(System.Windows.Window)">
+            <summary>
+            Default constructor
+            </summary>
+            <param name="window">The window to monitor and correctly maximize</param>
+            <param name="adjustSize">
+            The callback for the host to adjust the maximum available size if needed
+            </param>
+        </member>
+        <member name="M:FlatStyle.Resizer.WindowResizer.GetTransform">
+            <summary>
+            Gets the transform object used to convert WPF sizes to screen pixels
+            </summary>
+        </member>
+        <member name="M:FlatStyle.Resizer.WindowResizer.Window_SourceInitialized(System.Object,System.EventArgs)">
+            <summary>
+            Initialize and hook into the windows message pump
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:FlatStyle.Resizer.WindowResizer.Window_SizeChanged(System.Object,System.Windows.SizeChangedEventArgs)">
+            <summary>
+            Monitors for size changes and detects if the window has been docked (Aero snap) to an edge
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:FlatStyle.Resizer.WindowResizer.WindowProc(System.IntPtr,System.Int32,System.IntPtr,System.IntPtr,System.Boolean@)">
+            <summary>
+            Listens out for all windows messages for this window
+            </summary>
+            <param name="hwnd"></param>
+            <param name="msg"></param>
+            <param name="wParam"></param>
+            <param name="lParam"></param>
+            <param name="handled"></param>
+            <returns></returns>
+        </member>
+        <member name="M:FlatStyle.Resizer.WindowResizer.WmGetMinMaxInfo(System.IntPtr,System.IntPtr)">
+            <summary>
+            Get the min/max window size for this window Correctly accounting for the taskbar size
+            and position
+            </summary>
+            <param name="hwnd"></param>
+            <param name="lParam"></param>
+        </member>
+        <member name="F:FlatStyle.Resizer.POINT.X">
+            <summary>
+            x coordinate of point.
+            </summary>
+        </member>
+        <member name="F:FlatStyle.Resizer.POINT.Y">
+            <summary>
+            y coordinate of point.
+            </summary>
+        </member>
+        <member name="M:FlatStyle.Resizer.POINT.#ctor(System.Int32,System.Int32)">
+            <summary>
+            Construct a point of coordinates (x,y).
             </summary>
         </member>
         <member name="T:XamlGeneratedNamespace.GeneratedInternalTypeHelper">

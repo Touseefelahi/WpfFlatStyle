@@ -1,7 +1,7 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
 
-    <Style TargetType="{x:Type ToolTip}">
+    <Style x:Key="ToolTipBase" TargetType="{x:Type ToolTip}">
         <Setter Property="Background" Value="{DynamicResource BackgroundBrush}" />
         <Setter Property="Foreground" Value="{DynamicResource ForegroundMainBrush}" />
         <Setter Property="Template">
@@ -17,4 +17,5 @@
             </Setter.Value>
         </Setter>
     </Style>
+    <Style BasedOn="{StaticResource ToolTipBase}" TargetType="{x:Type ToolTip}" />
 </ResourceDictionary>

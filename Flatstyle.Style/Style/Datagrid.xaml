@@ -1,7 +1,7 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
 
-    <Style TargetType="{x:Type DataGridColumnHeader}">
+    <Style x:Key="DataGridColumnHeaderBase" TargetType="{x:Type DataGridColumnHeader}">
         <Setter Property="Background" Value="{DynamicResource PrimaryBrush}" />
         <Setter Property="Foreground" Value="{DynamicResource ControlForegroundBrush}" />
         <Setter Property="Height" Value="30" />
@@ -23,7 +23,9 @@
         </Setter>
     </Style>
 
-    <Style TargetType="{x:Type DataGridCell}">
+    <Style  TargetType="{x:Type DataGridColumnHeader}" BasedOn="{StaticResource DataGridColumnHeaderBase}" />
+
+    <Style x:Key="DataGridCellBase" TargetType="{x:Type DataGridCell}">
         <Setter Property="Foreground" Value="{DynamicResource ForegroundMainBrush}" />
         <Setter Property="Background" Value="{DynamicResource BackgroundBrush}" />
         <Setter Property="HorizontalContentAlignment" Value="Stretch" />
@@ -36,7 +38,9 @@
         </Style.Triggers>
     </Style>
 
-    <Style TargetType="{x:Type DataGridRow}">
+    <Style BasedOn="{StaticResource DataGridCellBase}" TargetType="{x:Type DataGridCell}" />
+
+    <Style x:Key="DataGridRowBase" TargetType="{x:Type DataGridRow}">
         <Setter Property="Foreground" Value="{DynamicResource ForegroundMainBrush}" />
         <Setter Property="Background" Value="{DynamicResource BackgroundBrush}" />
         <Setter Property="Height" Value="auto" />
@@ -54,10 +58,11 @@
             </Trigger>
         </Style.Triggers>
     </Style>
-
-    <Style TargetType="{x:Type DataGrid}">
+    <Style BasedOn="{StaticResource DataGridRowBase}" TargetType="{x:Type DataGridRow}" />
+    <Style x:Key="DataGridBase" TargetType="{x:Type DataGrid}">
         <Setter Property="RowHeaderWidth" Value="0" />
         <Setter Property="Margin" Value="5" />
         <Setter Property="Background" Value="{DynamicResource BackgroundBrush}" />
     </Style>
+    <Style BasedOn="{StaticResource DataGridBase}" TargetType="{x:Type DataGrid}" />
 </ResourceDictionary>
