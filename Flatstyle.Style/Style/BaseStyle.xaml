@@ -10,7 +10,7 @@
         <Setter Property="Control.VerticalAlignment" Value="Center" />
     </Style>
 
-    <Style x:Key="BaseTextBlock" TargetType="{x:Type TextBlock}" BasedOn="{StaticResource BaseStyle}">
+    <Style x:Key="TextBlockBase" TargetType="{x:Type TextBlock}" BasedOn="{StaticResource BaseStyle}">
         <Setter Property="HorizontalAlignment" Value="Left" />
     </Style>
 </ResourceDictionary>

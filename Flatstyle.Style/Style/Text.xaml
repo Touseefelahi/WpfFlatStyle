@@ -3,33 +3,33 @@
                     xmlns:converter="clr-namespace:Stira.Converters.Wpf;assembly=Stira.Converters.Wpf"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
 
-    <Style TargetType="{x:Type TextBlock}" BasedOn="{StaticResource BaseTextBlock}" />
+    <Style TargetType="{x:Type TextBlock}" BasedOn="{StaticResource TextBlockBase}" />
 
-    <Style x:Key="PrimaryText" TargetType="{x:Type TextBlock}" BasedOn="{StaticResource BaseTextBlock}">
+    <Style x:Key="PrimaryText" TargetType="{x:Type TextBlock}" BasedOn="{StaticResource TextBlockBase}">
         <Setter Property="Foreground" Value="{DynamicResource PrimaryBrush}" />
     </Style>
 
-    <Style x:Key="SecondaryText" TargetType="{x:Type TextBlock}" BasedOn="{StaticResource BaseTextBlock}">
+    <Style x:Key="SecondaryText" TargetType="{x:Type TextBlock}" BasedOn="{StaticResource TextBlockBase}">
         <Setter Property="Foreground" Value="{DynamicResource SecondaryBrush}" />
     </Style>
 
-    <Style x:Key="PrimaryBackgroundText" TargetType="{x:Type TextBlock}" BasedOn="{StaticResource BaseTextBlock}">
+    <Style x:Key="PrimaryBackgroundText" TargetType="{x:Type TextBlock}" BasedOn="{StaticResource TextBlockBase}">
         <Setter Property="Background" Value="{DynamicResource PrimaryBrush}" />
         <Setter Property="Padding" Value="2" />
         <Setter Property="Foreground" Value="{DynamicResource ControlForegroundBrush}" />
     </Style>
 
-    <Style x:Key="SecondaryBackgroundText" TargetType="{x:Type TextBlock}" BasedOn="{StaticResource BaseTextBlock}">
+    <Style x:Key="SecondaryBackgroundText" TargetType="{x:Type TextBlock}" BasedOn="{StaticResource TextBlockBase}">
         <Setter Property="Background" Value="{DynamicResource SecondaryBrush}" />
         <Setter Property="Padding" Value="2" />
         <Setter Property="Foreground" Value="{DynamicResource ControlForegroundBrush}" />
     </Style>
 
-    <Style x:Key="ErrorText" TargetType="{x:Type TextBlock}" BasedOn="{StaticResource BaseTextBlock}">
+    <Style x:Key="ErrorText" TargetType="{x:Type TextBlock}" BasedOn="{StaticResource TextBlockBase}">
         <Setter Property="Foreground" Value="{DynamicResource ErrorBrush}" />
     </Style>
 
-    <Style x:Key="ErrorBackgroundText" TargetType="{x:Type TextBlock}" BasedOn="{StaticResource BaseTextBlock}">
+    <Style x:Key="ErrorBackgroundText" TargetType="{x:Type TextBlock}" BasedOn="{StaticResource TextBlockBase}">
         <Setter Property="Background" Value="{DynamicResource ErrorBrush}" />
         <Setter Property="Padding" Value="2" />
         <Setter Property="Foreground" Value="{DynamicResource ControlForegroundBrush}" />
@@ -173,7 +173,7 @@
                                    HorizontalAlignment="{TemplateBinding HorizontalAlignment}"
                                    Foreground="{TemplateBinding Foreground}">
                             <TextBlock.Style>
-                                <Style TargetType="{x:Type TextBlock}" BasedOn="{StaticResource BaseTextBlock}">
+                                <Style TargetType="{x:Type TextBlock}" BasedOn="{StaticResource TextBlockBase}">
                                     <Setter Property="Visibility" Value="Collapsed" />
                                     <Style.Triggers>
                                         <DataTrigger Binding="{Binding Text, RelativeSource={RelativeSource TemplatedParent}}" Value="">
@@ -262,7 +262,7 @@
                                    HorizontalAlignment="{TemplateBinding HorizontalAlignment}"
                                    Foreground="{TemplateBinding Foreground}">
                             <TextBlock.Style>
-                                <Style TargetType="{x:Type TextBlock}" BasedOn="{StaticResource BaseTextBlock}">
+                                <Style TargetType="{x:Type TextBlock}" BasedOn="{StaticResource TextBlockBase}">
                                     <Setter Property="Visibility" Value="Collapsed" />
                                     <Style.Triggers>
                                         <DataTrigger Binding="{Binding Text, RelativeSource={RelativeSource TemplatedParent}}" Value="">
@@ -356,7 +356,7 @@
                                    HorizontalAlignment="{TemplateBinding HorizontalAlignment}"
                                    Foreground="{TemplateBinding Foreground}">
                             <TextBlock.Style>
-                                <Style TargetType="{x:Type TextBlock}" BasedOn="{StaticResource BaseTextBlock}">
+                                <Style TargetType="{x:Type TextBlock}" BasedOn="{StaticResource TextBlockBase}">
                                     <Setter Property="Visibility" Value="Collapsed" />
                                     <Style.Triggers>
                                         <DataTrigger Binding="{Binding Text, RelativeSource={RelativeSource TemplatedParent}}" Value="">
@@ -458,7 +458,7 @@
                                    HorizontalAlignment="{TemplateBinding HorizontalAlignment}"
                                    Foreground="{TemplateBinding Foreground}">
                             <TextBlock.Style>
-                                <Style TargetType="{x:Type TextBlock}" BasedOn="{StaticResource BaseTextBlock}">
+                                <Style TargetType="{x:Type TextBlock}" BasedOn="{StaticResource TextBlockBase}">
                                     <Setter Property="Visibility" Value="Collapsed" />
                                     <Style.Triggers>
                                         <DataTrigger Binding="{Binding Text, RelativeSource={RelativeSource TemplatedParent}}" Value="">

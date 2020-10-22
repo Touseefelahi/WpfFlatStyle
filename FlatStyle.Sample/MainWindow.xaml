@@ -141,6 +141,7 @@
                     <TextBlock Style="{StaticResource ErrorBackgroundText}" Text="This is ErrorBackground Text" />
                     <Slider />
                     <Slider Style="{StaticResource NumericUpDown}" />
+                    <Slider Style="{StaticResource NumericUpDownSlider}" />
                     <TextBox Style="{StaticResource FieldBox}" flatStyle:FieldName.Value="Email" flatStyle:Placeholder.Value="Enter your email here"  Text="{Binding Email}" />
                     <TextBox Style="{StaticResource FieldBoxVertical}" flatStyle:FieldName.Value="Email vertical" Text="{Binding Email}" />
 

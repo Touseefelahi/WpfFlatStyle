@@ -52,7 +52,7 @@
           Background="{TemplateBinding Background}" />
     </ControlTemplate>
 
-    <Style x:Key="{x:Type ComboBox}" TargetType="{x:Type ComboBox}">
+    <Style x:Key="ComboBoxBase" TargetType="{x:Type ComboBox}">
         <Setter Property="SnapsToDevicePixels" Value="true" />
         <Setter Property="OverridesDefaultStyle" Value="true" />
         <Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Auto" />
@@ -191,4 +191,6 @@
             </Setter.Value>
         </Setter>
     </Style>
+
+    <Style x:Key="{x:Type ComboBox}" TargetType="{x:Type ComboBox}" BasedOn="{StaticResource ComboBoxBase}" />
 </ResourceDictionary>
