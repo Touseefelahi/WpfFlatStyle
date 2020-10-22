@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FlatStyle.Resizer;
+using System;
 using System.Diagnostics;
 using System.Globalization;
 using System.IO;
@@ -15,6 +16,8 @@ namespace FlatStyle
     public class LogUnhandledExceptions : BaseAttachedProperty<LogUnhandledExceptions, bool>
     {
         private const string fileName = "Exceptions.log";
+
+        private WindowResizer windowResizer;
 
         /// <summary>
         /// Logs message in <see cref="fileName"/> file
@@ -35,7 +38,7 @@ namespace FlatStyle
         }
 
         /// <summary>
-        /// Hook all unhandled exceptions to the log method
+        /// Hook all unhandled exceptions to the log method and Sets the Resizer
         /// </summary>
         /// <param name="sender">Sender</param>
         /// <param name="value">bool</param>
@@ -58,6 +61,10 @@ namespace FlatStyle
                 catch
                 {
                 }
+            }
+            if (sender is Window window)
+            {
+                SetWindowResizer(window);
             }
         }
 
@@ -98,6 +105,11 @@ namespace FlatStyle
                 builder.Append(name).Append(", ").Append(subBuilder).Append(", ").Append(fullName).Append(", ").Append(fileName).Append(", ").Append(str);
             }
             return builder.ToString();
+        }
+
+        private void SetWindowResizer(Window window)
+        {
+            windowResizer = new WindowResizer(window);
         }
 
         private void Current_DispatcherUnhandledException(object sender, DispatcherUnhandledExceptionEventArgs e)
