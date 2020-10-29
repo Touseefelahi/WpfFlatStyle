@@ -4,7 +4,8 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              mc:Ignorable="d"
-             d:DesignHeight="450" d:DesignWidth="800">
+             x:Name="root"
+             d:DesignHeight="450" d:DesignWidth="300">
     <UserControl.ContentTemplate>
         <DataTemplate>
             <Grid Margin="5">
@@ -19,9 +20,19 @@
                         <DropShadowEffect  Color="Black" Direction="330" ShadowDepth="3" Opacity="1"  BlurRadius="9" />
                     </Border.Effect>
                 </Border>
-                <Border  Background="{DynamicResource BackgroundBrush}" CornerRadius="5" BorderBrush="{DynamicResource BackgroundBrush}" BorderThickness="1" />
+                <Border  Background="{DynamicResource BackgroundBrush}" d:Background="White"
+                         CornerRadius="5" BorderBrush="{DynamicResource BackgroundBrush}" BorderThickness="1" />
+                <TextBlock Text="{Binding Title, ElementName=root}"
+                           d:Text="Title"
+                           ClipToBounds="True"
+                           TextAlignment="Center" Padding="2"
+                           FontSize="{StaticResource FontSizeAboveAverage}"
+                           d:FontSize="17"
+                           Margin="1" VerticalAlignment="Top" HorizontalAlignment="Stretch"
+                           Foreground="{DynamicResource ForegroundMainBrush}" />
+
                 <ContentControl>
-                    <ContentPresenter Content="{TemplateBinding Content}" />
+                    <ContentPresenter Content="{TemplateBinding Content}" d:Content="design" d:HorizontalAlignment="Center" VerticalAlignment="Center" />
                 </ContentControl>
             </Grid>
         </DataTemplate>

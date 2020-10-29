@@ -8,21 +8,24 @@
     <Company>Stira.sa</Company>
     <Product>Wpf Flat Style</Product>
     <Description>
-      Simple flat theme with changeable color and Numeric Updown (Slider Style)
+      Simple flat theme with changeable color
+      Layouts. Tile Panels
+      Numeric Updown (Slider Style)
       Extra feature: exception logging
       Read the readme file and see example project for help
       Project URL: https://github.com/Touseefelahi/WpfFlatStyle
-    </Description>
+</Description>
     <Copyright>Stira.sa</Copyright>
     <PackageProjectUrl>https://github.com/Touseefelahi/WpfFlatStyle</PackageProjectUrl>
     <RepositoryUrl>https://github.com/Touseefelahi/WpfFlatStyle</RepositoryUrl>
     <RepositoryType>Git</RepositoryType>
     <PackageTags>Wpf, Theme, Flat-Design</PackageTags>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <Version>1.8.6.2</Version>
+    <Version>1.8.8</Version>
     <PackageIcon>StiraIcon.png</PackageIcon>
     <PackageIconUrl />
-    <PackageReleaseNotes>Converter project moved</PackageReleaseNotes>
+    <PackageReleaseNotes>TilePanels have Title Property
+Window Resizer added for Taskbar overlay issue</PackageReleaseNotes>
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <Configurations>Debug;Release;PublishOnLocal</Configurations>

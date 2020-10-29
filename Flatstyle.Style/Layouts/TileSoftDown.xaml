@@ -4,6 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              mc:Ignorable="d"
+             x:Name="root"
              d:DesignHeight="450" d:DesignWidth="800">
     <UserControl.ContentTemplate>
         <DataTemplate>
@@ -25,6 +26,15 @@
                 <Polygon Points="-5,0 0,0, 0,5" HorizontalAlignment="Right" VerticalAlignment="Top" Fill="{DynamicResource BackgroundBrush}" />
                 <Polygon Points="0,5 0,0, -5,5" HorizontalAlignment="Right" VerticalAlignment="Bottom" Fill="{DynamicResource BackgroundBrush}" />
                 <Polygon Points="0,-5 0,0, 5,0" HorizontalAlignment="Left" VerticalAlignment="Bottom" Fill="{DynamicResource BackgroundBrush}" />
+
+                <TextBlock Text="{Binding Title, ElementName=root}"
+                           d:Text="Title"
+                           ClipToBounds="True"
+                           TextAlignment="Center" Padding="2"
+                           FontSize="{StaticResource FontSizeAboveAverage}"
+                           d:FontSize="17"
+                           Margin="1" VerticalAlignment="Top" HorizontalAlignment="Stretch"
+                           Foreground="{DynamicResource ForegroundMainBrush}" />
                 <ContentControl>
                     <ContentPresenter Content="{TemplateBinding Content}" />
                 </ContentControl>
