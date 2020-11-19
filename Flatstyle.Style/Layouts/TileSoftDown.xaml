@@ -26,18 +26,32 @@
                 <Polygon Points="-5,0 0,0, 0,5" HorizontalAlignment="Right" VerticalAlignment="Top" Fill="{DynamicResource BackgroundBrush}" />
                 <Polygon Points="0,5 0,0, -5,5" HorizontalAlignment="Right" VerticalAlignment="Bottom" Fill="{DynamicResource BackgroundBrush}" />
                 <Polygon Points="0,-5 0,0, 5,0" HorizontalAlignment="Left" VerticalAlignment="Bottom" Fill="{DynamicResource BackgroundBrush}" />
-
-                <TextBlock Text="{Binding Title, ElementName=root}"
+                <StackPanel>
+                    <TextBlock Text="{Binding Title, ElementName=root}"
                            d:Text="Title"
                            ClipToBounds="True"
                            TextAlignment="Center" Padding="2"
                            FontSize="{StaticResource FontSizeAboveAverage}"
                            d:FontSize="17"
                            Margin="1" VerticalAlignment="Top" HorizontalAlignment="Stretch"
-                           Foreground="{DynamicResource ForegroundMainBrush}" />
-                <ContentControl>
-                    <ContentPresenter Content="{TemplateBinding Content}" />
-                </ContentControl>
+                           Foreground="{DynamicResource ForegroundMainBrush}">
+                        <TextBlock.Style>
+                            <Style TargetType="{x:Type TextBlock}">
+                                <Style.Triggers>
+                                    <Trigger Property="Text" Value="{x:Null}">
+                                        <Setter Property="Visibility" Value="Collapsed" />
+                                    </Trigger>
+                                    <Trigger Property="Text" Value="">
+                                        <Setter Property="Visibility" Value="Collapsed" />
+                                    </Trigger>
+                                </Style.Triggers>
+                            </Style>
+                        </TextBlock.Style>
+                    </TextBlock>
+                    <ContentControl>
+                        <ContentPresenter Content="{TemplateBinding Content}" />
+                    </ContentControl>
+                </StackPanel>
             </Grid>
         </DataTemplate>
     </UserControl.ContentTemplate>

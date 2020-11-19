@@ -22,18 +22,33 @@
                 </Border>
                 <Border  Background="{DynamicResource BackgroundBrush}" d:Background="White"
                          CornerRadius="5" BorderBrush="{DynamicResource BackgroundBrush}" BorderThickness="1" />
-                <TextBlock Text="{Binding Title, ElementName=root}"
+                <StackPanel>
+                    <TextBlock Text="{Binding Title, ElementName=root}"
                            d:Text="Title"
                            ClipToBounds="True"
                            TextAlignment="Center" Padding="2"
                            FontSize="{StaticResource FontSizeAboveAverage}"
                            d:FontSize="17"
                            Margin="1" VerticalAlignment="Top" HorizontalAlignment="Stretch"
-                           Foreground="{DynamicResource ForegroundMainBrush}" />
+                           Foreground="{DynamicResource ForegroundMainBrush}">
+                        <TextBlock.Style>
+                            <Style TargetType="{x:Type TextBlock}">
+                                <Style.Triggers>
+                                    <Trigger Property="Text" Value="{x:Null}">
+                                        <Setter Property="Visibility" Value="Collapsed" />
+                                    </Trigger>
+                                    <Trigger Property="Text" Value="">
+                                        <Setter Property="Visibility" Value="Collapsed" />
+                                    </Trigger>
+                                </Style.Triggers>
+                            </Style>
+                        </TextBlock.Style>
+                    </TextBlock>
 
-                <ContentControl>
-                    <ContentPresenter Content="{TemplateBinding Content}" d:Content="design" d:HorizontalAlignment="Center" VerticalAlignment="Center" />
-                </ContentControl>
+                    <ContentControl>
+                        <ContentPresenter Content="{TemplateBinding Content}" d:Content="design" d:HorizontalAlignment="Center" VerticalAlignment="Center" />
+                    </ContentControl>
+                </StackPanel>
             </Grid>
         </DataTemplate>
     </UserControl.ContentTemplate>

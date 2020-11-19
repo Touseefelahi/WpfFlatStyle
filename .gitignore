@@ -12,3 +12,6 @@
 /Stira.Converters.Wpf/bin/Release/net45
 /Stira.Converters.Wpf/bin/Release/netcoreapp3.0
 /Stira.Converters.Wpf/bin/Release
+/Stira.Converters.Wpf/bin/PublishOnLocal/net45
+/Stira.Converters.Wpf/bin/PublishOnLocal/netcoreapp3.0
+/Stira.Converters.Wpf/bin/PublishOnLocal
