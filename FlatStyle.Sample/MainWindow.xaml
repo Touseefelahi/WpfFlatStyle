@@ -106,7 +106,7 @@
                     <TextBlock Text="Custom Background" HorizontalAlignment="Center" />
                 </StackPanel>
             </flatStyle:TilePanel>
-            <flatStyle:TileSoftUp Width="200" Height="100" Margin="10">
+            <flatStyle:TileSoftUp Width="200" Height="100" Title="Something">
                 <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
                     <TextBlock Text="This" />
                     <TextBlock Text="is" />

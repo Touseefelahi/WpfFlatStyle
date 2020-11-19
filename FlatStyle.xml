@@ -90,11 +90,6 @@
             Logs unhandled exceptions if true in <see cref="F:FlatStyle.LogUnhandledExceptions.fileName"/>
             </summary>
         </member>
-        <member name="F:FlatStyle.LogUnhandledExceptions.dockPosition">
-            <summary>
-            The last known dock position
-            </summary>
-        </member>
         <member name="M:FlatStyle.LogUnhandledExceptions.Log(System.String)">
             <summary>
             Logs message in <see cref="F:FlatStyle.LogUnhandledExceptions.fileName"/> file
@@ -384,6 +379,11 @@
             TileSoftDown
             </summary>
         </member>
+        <member name="P:FlatStyle.TileSoftDown.Title">
+            <summary>
+            This will be title of tile
+            </summary>
+        </member>
         <member name="M:FlatStyle.TileSoftDown.InitializeComponent">
             <summary>
             InitializeComponent
@@ -395,6 +395,11 @@
             </summary>
             <summary>
             TileSoftUp
+            </summary>
+        </member>
+        <member name="P:FlatStyle.TileSoftUp.Title">
+            <summary>
+            This will be title of tile
             </summary>
         </member>
         <member name="M:FlatStyle.TileSoftUp.InitializeComponent">
