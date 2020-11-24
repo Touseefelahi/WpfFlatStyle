@@ -15,3 +15,7 @@
 /Stira.Converters.Wpf/bin/PublishOnLocal/net45
 /Stira.Converters.Wpf/bin/PublishOnLocal/netcoreapp3.0
 /Stira.Converters.Wpf/bin/PublishOnLocal
+/FlatStyle.Sample/old/obj
+/FlatStyle.Sample/old/bin
+/FlatStyle.Sample2/obj
+/FlatStyle.Sample2/bin/Debug/net5.0-windows
