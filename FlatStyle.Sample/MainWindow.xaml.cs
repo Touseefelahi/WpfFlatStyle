@@ -43,6 +43,20 @@ namespace FlatStyle.Sample
                 dataset9 ,
                 dataset10
             };
+            listView.ItemsSource = new ObservableCollection<string>
+            {
+                "dataset1",
+                "dataset2",
+                "dataset3",
+                "dataset4",
+            };
+            listView2.ItemsSource = new ObservableCollection<string>
+            {
+                "dataset1",
+                "dataset2",
+                "dataset3",
+                "dataset4",
+            };
             DataContext = this;
         }
 
