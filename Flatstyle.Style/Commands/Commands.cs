@@ -147,6 +147,7 @@ namespace FlatStyle
         {
             Window window = sender as Window;
             window.Close();
+            windowTheme?.Close();
         }
     }
 }
