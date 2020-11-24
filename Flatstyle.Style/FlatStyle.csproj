@@ -14,7 +14,7 @@
       Extra feature: exception logging
       Read the readme file and see example project for help
       Project URL: https://github.com/Touseefelahi/WpfFlatStyle
-</Description>
+    </Description>
     <Copyright>Stira.sa</Copyright>
     <PackageProjectUrl>https://github.com/Touseefelahi/WpfFlatStyle</PackageProjectUrl>
     <RepositoryUrl>https://github.com/Touseefelahi/WpfFlatStyle</RepositoryUrl>
@@ -24,8 +24,10 @@
     <Version>1.8.8.1</Version>
     <PackageIcon>StiraIcon.png</PackageIcon>
     <PackageIconUrl />
-    <PackageReleaseNotes>TilePanels have Title Property
-Window Resizer added for Taskbar overlay issue</PackageReleaseNotes>
+    <PackageReleaseNotes>
+      TilePanels have Title Property
+      Window Resizer added for Taskbar overlay issue
+    </PackageReleaseNotes>
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <Configurations>Debug;Release;PublishOnLocal</Configurations>
@@ -94,6 +96,18 @@ Window Resizer added for Taskbar overlay issue</PackageReleaseNotes>
   </ItemGroup>
 
   <ItemGroup>
+    <Page Update="Style\ListBox.xaml">
+      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Style\ContextMenu.xaml">
+      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Style\ListView.xaml">
+      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Style\ButtonSoft.xaml">
       <SubType>Designer</SubType>
     </Page>
