@@ -1,6 +1,7 @@
-﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-                       xmlns:local="clr-namespace:FlatStyle"
-                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="clr-namespace:FlatStyle">
 
     <Style x:Key="TickStatus" TargetType="{x:Type CheckBox}">
         <Setter Property="Height" Value="13" />
@@ -14,23 +15,33 @@
                 <ControlTemplate TargetType="{x:Type CheckBox}">
                     <StackPanel Orientation="Horizontal">
                         <Canvas>
-                            <Path  x:Name="true" Data="M371.18033,210.40164 L376.13934,203.41393 382.22541,216.93852 391.91803,207.69672 401.38525,198.45492 414.0082,186.05738 420.77049,195.97541 409.72541,207.02049 399.35656,216.2623 388.08607,226.85656 379.7459,234.06967 368.75,216 368.25,237 423,236.75 423.25,182 368.5,182 368.25,214.5 z"
-                        Width="{TemplateBinding Width}"  Stretch="Fill" Fill="{Binding Path=(local:BaseColor.Value),
-                        RelativeSource={RelativeSource TemplatedParent}}" Height="{TemplateBinding Height}" />
+                            <Path
+                                x:Name="true"
+                                Width="{TemplateBinding Width}"
+                                Height="{TemplateBinding Height}"
+                                Data="M371.18033,210.40164 L376.13934,203.41393 382.22541,216.93852 391.91803,207.69672 401.38525,198.45492 414.0082,186.05738 420.77049,195.97541 409.72541,207.02049 399.35656,216.2623 388.08607,226.85656 379.7459,234.06967 368.75,216 368.25,237 423,236.75 423.25,182 368.5,182 368.25,214.5 z"
+                                Fill="{Binding Path=(local:BaseColor.Value), RelativeSource={RelativeSource TemplatedParent}}"
+                                Stretch="Fill" />
 
-                            <Path x:Name="false" Data="M2.6245,0.437 L1.1319536,2.3820517 1.1240103,2.3739944 0.93701041,2.562 0.812,2.437 4.8035507,6.1063366 0.9995,9.9995 2.7495,11.9995 6.5597377,7.8877249 9.8744431,11.249996 12.2495,9.7495 8.1818848,6.3228612 12.183897,2.3663205 10.437,0.7495 10.3745,0.687 6.3604212,4.6177564 z M0,0 L13,0 13,13 0,13 z"
-                              Width="{TemplateBinding Width}" Stretch="Fill" Fill="{DynamicResource ErrorBrush}"
-                                  Height="{TemplateBinding Height}" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                            <Path
+                                x:Name="false"
+                                Width="{TemplateBinding Width}"
+                                Height="{TemplateBinding Height}"
+                                HorizontalAlignment="Center"
+                                VerticalAlignment="Center"
+                                Data="M2.6245,0.437 L1.1319536,2.3820517 1.1240103,2.3739944 0.93701041,2.562 0.812,2.437 4.8035507,6.1063366 0.9995,9.9995 2.7495,11.9995 6.5597377,7.8877249 9.8744431,11.249996 12.2495,9.7495 8.1818848,6.3228612 12.183897,2.3663205 10.437,0.7495 10.3745,0.687 6.3604212,4.6177564 z M0,0 L13,0 13,13 0,13 z"
+                                Fill="{DynamicResource ErrorBrush}"
+                                Stretch="Fill" />
                         </Canvas>
                     </StackPanel>
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsChecked" Value="False">
-                            <Setter Property="Visibility" TargetName="true" Value ="Hidden" />
-                            <Setter Property="Visibility" TargetName="false" Value ="Visible" />
+                            <Setter TargetName="true" Property="Visibility" Value="Hidden" />
+                            <Setter TargetName="false" Property="Visibility" Value="Visible" />
                         </Trigger>
                         <Trigger Property="IsChecked" Value="true">
-                            <Setter Property="Visibility" TargetName="true" Value ="Visible" />
-                            <Setter Property="Visibility" TargetName="false" Value ="Hidden" />
+                            <Setter TargetName="true" Property="Visibility" Value="Visible" />
+                            <Setter TargetName="false" Property="Visibility" Value="Hidden" />
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
@@ -50,19 +61,22 @@
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type CheckBox}">
                     <StackPanel Orientation="Horizontal">
-                        <Ellipse x:Name="led" Fill="Red" Height="{TemplateBinding Height}" Width="{TemplateBinding Width}"></Ellipse>
+                        <Ellipse
+                            x:Name="led"
+                            Width="{TemplateBinding Width}"
+                            Height="{TemplateBinding Height}"
+                            Fill="Red" />
                         <ContentPresenter
-                        VerticalAlignment="Bottom"
-                        HorizontalAlignment="Right"
-                        RecognizesAccessKey="True" />
+                            HorizontalAlignment="Right"
+                            VerticalAlignment="Bottom"
+                            RecognizesAccessKey="True" />
                     </StackPanel>
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsChecked" Value="False">
-                            <Setter Property="Fill" TargetName="led" Value ="{StaticResource ErrorBrush}" />
+                            <Setter TargetName="led" Property="Fill" Value="{StaticResource ErrorBrush}" />
                         </Trigger>
                         <Trigger Property="IsChecked" Value="true">
-                            <Setter Property="Fill" TargetName="led" Value="{Binding Path=(local:BaseColor.Value),
-                        RelativeSource={RelativeSource TemplatedParent}}" />
+                            <Setter TargetName="led" Property="Fill" Value="{Binding Path=(local:BaseColor.Value), RelativeSource={RelativeSource TemplatedParent}}" />
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
@@ -75,16 +89,18 @@
         <Setter Property="OverridesDefaultStyle" Value="true" />
         <Setter Property="Background" Value="{DynamicResource PrimaryBrush}" />
         <Setter Property="Margin" Value="3" />
-        <Setter Property="Height" Value="18" />
         <Setter Property="Padding" Value="0" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type CheckBox}">
                     <BulletDecorator>
                         <BulletDecorator.Bullet>
-                            <Grid Height="{TemplateBinding Height}"
-                                  Width="{Binding RelativeSource={RelativeSource Self}, Path=Height, UpdateSourceTrigger=PropertyChanged}"
-                              MinHeight="10" MinWidth="10" ShowGridLines="False">
+                            <Grid
+                                Width="{Binding RelativeSource={RelativeSource Self}, Path=Height, UpdateSourceTrigger=PropertyChanged}"
+                                Height="{TemplateBinding Height}"
+                                MinWidth="10"
+                                MinHeight="10"
+                                ShowGridLines="False">
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="1*" />
                                     <ColumnDefinition Width="1*" />
@@ -102,82 +118,85 @@
                                     <RowDefinition Height="1*" />
                                 </Grid.RowDefinitions>
 
-                                <Border Name="MainBorder"
-                                    Grid.ColumnSpan="6" Grid.RowSpan="6"
-                                    CornerRadius="4"
+                                <Border
+                                    Name="MainBorder"
+                                    Grid.RowSpan="6"
+                                    Grid.ColumnSpan="6"
+                                    Background="Transparent"
                                     BorderThickness="1"
-                                    Background="Transparent" />
+                                    CornerRadius="4" />
 
-                                <Border Name="InnerBorder"
-                                    Grid.Column="1" Grid.ColumnSpan="5"
-                                    Grid.Row="2" Grid.RowSpan="5"
-                                    BorderThickness="1"
-                                    BorderBrush="#808080" />
+                                <Border
+                                    Name="InnerBorder"
+                                    Grid.Row="2"
+                                    Grid.RowSpan="5"
+                                    Grid.Column="1"
+                                    Grid.ColumnSpan="5"
+                                    BorderBrush="#808080"
+                                    BorderThickness="1" />
 
-                                <Path Name="InnerPath"
-                                  Grid.Column="1" Grid.ColumnSpan="5"
-                                  Grid.Row="2" Grid.RowSpan="5"
-                                  Data="M31,5 L19.5,5 19.5,19.5 34.5,19.5 34.5,11.75"
-                                  Stretch="Fill" Stroke="#808080" />
+                                <Path
+                                    Name="InnerPath"
+                                    Grid.Row="2"
+                                    Grid.RowSpan="5"
+                                    Grid.Column="1"
+                                    Grid.ColumnSpan="5"
+                                    Data="M31,5 L19.5,5 19.5,19.5 34.5,19.5 34.5,11.75"
+                                    Stretch="Fill"
+                                    Stroke="#808080" />
 
-                                <Path Name="CheckMark"
-                                  Grid.Column="2" Grid.ColumnSpan="5"
-                                  Grid.Row="1" Grid.RowSpan="5"
-                                  Opacity="0"
-                                  Data="M9.07743946676476E-09,4.31805768640244L4.68740335877841,
-                                      8.86361158398516C4.68740335877841,8.86361158398516,16.3281249985376,
-                                      -2.42451336648723,16.3281249985376,-2.42451336648723L14.0622100581796,-4.77304938341948 4.68740335877846,
-                                      4.31805791992662 2.22656251699567,1.93164208562579z"
-                                  Fill="{TemplateBinding Background}"
-                                  Stretch="Fill" />
+                                <Path
+                                    Name="CheckMark"
+                                    Grid.Row="1"
+                                    Grid.RowSpan="5"
+                                    Grid.Column="2"
+                                    Grid.ColumnSpan="5"
+                                    Data="M9.07743946676476E-09,4.31805768640244L4.68740335877841,8.86361158398516C4.68740335877841,8.86361158398516,16.3281249985376,-2.42451336648723,16.3281249985376,-2.42451336648723L14.0622100581796,-4.77304938341948 4.68740335877846,4.31805791992662 2.22656251699567,1.93164208562579z"
+                                    Fill="{TemplateBinding Background}"
+                                    Opacity="0"
+                                    Stretch="Fill" />
 
-                                <Path Name="InderminateMark"
-                                  Grid.Column="3"
-                                  Grid.Row="4"
-                                  Data="M0,4 L1,5 5,1 4,0"
-                                  Opacity="0"
-                                  Stretch="Fill"
-                                  StrokeThickness="0"
-                                  Fill="#808080" />
+                                <Path
+                                    Name="InderminateMark"
+                                    Grid.Row="4"
+                                    Grid.Column="3"
+                                    Data="M0,4 L1,5 5,1 4,0"
+                                    Fill="{DynamicResource SecondaryMidBrush}"
+                                    Opacity="0"
+                                    Stretch="Fill"
+                                    StrokeThickness="0" />
                             </Grid>
                         </BulletDecorator.Bullet>
-
-                        <VisualStateManager.VisualStateGroups>
-                            <VisualStateGroup x:Name="CheckStates">
-                                <VisualState x:Name="Checked">
-                                    <Storyboard>
-                                        <DoubleAnimation Storyboard.TargetProperty="Opacity"
-                                             Storyboard.TargetName="CheckMark" Duration="0:0:0.2" To="1" />
-                                    </Storyboard>
-                                </VisualState>
-                                <VisualState x:Name="Unchecked">
-                                    <Storyboard>
-                                        <DoubleAnimation Storyboard.TargetProperty="Opacity"
-                                             Storyboard.TargetName="CheckMark" Duration="0:0:0.2" To="0" />
-                                    </Storyboard>
-                                </VisualState>
-                                <VisualState x:Name="Indeterminate">
-                                    <Storyboard>
-                                        <DoubleAnimation Storyboard.TargetProperty="Opacity"
-                                             Storyboard.TargetName="InderminateMark" Duration="0:0:0.2" To="1" />
-                                    </Storyboard>
-                                </VisualState>
-                            </VisualStateGroup>
-                        </VisualStateManager.VisualStateGroups>
-                        <Viewbox Margin="0,0,0,0"  Height="{TemplateBinding Height}">
-                            <ContentPresenter
-                        VerticalAlignment="Center"
-                        HorizontalAlignment="Right"
-                        RecognizesAccessKey="True" />
-                        </Viewbox>
+                        <ContentPresenter
+                            Grid.Column="1"
+                            Margin="{TemplateBinding Padding}"
+                            HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                            VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                            Focusable="False"
+                            RecognizesAccessKey="True"
+                            SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" />
                     </BulletDecorator>
 
                     <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="true">
+                            <Setter TargetName="InnerPath" Property="Stroke" Value="{DynamicResource SecondaryMidBrush}" />
+                            <Setter TargetName="InnerPath" Property="StrokeThickness" Value="2" />
+                            <Setter TargetName="InnerBorder" Property="BorderBrush" Value="{DynamicResource SecondaryMidBrush}" />
+                            <Setter TargetName="InnerBorder" Property="BorderThickness" Value="2" />
+                        </Trigger>
                         <Trigger Property="IsChecked" Value="True">
-                            <Setter TargetName="InnerBorder" Property="Visibility" Value="Collapsed" />
+                            <Setter TargetName="InnerBorder" Property="Opacity" Value="0" />
+                            <Setter TargetName="CheckMark" Property="Opacity" Value="1" />
+                        </Trigger>
+                        <Trigger Property="IsChecked" Value="False">
+                            <Setter TargetName="CheckMark" Property="Opacity" Value="0" />
+                        </Trigger>
+                        <Trigger Property="IsChecked" Value="{x:Null}">
+                            <Setter TargetName="CheckMark" Property="Opacity" Value="0" />
+                            <Setter TargetName="InderminateMark" Property="Opacity" Value="1" />
                         </Trigger>
                         <Trigger Property="IsPressed" Value="True">
-                            <Setter TargetName="MainBorder" Property="Background" Value="{DynamicResource PrimaryBrush}" />
+                            <Setter TargetName="MainBorder" Property="Background" Value="{DynamicResource PrimaryMidBrush}" />
                         </Trigger>
                         <Trigger Property="IsEnabled" Value="False">
                             <Setter TargetName="CheckMark" Property="Fill" Value="#cccccc" />
