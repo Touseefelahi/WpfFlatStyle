@@ -19,6 +19,7 @@
         SecondaryLightColor,
 
         ErrorColor,
+        BorderColor,
         BackgroundColor,
         DisabledColor,
         ForegroundMainColor,

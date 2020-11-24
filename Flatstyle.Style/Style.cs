@@ -131,16 +131,17 @@ namespace FlatStyle
 
         public static void SwitchTheme(bool isLightTheme)
         {
-            var primaryColor = GetColor(ColorFlat.PrimaryColor);
             if (isLightTheme)
             {
-                SetColor(ColorFlat.BackgroundColor, GetBrightColor(primaryColor, 90));
+                SetColor(ColorFlat.BackgroundColor, "FAFAFA");
                 SetColor(ColorFlat.ForegroundMainColor, "232323");
+                SetColor(ColorFlat.BorderColor, "1E1E1E");
             }
             else
             {
-                SetColor(ColorFlat.ForegroundMainColor, GetBrightColor(primaryColor, 90));
+                SetColor(ColorFlat.ForegroundMainColor, "FAFAFA");
                 SetColor(ColorFlat.BackgroundColor, "232323");
+                SetColor(ColorFlat.BorderColor, "D7D7D7");
             }
             IsLightTheme = isLightTheme;
             ThemeSwitched?.Invoke(null, IsLightTheme);
@@ -149,18 +150,7 @@ namespace FlatStyle
         public static void ToggleNightMode()
         {
             IsLightTheme = !IsLightTheme;
-            var primaryColor = GetColor(ColorFlat.PrimaryColor);
-            if (IsLightTheme)
-            {
-                SetColor(ColorFlat.BackgroundColor, GetBrightColor(primaryColor, 90));
-                SetColor(ColorFlat.ForegroundMainColor, "232323");
-            }
-            else
-            {
-                SetColor(ColorFlat.ForegroundMainColor, GetBrightColor(primaryColor, 90));
-                SetColor(ColorFlat.BackgroundColor, "232323");
-            }
-            ThemeSwitched?.Invoke(null, IsLightTheme);
+            SwitchTheme(IsLightTheme);
         }
 
         public static void SetTheme(string primaryColor, string secondaryColor, bool isLightTheme = true)
