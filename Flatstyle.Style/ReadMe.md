@@ -14,28 +14,33 @@
 # How To Use
 Add This In your App.xaml file
 
-    <Application.Resources>
-           <ResourceDictionary>
-               <ResourceDictionary.MergedDictionaries>
-                   <ResourceDictionary Source="pack://application:,,,/FlatStyle;component/Style/Colors.xaml" />
-                   <ResourceDictionary Source="pack://application:,,,/FlatStyle;component/Style/Fonts.xaml" />
-                   <ResourceDictionary Source="pack://application:,,,/FlatStyle;component/Style/BaseStyle.xaml" />
-                   <ResourceDictionary Source="pack://application:,,,/FlatStyle;component/Style/Icons.xaml" />                
-                   <ResourceDictionary Source="pack://application:,,,/FlatStyle;component/Style/IconsSolid.xaml" />
-                   <ResourceDictionary Source="pack://application:,,,/FlatStyle;component/Style/Button.xaml" />
-                   <ResourceDictionary Source="pack://application:,,,/FlatStyle;component/Style/ButtonIconBased.xaml" />
-                   <ResourceDictionary Source="pack://application:,,,/FlatStyle;component/Style/Text.xaml" />
-                   <ResourceDictionary Source="pack://application:,,,/FlatStyle;component/Style/Scroll.xaml" />
-                   <ResourceDictionary Source="pack://application:,,,/FlatStyle;component/Style/Datagrid.xaml" />
-                   <ResourceDictionary Source="pack://application:,,,/FlatStyle;component/Style/ComboBox.xaml" />
-                   <ResourceDictionary Source="pack://application:,,,/FlatStyle;component/Style/CheckBox.xaml" />                
-                   <ResourceDictionary Source="pack://application:,,,/FlatStyle;component/Style/ProgressBar.xaml" />  
-                   <ResourceDictionary Source="pack://application:,,,/FlatStyle;component/Style/TabControl.xaml" />                   
-                   <ResourceDictionary Source="pack://application:,,,/FlatStyle;component/Style/Slider.xaml" />
-                   <ResourceDictionary Source="pack://application:,,,/FlatStyle;component/Style/WindowStyle.xaml" />
-               </ResourceDictionary.MergedDictionaries>
-           </ResourceDictionary>
-     </Application.Resources>
+      <Application.Resources>
+            <ResourceDictionary>
+                <ResourceDictionary.MergedDictionaries>
+                    <!-- Order is important -->
+                    <ResourceDictionary Source="pack://application:,,,/FlatStyle;component/Style/Colors.xaml" />
+                    <ResourceDictionary Source="pack://application:,,,/FlatStyle;component/Style/Fonts.xaml" />
+                    <ResourceDictionary Source="pack://application:,,,/FlatStyle;component/Style/BaseStyle.xaml" />
+                    <ResourceDictionary Source="pack://application:,,,/FlatStyle;component/Style/ButtonSoft.xaml" />
+                    <ResourceDictionary Source="pack://application:,,,/FlatStyle;component/Style/Icons.xaml" />
+                    <ResourceDictionary Source="pack://application:,,,/FlatStyle;component/Style/Button.xaml" />
+                    <ResourceDictionary Source="pack://application:,,,/FlatStyle;component/Style/ToolTip.xaml" />
+                    <ResourceDictionary Source="pack://application:,,,/FlatStyle;component/Style/ContextMenu.xaml" />
+                    <ResourceDictionary Source="pack://application:,,,/FlatStyle;component/Style/ListView.xaml" />
+                    <ResourceDictionary Source="pack://application:,,,/FlatStyle;component/Style/ListBox.xaml" />
+                    <ResourceDictionary Source="pack://application:,,,/FlatStyle;component/Style/ButtonIconBased.xaml" />
+                    <ResourceDictionary Source="pack://application:,,,/FlatStyle;component/Style/Text.xaml" />
+                    <ResourceDictionary Source="pack://application:,,,/FlatStyle;component/Style/Scroll.xaml" />
+                    <ResourceDictionary Source="pack://application:,,,/FlatStyle;component/Style/Datagrid.xaml" />
+                    <ResourceDictionary Source="pack://application:,,,/FlatStyle;component/Style/ComboBox.xaml" />
+                    <ResourceDictionary Source="pack://application:,,,/FlatStyle;component/Style/CheckBox.xaml" />
+                    <ResourceDictionary Source="pack://application:,,,/FlatStyle;component/Style/TabControl.xaml" />
+                    <ResourceDictionary Source="pack://application:,,,/FlatStyle;component/Style/ProgressBar.xaml" />
+                    <ResourceDictionary Source="pack://application:,,,/FlatStyle;component/Style/Slider.xaml" />
+                    <ResourceDictionary Source="pack://application:,,,/FlatStyle;component/Style/WindowStyle.xaml" />
+                </ResourceDictionary.MergedDictionaries>
+            </ResourceDictionary>
+        </Application.Resources>
 
 
 # Chrome Window
