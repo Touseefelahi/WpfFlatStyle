@@ -96,7 +96,6 @@
                     </Border>
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsEnabled" Value="false">
-                            <Setter TargetName="Bd" Property="Background" Value="{DynamicResource DisabledBrush}" />
                             <Setter TargetName="Bd" Property="BorderBrush" Value="{DynamicResource DisabledBrush}" />
                         </Trigger>
                         <MultiTrigger>
