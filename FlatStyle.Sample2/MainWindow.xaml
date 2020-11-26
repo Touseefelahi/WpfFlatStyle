@@ -312,10 +312,12 @@
             <TabItem Header="ListView">
                 <StackPanel Orientation="Horizontal">
                     <ListBox
+                        IsEnabled="False"
                         x:Name="listView"
                         Width="100"
                         Height="200" />
                     <ListView
+                        IsEnabled="False"
                         x:Name="listView2"
                         Width="100"
                         Height="200" />
