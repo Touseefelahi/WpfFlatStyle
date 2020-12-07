@@ -1,12 +1,4 @@
-﻿using FlatStyle.Resizer;
-using System;
-using System.Diagnostics;
-using System.Globalization;
-using System.IO;
-using System.Reflection;
-using System.Text;
-using System.Windows;
-using System.Windows.Threading;
+﻿using System.Windows;
 
 namespace FlatStyle
 {
@@ -30,7 +22,9 @@ namespace FlatStyle
             if (value is bool isLoadRequired)
             {
                 if (isLoadRequired)
+                {
                     Style.LoadTheme();
+                }
             }
         }
     }
