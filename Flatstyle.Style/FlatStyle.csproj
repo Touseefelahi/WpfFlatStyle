@@ -21,11 +21,11 @@
     <RepositoryType>Git</RepositoryType>
     <PackageTags>Wpf, Theme, Flat-Design</PackageTags>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <Version>1.9.0.0</Version>
+    <Version>1.9.0.1</Version>
     <PackageIcon>StiraIcon.png</PackageIcon>
     <PackageIconUrl />
     <PackageReleaseNotes>
-      List View, List Box, Context menu style added
+      List View, List Box, Context menu style added (Disable UI fix)
       ComboBox Restyled
     </PackageReleaseNotes>
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
@@ -51,13 +51,17 @@
 
   <ItemGroup>
     <Compile Remove="FlatStyle.Sample\**" />
+    <Compile Remove="Properties\**" />
     <EmbeddedResource Remove="FlatStyle.Sample\**" />
+    <EmbeddedResource Remove="Properties\**" />
     <None Remove="FlatStyle.Sample\**" />
+    <None Remove="Properties\**" />
     <None Include="StiraIcon.png">
       <Pack>True</Pack>
       <PackagePath></PackagePath>
     </None>
     <Page Remove="FlatStyle.Sample\**" />
+    <Page Remove="Properties\**" />
   </ItemGroup>
 
   <ItemGroup>
@@ -165,10 +169,6 @@
     <Page Update="Style\Scroll.xaml">
       <SubType>Designer</SubType>
     </Page>
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Properties\" />
   </ItemGroup>
 
   <ItemGroup>
