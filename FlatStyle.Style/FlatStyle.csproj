@@ -1,0 +1,197 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+
+  <PropertyGroup>
+    <TargetFrameworks>netcoreapp3.0;net45</TargetFrameworks>
+    <UseWPF>true</UseWPF>
+    <PackageId>Stira.WpfFlatStyle</PackageId>
+    <Authors>Touseef Elahi</Authors>
+    <Company>Stira.sa</Company>
+    <Product>Wpf Flat Style</Product>
+    <Description>
+      Simple flat theme with changeable color
+      Layouts. Tile Panels
+      Numeric Updown (Slider Style)
+      Extra feature: exception logging
+      Read the readme file and see example project for help
+      Project URL: https://github.com/Touseefelahi/WpfFlatStyle
+    </Description>
+    <Copyright>Stira.sa</Copyright>
+    <PackageProjectUrl>https://github.com/Touseefelahi/WpfFlatStyle</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/Touseefelahi/WpfFlatStyle</RepositoryUrl>
+    <RepositoryType>Git</RepositoryType>
+    <PackageTags>Wpf, Theme, Flat-Design</PackageTags>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Version>1.9.0.1</Version>
+    <PackageIcon>StiraIcon.png</PackageIcon>
+    <PackageIconUrl />
+    <PackageReleaseNotes>
+      List View, List Box, Context menu style added (Disable UI fix)
+      ComboBox Restyled
+    </PackageReleaseNotes>
+    <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <Configurations>Debug;Release;PublishOnLocal</Configurations>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|netcoreapp3.0|AnyCPU'">
+    <OutputPath>D:\VisualStudioProjects\Visual Studio 2019\Nuget Packages\All Packages\</OutputPath>
+    <DocumentationFile>D:\VisualStudioProjects\Visual Studio 2019\Nuget Packages\FlatStyle\FlatStyle.xml</DocumentationFile>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='PublishOnLocal|netcoreapp3.0|AnyCPU'">
+    <OutputPath>D:\VisualStudioProjects\Visual Studio 2019\Nuget Packages\All Packages\</OutputPath>
+    <DocumentationFile>D:\VisualStudioProjects\Visual Studio 2019\Nuget Packages\FlatStyle\FlatStyle.xml</DocumentationFile>
+    <Optimize>true</Optimize>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|netcoreapp3.0|AnyCPU'">
+    <OutputPath>D:\VisualStudioProjects\Visual Studio 2019\Nuget Packages\All Packages\</OutputPath>
+    <DocumentationFile>D:\VisualStudioProjects\Visual Studio 2019\Nuget Packages\FlatStyle\FlatStyle.xml</DocumentationFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="FlatStyle.Sample\**" />
+    <Compile Remove="Properties\**" />
+    <EmbeddedResource Remove="FlatStyle.Sample\**" />
+    <EmbeddedResource Remove="Properties\**" />
+    <None Remove="FlatStyle.Sample\**" />
+    <None Remove="Properties\**" />
+    <None Include="StiraIcon.png">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
+    <Page Remove="FlatStyle.Sample\**" />
+    <Page Remove="Properties\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="Fonts\fa-regular-400.ttf" />
+    <None Remove="Fonts\fa-solid-900.ttf" />
+    <None Remove="Fonts\QuickSand\Quicksand-Bold.ttf" />
+    <None Remove="Fonts\QuickSand\Quicksand-Light.ttf" />
+    <None Remove="Fonts\QuickSand\Quicksand-Medium.ttf" />
+    <None Remove="Fonts\QuickSand\Quicksand-Regular.ttf" />
+    <None Remove="Fonts\QuickSand\Quicksand-SemiBold.ttf" />
+    <None Remove="Images\ColorSwatchSquare.png" />
+    <None Remove="stira.ico" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Fonts\fa-regular-400.ttf">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Fonts\fa-solid-900.ttf">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Fonts\QuickSand\Quicksand-Bold.ttf" />
+    <Resource Include="Fonts\QuickSand\Quicksand-Light.ttf" />
+    <Resource Include="Fonts\QuickSand\Quicksand-Medium.ttf" />
+    <Resource Include="Fonts\QuickSand\Quicksand-Regular.ttf" />
+    <Resource Include="Fonts\QuickSand\Quicksand-SemiBold.ttf" />
+    <Resource Include="Icons\stira.ico" />
+    <Resource Include="Images\ColorSwatchSquare.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="build\Stira.WpfFlatStyle.targets">
+      <PackagePath>build/</PackagePath>
+      <Pack>true</Pack>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Page Update="Style\GroupBox.xaml">
+      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Style\ListBox.xaml">
+      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Style\ContextMenu.xaml">
+      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Style\ListView.xaml">
+      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Style\ButtonSoft.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Style\ColorsSoft.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Style\TabControl.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Style\ProgressBar.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Style\Slider.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Style\ToolTip.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Style\IconsSolid.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Style\WindowStyle.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Style\ButtonIconBased.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Style\Icons.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Style\Button.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Style\BaseStyle.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Style\Fonts.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Style\ComboBox.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Style\Text.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Style\Colors.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Style\CheckBox.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Style\Datagrid.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Style\Scroll.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Stira.Converters.Wpf" Version="1.0.2" />
+    <PackageReference Include="System.Windows.Interactivity.WPF" Version="2.0.20525" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="ReadMe.md">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="$(MSBuildThisFileDirectory)\ReadMe.md">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Link>ReadMe.md</Link>
+      <Pack>True</Pack>
+      <Visible>True</Visible>
+    </None>
+  </ItemGroup>
+</Project>
