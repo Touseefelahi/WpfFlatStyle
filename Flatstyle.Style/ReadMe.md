@@ -30,6 +30,7 @@ Add This In your App.xaml file
                     <ResourceDictionary Source="pack://application:,,,/FlatStyle;component/Style/ListBox.xaml" />
                     <ResourceDictionary Source="pack://application:,,,/FlatStyle;component/Style/ButtonIconBased.xaml" />
                     <ResourceDictionary Source="pack://application:,,,/FlatStyle;component/Style/Text.xaml" />
+                    <ResourceDictionary Source="pack://application:,,,/FlatStyle;component/Style/GroupBox.xaml" />
                     <ResourceDictionary Source="pack://application:,,,/FlatStyle;component/Style/Scroll.xaml" />
                     <ResourceDictionary Source="pack://application:,,,/FlatStyle;component/Style/Datagrid.xaml" />
                     <ResourceDictionary Source="pack://application:,,,/FlatStyle;component/Style/ComboBox.xaml" />
