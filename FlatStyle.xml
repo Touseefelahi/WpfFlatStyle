@@ -109,6 +109,21 @@
             <param name="sender">Sender</param>
             <param name="value">bool</param>
         </member>
+        <member name="T:FlatStyle.ShowThemeSelector">
+            <summary>
+            Shows theme selector on window
+            </summary>
+        </member>
+        <member name="T:FlatStyle.TitleBar">
+            <summary>
+            Title bar thickness
+            </summary>
+        </member>
+        <member name="T:FlatStyle.OnloadThemeUpdate">
+            <summary>
+            Loads the saved theme on BootUp
+            </summary>
+        </member>
         <member name="F:FlatStyle.ColorFlat.PrimaryColor">
             <summary>
             This is the primary color of Flat UI Buttons, Headers

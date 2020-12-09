@@ -81,7 +81,7 @@
             <DataGrid x:Name="datagrid" Height="150">
                 <DataGrid.ContextMenu>
                     <ContextMenu>
-                        <MenuItem Header="something" />
+                        <MenuItem Header="something" IsCheckable="True" />
                         <MenuItem Header="something2" />
                         <MenuItem Header="something4" />
                     </ContextMenu>
@@ -99,7 +99,10 @@
             </StackPanel>
 
             <StackPanel Orientation="Horizontal">
-                <CheckBox HorizontalAlignment="Left" IsThreeState="True" Content="this g check" />
+                <CheckBox
+                    HorizontalAlignment="Left"
+                    Content="this g check"
+                    IsThreeState="True" />
                 <CheckBox IsChecked="True" Style="{StaticResource StatusLed}" />
                 <CheckBox
                     flatStyle:BaseColor.Value="Green"
@@ -312,15 +315,15 @@
             <TabItem Header="ListView">
                 <StackPanel Orientation="Horizontal">
                     <ListBox
-                        IsEnabled="False"
                         x:Name="listView"
                         Width="100"
-                        Height="200" />
+                        Height="200"
+                        IsEnabled="False" />
                     <ListView
-                        IsEnabled="False"
                         x:Name="listView2"
                         Width="100"
-                        Height="200" />
+                        Height="200"
+                        IsEnabled="False" />
                 </StackPanel>
             </TabItem>
         </TabControl>
