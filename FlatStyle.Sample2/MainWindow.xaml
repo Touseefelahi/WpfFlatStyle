@@ -202,6 +202,7 @@
         <TabControl Grid.Column="2">
             <TabItem Header="Tab 1">
                 <StackPanel>
+                    <TextBox Margin="0,40,0,0" Text="abc" />
                     <TextBlock Text="This is Primary Text" />
                     <TextBlock Style="{StaticResource PrimaryText}" Text="This is Primary Text" />
                     <TextBlock Style="{StaticResource PrimaryBackgroundText}" Text="This is PrimaryBackground Text" />
@@ -210,8 +211,11 @@
                     <TextBlock Style="{StaticResource ErrorText}" Text="This is Error Text" />
                     <TextBlock Style="{StaticResource ErrorBackgroundText}" Text="This is ErrorBackground Text" />
                     <Slider />
-                    <Slider Style="{StaticResource NumericUpDown}" />
-                    <Slider Style="{StaticResource NumericUpDownSlider}" />
+                    <Slider
+                        flatStyle:Placeholder.Value="Important2"
+                        SmallChange="0.1"
+                        Style="{StaticResource NumericUpDown}" />
+                    <Slider flatStyle:Placeholder.Value="Important" Style="{StaticResource NumericUpDownSlider}" />
                     <TextBox
                         flatStyle:FieldName.Value="Email"
                         flatStyle:Placeholder.Value="Enter your email here"

@@ -21,10 +21,11 @@
     <RepositoryType>Git</RepositoryType>
     <PackageTags>Wpf, Theme, Flat-Design</PackageTags>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <Version>1.9.1.0</Version>
+    <Version>1.9.2.0</Version>
     <PackageIcon>StiraIcon.png</PackageIcon>
     <PackageIconUrl />
     <PackageReleaseNotes>
+      Slider Updated with Placeholder and Lost Focus Property change
       Font Awesome Updated
       Removed .net framework support
       List View, List Box, Context menu style added (Disable UI fix)

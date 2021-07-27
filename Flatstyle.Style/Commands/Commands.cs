@@ -65,18 +65,21 @@ namespace FlatStyle
             {
                 try
                 {
-                    try
-                    {
-                        slider.Value = Convert.ToDouble(textBox.Text.Replace(" ", ""));
-                    }
-                    catch { }
-                    textBox.Text = slider.Value.ToString();
-                    textBox.CaretIndex = textBox.Text.Length;
+                    slider.Value = Convert.ToDouble(textBox.Text.Replace(" ", ""));
                 }
-                catch
-                {
-                    throw;
-                }
+                catch { }
+                var valueString = slider.Value.ToString();
+                //var splits = valueString.Split(".");
+                //if (splits.Length == 2)//Check precision issue
+                //{
+                //    var smallChangeSplits = slider.SmallChange.ToString().Split(".");
+                //    if (smallChangeSplits.Length == 2 && splits[1].Length > smallChangeSplits[1].Length + 2)
+                //    {
+                //        valueString = slider.Value.ToString($"N{smallChangeSplits[1].Length + 2}");
+                //    }
+                //}
+                textBox.Text = valueString;
+                textBox.CaretIndex = textBox.Text.Length;
             }
         }
 
