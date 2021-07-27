@@ -1,9 +1,0 @@
-﻿<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <ItemGroup>
-    <Content Include="$(MSBuildThisFileDirectory)..\ReadMe.md">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      <Link>ReadMe.md</Link>
-      <Visible>True</Visible>
-    </Content>
-  </ItemGroup>
-</Project>

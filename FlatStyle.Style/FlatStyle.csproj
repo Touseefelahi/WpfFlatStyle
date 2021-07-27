@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
-
   <PropertyGroup>
-    <TargetFrameworks>netcoreapp3.0;net45</TargetFrameworks>
+    <OutputType>Library</OutputType>
+    <TargetFramework>net5.0-windows</TargetFramework>
     <UseWPF>true</UseWPF>
     <PackageId>Stira.WpfFlatStyle</PackageId>
     <Authors>Touseef Elahi</Authors>
@@ -21,32 +21,18 @@
     <RepositoryType>Git</RepositoryType>
     <PackageTags>Wpf, Theme, Flat-Design</PackageTags>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <Version>1.9.0.1</Version>
+    <Version>1.9.1.0</Version>
     <PackageIcon>StiraIcon.png</PackageIcon>
     <PackageIconUrl />
     <PackageReleaseNotes>
+      Font Awesome Updated
+      Removed .net framework support
       List View, List Box, Context menu style added (Disable UI fix)
       ComboBox Restyled
     </PackageReleaseNotes>
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <Configurations>Debug;Release;PublishOnLocal</Configurations>
-  </PropertyGroup>
-
-  <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|netcoreapp3.0|AnyCPU'">
-    <OutputPath>D:\VisualStudioProjects\Visual Studio 2019\Nuget Packages\All Packages\</OutputPath>
-    <DocumentationFile>D:\VisualStudioProjects\Visual Studio 2019\Nuget Packages\FlatStyle\FlatStyle.xml</DocumentationFile>
-  </PropertyGroup>
-
-  <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='PublishOnLocal|netcoreapp3.0|AnyCPU'">
-    <OutputPath>D:\VisualStudioProjects\Visual Studio 2019\Nuget Packages\All Packages\</OutputPath>
-    <DocumentationFile>D:\VisualStudioProjects\Visual Studio 2019\Nuget Packages\FlatStyle\FlatStyle.xml</DocumentationFile>
-    <Optimize>true</Optimize>
-  </PropertyGroup>
-
-  <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|netcoreapp3.0|AnyCPU'">
-    <OutputPath>D:\VisualStudioProjects\Visual Studio 2019\Nuget Packages\All Packages\</OutputPath>
-    <DocumentationFile>D:\VisualStudioProjects\Visual Studio 2019\Nuget Packages\FlatStyle\FlatStyle.xml</DocumentationFile>
   </PropertyGroup>
 
   <ItemGroup>
@@ -67,6 +53,9 @@
   <ItemGroup>
     <None Remove="Fonts\fa-regular-400.ttf" />
     <None Remove="Fonts\fa-solid-900.ttf" />
+    <None Remove="Fonts\Font Awesome 5 Brands-Regular-400.otf" />
+    <None Remove="Fonts\Font Awesome 5 Free-Regular-400.otf" />
+    <None Remove="Fonts\Font Awesome 5 Free-Solid-900.otf" />
     <None Remove="Fonts\QuickSand\Quicksand-Bold.ttf" />
     <None Remove="Fonts\QuickSand\Quicksand-Light.ttf" />
     <None Remove="Fonts\QuickSand\Quicksand-Medium.ttf" />
@@ -77,12 +66,12 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Resource Include="Fonts\fa-regular-400.ttf">
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="Fonts\fa-solid-900.ttf">
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-    </Resource>
+    <Resource Include="Fonts\Font Awesome 5 Brands-Regular-400.otf" />
+    <Resource Include="Fonts\Font Awesome 5 Free-Regular-400.otf" />
+    <Resource Include="Fonts\Font Awesome 5 Free-Solid-900.otf" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Resource Include="Fonts\QuickSand\Quicksand-Bold.ttf" />
     <Resource Include="Fonts\QuickSand\Quicksand-Light.ttf" />
     <Resource Include="Fonts\QuickSand\Quicksand-Medium.ttf" />
@@ -90,13 +79,6 @@
     <Resource Include="Fonts\QuickSand\Quicksand-SemiBold.ttf" />
     <Resource Include="Icons\stira.ico" />
     <Resource Include="Images\ColorSwatchSquare.png" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <None Include="build\Stira.WpfFlatStyle.targets">
-      <PackagePath>build/</PackagePath>
-      <Pack>true</Pack>
-    </None>
   </ItemGroup>
 
   <ItemGroup>
@@ -178,20 +160,5 @@
   <ItemGroup>
     <PackageReference Include="Stira.Converters.Wpf" Version="1.0.2" />
     <PackageReference Include="System.Windows.Interactivity.WPF" Version="2.0.20525" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <None Update="ReadMe.md">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-  </ItemGroup>
-
-  <ItemGroup>
-    <None Include="$(MSBuildThisFileDirectory)\ReadMe.md">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      <Link>ReadMe.md</Link>
-      <Pack>True</Pack>
-      <Visible>True</Visible>
-    </None>
   </ItemGroup>
 </Project>
