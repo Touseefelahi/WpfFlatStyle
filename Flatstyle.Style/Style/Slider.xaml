@@ -10,25 +10,22 @@
         <Setter Property="SnapsToDevicePixels" Value="true" />
         <Setter Property="OverridesDefaultStyle" Value="false" />
         <Setter Property="Height" Value="20" />
-        <Setter Property="Width" Value="10" />
+        <Setter Property="Width" Value="20" />
 
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="Thumb">
-
-                    <Rectangle
+                    <Ellipse
                         Name="canvas"
-                        Width="{TemplateBinding Height,
-                                                Converter={converter:AirthmeticOperator},
-                                                ConverterParameter=*0.5}"
+                        Width="{TemplateBinding Height}"
                         Height="{TemplateBinding Height}"
                         Fill="{DynamicResource PrimaryBrush}">
-                        <Rectangle.RenderTransform>
+                        <Ellipse.RenderTransform>
                             <TransformGroup>
-                                <ScaleTransform CenterX="5" CenterY="10" ScaleX="1" ScaleY="1" />
+                                <ScaleTransform CenterX="10" CenterY="10" ScaleX="1" ScaleY="1" />
                             </TransformGroup>
-                        </Rectangle.RenderTransform>
-                    </Rectangle>
+                        </Ellipse.RenderTransform>
+                    </Ellipse>
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsMouseOver" Value="True">
                             <Setter TargetName="canvas" Property="Fill" Value="{DynamicResource SecondaryBrush}" />
@@ -307,7 +304,10 @@
 
                             <Track.Thumb>
                                 <Thumb
-                                    Height="{TemplateBinding Height}"
+                                    Margin="0 -5"
+                                    Height="{TemplateBinding Height,
+                                                             Converter={converter:AirthmeticOperator},
+                                                             ConverterParameter=*0.4}"
                                     Opacity="0.5"
                                     Style="{StaticResource SliderThumbStyle}" />
                             </Track.Thumb>

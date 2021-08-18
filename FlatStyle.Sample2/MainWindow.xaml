@@ -214,8 +214,9 @@
                     <Slider
                         flatStyle:Placeholder.Value="Important2"
                         SmallChange="0.1"
+                        HorizontalAlignment="Left"
                         Style="{StaticResource NumericUpDown}" />
-                    <Slider flatStyle:Placeholder.Value="Important" Style="{StaticResource NumericUpDownSlider}" />
+                    <Slider flatStyle:Placeholder.Value="Important" HorizontalAlignment="Left" Style="{StaticResource NumericUpDownSlider}" />
                     <TextBox
                         flatStyle:FieldName.Value="Email"
                         flatStyle:Placeholder.Value="Enter your email here"
